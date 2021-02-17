@@ -1,0 +1,9 @@
+.site-body {
+  width: 90vw;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+::ng-deep .mat-drawer-backdrop.mat-drawer-shown {
+  display: none;
+}

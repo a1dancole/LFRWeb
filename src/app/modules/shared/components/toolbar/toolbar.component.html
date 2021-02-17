@@ -1,0 +1,19 @@
+<mat-toolbar>
+  <button mat-icon-button (click)="toggleSideMenu()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <a routerLink="" class="menu-image"><img src="../../../../../assets/images/Color logo - no background.png"/></a>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/underconstruction">
+      <mat-icon>login</mat-icon>
+      <span>Login</span>
+    </button>
+    <button mat-menu-item routerLink="/register">
+      <mat-icon>create</mat-icon>
+      <span>Register</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>

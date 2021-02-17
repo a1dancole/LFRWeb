@@ -1,0 +1,67 @@
+<mat-drawer-container>
+  <mat-drawer #drawer mode="over">
+    <mat-list>
+      <mat-list-item>
+        <button mat-menu-item routerLink="">
+          <mat-icon>home</mat-icon>
+          <span>Home</span>
+        </button>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <button mat-menu-item routerLink="/underconstruction">
+          <mat-icon>people</mat-icon>
+          <span>Online Players</span>
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-menu-item routerLink="/serverstatus">
+          <mat-icon>speed</mat-icon>
+          <span>Server Status</span>
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-menu-item routerLink="/underconstruction">
+          <mat-icon>download</mat-icon>
+          <span>Downloads</span>
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-menu-item routerLink="/underconstruction">
+          <mat-icon>rule</mat-icon>
+          <span>Server Rules</span>
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-menu-item routerLink="/underconstruction">
+          <mat-icon>stream</mat-icon>
+          <span>Streams</span>
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-menu-item routerLink="/underconstruction">
+          <mat-icon>edit_road</mat-icon>
+          <span>Roadmap</span>
+        </button>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <button mat-menu-item routerLink="/underconstruction">
+          <mat-icon>login</mat-icon>
+          <span>Login</span>
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-menu-item routerLink="/register">
+          <mat-icon>create</mat-icon>
+          <span>Register</span>
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div class="site-body">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
