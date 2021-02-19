@@ -1,0 +1,27 @@
+<br />
+<br />
+<mat-grid-list cols="2" rowHeight="fit" class="twitch-streams-grid" gutterSize="3%">
+  <mat-grid-tile>
+    <mat-card class="stream-card">
+      <br />
+      <mat-card-header>
+        <mat-card-title>Potter</mat-card-title>
+        <mat-card-subtitle>{{potterStreamEnded ? 'Currently Offline' : 'Developer Stream'}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div [style.visibility]="potterStreamEnded? 'hidden': 'visible'" [style.height]="potterStreamEnded? '0%': '100%'"  class="twitch-stream" id="potterTwitch">
+        </div>
+        <img class="stream-offline" *ngIf="potterStreamEnded" src="https://i.gifer.com/AZZ.gif">
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+
+  </mat-grid-tile>
+  <mat-grid-tile>
+
+  </mat-grid-tile>
+  <mat-grid-tile>
+
+  </mat-grid-tile>
+</mat-grid-list>

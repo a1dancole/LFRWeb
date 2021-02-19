@@ -10,6 +10,7 @@ import { HomeModule } from './modules/home/home.module';
 import { AuthenticationModule } from './modules/authentication/authentication.module';
 import { ServerStatusModule } from './modules/serverstatus/serverstatus.module';
 import { UnderConstructionModule } from './modules/underconstruction/underconstruction.module';
+import { StreamModule } from './modules/stream/stream.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { UnderConstructionModule } from './modules/underconstruction/underconstr
     HomeModule,
     AuthenticationModule,
     ServerStatusModule,
-    UnderConstructionModule
+    UnderConstructionModule,
+    StreamModule
   ],
   providers: [],
   bootstrap: [AppComponent]
