@@ -64,6 +64,7 @@ export class RegisterComponent implements OnInit {
           duration: 2000,
         })
       }, (error: any) => {
+        console.log(error);
         this._snackBar.open(`${error.error.detail}`, 'Error', { duration: 2000, panelClass:['warning'] })
       });
   }

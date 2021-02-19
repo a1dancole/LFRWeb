@@ -5,35 +5,26 @@ import {
   HttpRequest,
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { time } from 'console';
-import { Observable, of, throwError, timer } from 'rxjs';
-import { catchError, concatMap, delay, mergeMap, retry, retryWhen, take } from 'rxjs/operators';
+import { Observable, of, throwError } from 'rxjs';
+import { concatMap, delay, retryWhen } from 'rxjs/operators';
 import { JwtAuthenticationService } from './jwtAuthentication.service';
 
 @Injectable({ providedIn: 'root' })
 export class JwtAuthenticationInterceptor implements HttpInterceptor {
-
-  private retryCount = 3;
+  private retryCount = 1;
 
   constructor(private _jwtAuthenticationService: JwtAuthenticationService) {}
 
-  intercept(
-    req: HttpRequest<any>,
-    next: HttpHandler
-  ): Observable<HttpEvent<any>> {
+  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     if (req.url.includes('settings.json')) {
       return next.handle(req);
     }
 
-    var token = this._jwtAuthenticationService.getToken();
-
-    req = req.clone({
+    return next.handle(req.clone({
       setHeaders: {
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${this._jwtAuthenticationService.getToken()}`,
       },
-    });
-
-    return next.handle(req).pipe(retryWhen(error => {
+    })).pipe(retryWhen(error => {
       return error.pipe(concatMap((error, count) => {
         if (count <= this.retryCount && error.status === 401) {
           this._jwtAuthenticationService.login();

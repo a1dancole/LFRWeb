@@ -8,6 +8,7 @@ import { SettingsService } from './services/settings.service';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { JwtAuthenticationInterceptor } from './services/authentication/jwtAuthentication.interceptor';
 import { JwtAuthenticationService } from './services/authentication/jwtAuthentication.service';
+import { UnauthorizedInterceptor } from './services/authentication/unauthorized.interceptor';
 
 export function initApp(settingsService: SettingsService) {
   return () => settingsService.initialise();
@@ -34,6 +35,11 @@ export function initApp(settingsService: SettingsService) {
     {
       provide: HTTP_INTERCEPTORS,
       useClass: JwtAuthenticationInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: UnauthorizedInterceptor,
       multi: true,
     }
   ],
