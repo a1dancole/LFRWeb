@@ -36,11 +36,6 @@ export function initApp(settingsService: SettingsService) {
       provide: HTTP_INTERCEPTORS,
       useClass: JwtAuthenticationInterceptor,
       multi: true,
-    },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: UnauthorizedInterceptor,
-      multi: true,
     }
   ],
   exports: [

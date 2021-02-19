@@ -5,8 +5,8 @@ import {
   HttpRequest,
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of, throwError } from 'rxjs';
-import { concatMap, delay, retryWhen } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+import { concatMap, map, retryWhen, switchMap } from 'rxjs/operators';
 import { JwtAuthenticationService } from './jwtAuthentication.service';
 
 @Injectable({ providedIn: 'root' })
@@ -33,11 +33,11 @@ export class JwtAuthenticationInterceptor implements HttpInterceptor {
           return error.pipe(
             concatMap((error, count) => {
               if (count <= this.retryCount && error.status === 401) {
-                return this.handle401Error(req, next);
+                return this._jwtAuthenticationService.login().pipe(switchMap(response => { return this.handle401Error(req, next)}));
+                //return this.handle401Error(req, next);
               }
               return throwError(error);
-            }),
-            delay(1000)
+            })
           );
         })
       );

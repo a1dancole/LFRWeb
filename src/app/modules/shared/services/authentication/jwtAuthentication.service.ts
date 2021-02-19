@@ -11,10 +11,9 @@ export class JwtAuthenticationService extends BaseHttpClient {
     localStorage.removeItem(this.key)
   }
 
-  public login(): void {
+  public login() {
     let key = Buffer.from(`${this._settingsService.settings.applicationName}:${this._settingsService.settings.wpaSecret}`).toString("base64");
-
-    this.get(`${this._settingsService.settings.apiUrl}/authentication/authenticate?key=${key}`, {"responseType": 'text'}).subscribe((response => localStorage.setItem(this.key, response)));
+    return this.get(`${this._settingsService.settings.apiUrl}/authentication/authenticate?key=${key}`, { "responseType": 'text' }).pipe(map(jwt => { localStorage.setItem(this.key, jwt)}));
   }
 
   public getToken(): string | null {
