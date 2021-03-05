@@ -15,7 +15,6 @@ export class RegisterComponent implements OnInit {
   constructor(
     private _formBuilder: FormBuilder,
     private _authenticationService: AuthenticationService,
-    private _srp6Service: SRP6Service,
     private _snackBar: MatSnackBar
   ) {}
 
@@ -27,40 +26,34 @@ export class RegisterComponent implements OnInit {
 
   async ngOnInit() {
     this.form = this._formBuilder.group({
-      nickName: ['', Validators.required],
       userName: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
+      confirmPassword: ['', Validators.required]
     });
   }
 
   public async register() {
-    let nickName = this.form.get('nickName')?.value;
     let userName = this.form.get('userName')?.value;
     let password = this.form.get('password')?.value;
-    let email = this.form.get('email')?.value;
+    let confirmPassword = this.form.get('confirmPassword')?.value;
 
-    if (!(!!nickName && !!userName && !!password && !!email)) {
+    if (!(!!userName || !!password || !!confirmPassword)) {
       return;
     }
 
-    let generatedSrp6: GeneratedSrp6 = this._srp6Service.GetSRP6RegistrationData(
-      userName,
-      password
-    );
-
+    if(password != confirmPassword){
+      this._snackBar.open(`Password's do not match`, 'Error', { duration: 2000, panelClass:['warning'] })
+      return;
+    }
     let registerModel: Register = {
-      nickName: nickName,
       userName: userName,
-      email: email,
-      salt: generatedSrp6.salt.toString(),
-      verifier: generatedSrp6.verifier.toString(),
+      password: password
     };
 
     this._authenticationService
       .register(registerModel)
       .subscribe(response => {
-        this._snackBar.open(`Account ${response.userName} created`, undefined, {
+        this._snackBar.open(`Account ${registerModel.userName} created`, undefined, {
           duration: 2000,
         })
       }, (error: any) => {
