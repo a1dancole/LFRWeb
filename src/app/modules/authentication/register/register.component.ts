@@ -24,6 +24,8 @@ export class RegisterComponent implements OnInit {
   public duplicateUserName: boolean = false;
   public duplicateEmail: boolean = false;
 
+  public registering: boolean = false;
+
   async ngOnInit() {
     this.form = this._formBuilder.group({
       userName: ['', Validators.required],
@@ -45,11 +47,13 @@ export class RegisterComponent implements OnInit {
       this._snackBar.open(`Password's do not match`, 'Error', { duration: 2000, panelClass:['warning'] })
       return;
     }
+
     let registerModel: Register = {
       userName: userName,
       password: password
     };
 
+    this.registering = true;
     this._authenticationService
       .register(registerModel)
       .subscribe(response => {
@@ -59,6 +63,9 @@ export class RegisterComponent implements OnInit {
       }, (error: any) => {
         console.log(error);
         this._snackBar.open(`${error.error.detail}`, 'Error', { duration: 2000, panelClass:['warning'] })
-      });
+      })
+      .add(() => {
+        this.registering = false;
+      })
   }
 }
