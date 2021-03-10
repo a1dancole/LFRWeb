@@ -6,6 +6,8 @@ import { SRP6Service } from '../../shared/services/authentication/srp6.service';
 import { AuthenticationService } from '../authentication.service';
 import { Register } from '../models/register';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+import { EncryptionDialogComponent } from './dialogs/encryption.dialog.component';
 
 @Component({
   styleUrls: ['./register.component.scss'],
@@ -15,7 +17,8 @@ export class RegisterComponent implements OnInit {
   constructor(
     private _formBuilder: FormBuilder,
     private _authenticationService: AuthenticationService,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private _dialog: MatDialog
   ) {}
 
   public form!: FormGroup;
@@ -67,5 +70,9 @@ export class RegisterComponent implements OnInit {
       .add(() => {
         this.registering = false;
       })
+  }
+
+  public openEncryptionInformationDialog() {
+    const dialogRef = this._dialog.open(EncryptionDialogComponent);
   }
 }

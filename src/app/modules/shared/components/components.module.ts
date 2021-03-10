@@ -12,6 +12,10 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { RouterModule } from '@angular/router';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MAT_RIPPLE_GLOBAL_OPTIONS, RippleGlobalOptions } from '@angular/material/core';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatTooltipModule} from '@angular/material/tooltip';
+
+
 
 const globalRippleConfig: RippleGlobalOptions = {
   disabled: false,
@@ -32,7 +36,9 @@ const globalRippleConfig: RippleGlobalOptions = {
     RouterModule,
     MatCardModule,
     MatListModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatDialogModule,
+    MatTooltipModule
   ],
   declarations: [ToolbarComponent, SideMenuComponent],
   providers: [
@@ -49,7 +55,9 @@ const globalRippleConfig: RippleGlobalOptions = {
     MatTabsModule,
     MatCardModule,
     MatListModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatDialogModule,
+    MatTooltipModule
   ],
 })
 export class ComponentsModule {}

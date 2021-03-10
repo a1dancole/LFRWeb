@@ -5,10 +5,11 @@ import {
 } from '@angular/material/core';
 import { SharedModule } from '../shared/shared.module';
 import { AuthenticationService } from './authentication.service';
+import { EncryptionDialogComponent } from './register/dialogs/encryption.dialog.component';
 import { RegisterComponent } from './register/register.component';
 
 @NgModule({
-  declarations: [RegisterComponent],
+  declarations: [RegisterComponent, EncryptionDialogComponent],
   providers: [
     { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher },
     AuthenticationService
