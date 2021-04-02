@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -11,6 +10,8 @@ import { AuthenticationModule } from './modules/authentication/authentication.mo
 import { ServerStatusModule } from './modules/serverstatus/serverstatus.module';
 import { UnderConstructionModule } from './modules/underconstruction/underconstruction.module';
 import { StreamModule } from './modules/stream/stream.module';
+import { DiscordModule } from './modules/discord/discord.module';
+import { HowToConnectModule } from './modules/howtoconnect/howtoconnect.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,9 @@ import { StreamModule } from './modules/stream/stream.module';
     AuthenticationModule,
     ServerStatusModule,
     UnderConstructionModule,
-    StreamModule
+    StreamModule,
+    DiscordModule,
+    HowToConnectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,115 @@
+<br />
+<mat-card class="how-to-connect-card">
+  <br />
+  <mat-card-header>
+    <mat-card-title>How To Connect</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-horizontal-stepper>
+      <mat-step label="Download the client " state="phone">
+        <mat-list>
+          <a class="no-decoration" mat-list-item href="https://wow.gamefreedom.net/WoW-WotLK-(Classic-Textures).7z"
+            target="_blank">
+            <mat-icon>download</mat-icon>&nbsp;&nbsp;Download the client from here
+          </a>
+          <a class="no-decoration" mat-list-item href="https://www.7-zip.org/a/7z1900-x64.exe" target="_blank">
+            <mat-icon>system_update_alt</mat-icon>&nbsp;&nbsp;<i>(Optional) Download 7Zip from here</i>
+          </a>
+          <mat-list-item>
+            <mat-icon>unarchive</mat-icon>&nbsp;&nbsp;Extract the contents of your client download to somewhere on your
+            PC
+          </mat-list-item>
+        </mat-list>
+        <br />
+        <div>
+          <button mat-flat-button color="primary" matStepperNext>Next</button>
+        </div>
+      </mat-step>
+      <mat-step label="Set your realmlist" state="chat">
+        <mat-list>
+          <mat-list-item>
+            <mat-icon>grid_view</mat-icon>&nbsp;&nbsp;Navigate to the folder on your machine where the 3.3.5a client is
+            located
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon>folder</mat-icon>&nbsp;&nbsp;Navigate to /data/enus within your client folder
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon>description</mat-icon>&nbsp;&nbsp;Open the file realmlist.wtf
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon>code</mat-icon>&nbsp;&nbsp;<i>(Optional) If you want to keep existing server realmlist information
+              in this file you can put '#' infront and it will be ignored by the client</i>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon>content_paste</mat-icon>&nbsp;&nbsp;Paste in the follow realmlist information:&nbsp;
+            <code>set realmlist login.lookingforraid.co.uk</code>
+          </mat-list-item>
+        </mat-list>
+        <br />
+        <div>
+          <button mat-flat-button color="primary" matStepperNext>Next</button>
+        </div>
+      </mat-step>
+      <mat-step label="Create an account">
+        <mat-list>
+          <a class="no-decoration" mat-list-item [routerLink]="['/register']">
+            <mat-icon>create</mat-icon>&nbsp;&nbsp;If you have not already created a Looking For Raid account, you can
+            do so here
+          </a>
+        </mat-list>
+        <br />
+        <div>
+          <button mat-flat-button color="primary" matStepperNext>Next</button>
+        </div>
+      </mat-step>
+      <mat-step label="Optional steps">
+        <mat-list>
+          <mat-list-item>
+            <mat-icon>insights</mat-icon>&nbsp;&nbsp;If you want to improve the graphics quality of the game as much as
+            possible additional variables can be set via / commands. Below is a list of these commands and their values
+          </mat-list-item>
+          <div class="macro-box">
+            <div>
+              <code>/console overridefarclip 1</code>
+            </div>
+            <div>
+              <code>/console farclip 1600</code>
+            </div>
+            <div>
+              <code>/console horizonfarclip 6226</code>
+            </div>
+            <div>
+              <code>/console groundeffectdensity 128</code>
+            </div>
+            <div>
+              <code>/console groundeffectdist 1000</code>
+            </div>
+            <div>
+              <code>/console smallcull 0</code>
+            </div>
+            <div>
+              <code>/console skycloudlod 3</code>
+            </div>
+            <div>
+              <code>/console characterAmbient</code>
+            </div>
+            <div>
+              <code>/console extshadowquality 4</code>
+            </div>
+          </div>
+        </mat-list>
+        <br />
+        <div>
+          <button mat-flat-button color="primary" matStepperPrevious>Back</button>
+        </div>
+      </mat-step>
+      <ng-template matStepperIcon="phone">
+        <mat-icon>call_end</mat-icon>
+      </ng-template>
+      <ng-template matStepperIcon="chat">
+        <mat-icon>forum</mat-icon>
+      </ng-template>
+    </mat-horizontal-stepper>
+  </mat-card-content>
+</mat-card>

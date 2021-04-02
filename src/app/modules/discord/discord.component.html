@@ -1,0 +1,13 @@
+<br />
+<mat-card class="discord-card">
+  <mat-card-header>
+    <mat-card-title>Discord</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <iframe class="discord-chat-frame" [src]="discordUrl"></iframe>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-flat-button class="join-server-button" color="accent" [href]="discordJoinUrl" target="_blank"
+      rel="noopener noreferrer">Join Server</a>
+  </mat-card-actions>
+</mat-card>

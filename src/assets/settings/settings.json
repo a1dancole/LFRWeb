@@ -2,5 +2,8 @@
   "apiUrl": "https://lfrapi.azurewebsites.net",
   "applicationName": "LookingForRaid",
   "wpaSecret": "TN,+CFS=t+vxk22-;r&ZWjmds,L(YesK`C*Bid?`KAVYPv!Qu:xh&yA/@M*g#G|",
-  "dashboardUrl": "https://play.grafana.org/d/000000012/grafana-play-home?orgId=1&from=1613518541823&to=1613522141824"
+  "dashboardUrl": "https://play.grafana.org/d/000000012/grafana-play-home?orgId=1&from=1613518541823&to=1613522141824",
+  "discordServerId": "808813760978223135",
+  "discordDefaultChannelId": "817035250840502284",
+  "discordJoinUrl": "https://discord.gg/sHpEP73vVT"
 }
