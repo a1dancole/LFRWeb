@@ -5,5 +5,9 @@ export interface Settings {
   dashboardUrl: string,
   discordServerId: string,
   discordDefaultChannelId: string,
-  discordJoinUrl: string
+  discordJoinUrl: string,
+  trelloAccessKey: string,
+  trelloAccessToken: string,
+  trelloBoardId: string,
+  trelloReleasedListId: string
 }

@@ -12,6 +12,7 @@ import { UnderConstructionModule } from './modules/underconstruction/underconstr
 import { StreamModule } from './modules/stream/stream.module';
 import { DiscordModule } from './modules/discord/discord.module';
 import { HowToConnectModule } from './modules/howtoconnect/howtoconnect.module';
+import { ChangesModule } from './modules/changes/changes.module';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { HowToConnectModule } from './modules/howtoconnect/howtoconnect.module';
     UnderConstructionModule,
     StreamModule,
     DiscordModule,
-    HowToConnectModule
+    HowToConnectModule,
+    ChangesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

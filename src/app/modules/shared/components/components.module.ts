@@ -15,6 +15,8 @@ import { MAT_RIPPLE_GLOBAL_OPTIONS, RippleGlobalOptions } from '@angular/materia
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatStepperModule} from '@angular/material/stepper';
+import {MatExpansionModule} from '@angular/material/expansion';
+
 
 
 
@@ -40,7 +42,9 @@ const globalRippleConfig: RippleGlobalOptions = {
     MatListModule,
     MatProgressSpinnerModule,
     MatDialogModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatStepperModule,
+    MatExpansionModule
   ],
   declarations: [ToolbarComponent, SideMenuComponent],
   providers: [
@@ -60,7 +64,8 @@ const globalRippleConfig: RippleGlobalOptions = {
     MatProgressSpinnerModule,
     MatDialogModule,
     MatTooltipModule,
-    MatStepperModule
+    MatStepperModule,
+    MatExpansionModule
   ],
 })
 export class ComponentsModule {}

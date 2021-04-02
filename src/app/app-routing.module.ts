@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RegisterComponent } from './modules/authentication/register/register.component';
+import { ChangesComponent } from './modules/changes/changes.component';
 import { DiscordComponent } from './modules/discord/discord.component';
 import { HomeComponent } from './modules/home/home.component';
 import { HowToConnectComponent } from './modules/howtoconnect/howtoconnect.component';
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'underconstruction', component: UnderConstructionComponent},
   { path: 'streams', component: StreamComponent },
   { path: 'discord', component: DiscordComponent },
-  { path: 'howtoconnect', component: HowToConnectComponent}
+  { path: 'howtoconnect', component: HowToConnectComponent},
+  { path: 'latestchanges', component: ChangesComponent}
 ];
 
 @NgModule({

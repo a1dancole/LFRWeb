@@ -5,5 +5,9 @@
   "dashboardUrl": "https://play.grafana.org/d/000000012/grafana-play-home?orgId=1&from=1613518541823&to=1613522141824",
   "discordServerId": "808813760978223135",
   "discordDefaultChannelId": "817035250840502284",
-  "discordJoinUrl": "https://discord.gg/sHpEP73vVT"
+  "discordJoinUrl": "https://discord.gg/sHpEP73vVT",
+  "trelloAccessKey": "ea7f21fe2c6b3a6bc4977cb397d48012",
+  "trelloAccessToken": "3240d4914e4701e3bf78e1ab3b301697f1143f6556e361685ef2a4aa6f796a93",
+  "trelloBoardId": "ea7f21fe2c6b3a6bc4977cb397d48012",
+  "trelloReleasedListId": "60229b6668a92c60ff2de9b6"
 }
