@@ -8,9 +8,13 @@ export class SettingsService {
 
   constructor(private _httpClient: HttpClient) { }
 
-  public initialise() {
-    this._httpClient.get<Settings>('./assets/settings/settings.json').subscribe(response => {
-      this.settings = response;
-    });
+  public initialise(): Promise<void> {
+    return new Promise<void>((resolve, reject) => {
+      this._httpClient.get<Settings>('./assets/settings/settings.json').subscribe(response => {
+        this.settings = response;
+        resolve();
+      });
+    })
+
   }
 }

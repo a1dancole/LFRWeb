@@ -13,6 +13,7 @@ import { StreamModule } from './modules/stream/stream.module';
 import { DiscordModule } from './modules/discord/discord.module';
 import { HowToConnectModule } from './modules/howtoconnect/howtoconnect.module';
 import { ChangesModule } from './modules/changes/changes.module';
+import { AccountModule } from './modules/account/account.module';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ChangesModule } from './modules/changes/changes.module';
     StreamModule,
     DiscordModule,
     HowToConnectModule,
-    ChangesModule
+    ChangesModule,
+    AccountModule
   ],
   providers: [],
   bootstrap: [AppComponent]

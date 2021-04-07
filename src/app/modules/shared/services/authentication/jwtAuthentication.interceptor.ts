@@ -15,7 +15,10 @@ export class JwtAuthenticationInterceptor implements HttpInterceptor {
 
   constructor(private _jwtAuthenticationService: JwtAuthenticationService) {}
 
-  intercept(req: HttpRequest<any>,next: HttpHandler): Observable<HttpEvent<any>> {
+  intercept(
+    req: HttpRequest<any>,
+    next: HttpHandler
+  ): Observable<HttpEvent<any>> {
     if (req.url.includes('settings.json')) {
       return next.handle(req);
     }
@@ -33,8 +36,11 @@ export class JwtAuthenticationInterceptor implements HttpInterceptor {
           return error.pipe(
             concatMap((error, count) => {
               if (count <= this.retryCount && error.status === 401) {
-                return this._jwtAuthenticationService.login().pipe(switchMap(response => { return this.handle401Error(req, next)}));
-                //return this.handle401Error(req, next);
+                return this._jwtAuthenticationService.login().pipe(
+                  switchMap((response) => {
+                    return this.handle401Error(req, next);
+                  })
+                );
               }
               return throwError(error);
             })

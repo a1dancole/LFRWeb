@@ -11,15 +11,15 @@ import {MatCardModule} from '@angular/material/card';
 import {MatTabsModule} from '@angular/material/tabs';
 import { RouterModule } from '@angular/router';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import { MAT_RIPPLE_GLOBAL_OPTIONS, RippleGlobalOptions } from '@angular/material/core';
+import { MatRippleModule, MAT_RIPPLE_GLOBAL_OPTIONS, RippleGlobalOptions } from '@angular/material/core';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatExpansionModule} from '@angular/material/expansion';
-
-
-
-
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatSelectModule } from '@angular/material/select'
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 const globalRippleConfig: RippleGlobalOptions = {
   disabled: false,
@@ -44,7 +44,12 @@ const globalRippleConfig: RippleGlobalOptions = {
     MatDialogModule,
     MatTooltipModule,
     MatStepperModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatGridListModule,
+    MatRippleModule,
+    CommonModule,
+    FormsModule,
+    MatSelectModule
   ],
   declarations: [ToolbarComponent, SideMenuComponent],
   providers: [
@@ -65,7 +70,12 @@ const globalRippleConfig: RippleGlobalOptions = {
     MatDialogModule,
     MatTooltipModule,
     MatStepperModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatGridListModule,
+    MatRippleModule,
+    CommonModule,
+    FormsModule,
+    MatSelectModule
   ],
 })
 export class ComponentsModule {}

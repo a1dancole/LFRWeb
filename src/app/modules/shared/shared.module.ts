@@ -1,7 +1,6 @@
 import { APP_INITIALIZER, ModuleWithProviders, NgModule } from '@angular/core';
 import { ComponentsModule } from './components/components.module';
 import { MatInputModule } from '@angular/material/input';
-import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SettingsService } from './services/settings.service';
@@ -9,16 +8,17 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { JwtAuthenticationInterceptor } from './services/authentication/jwtAuthentication.interceptor';
 import { JwtAuthenticationService } from './services/authentication/jwtAuthentication.service';
 import { UnauthorizedInterceptor } from './services/authentication/unauthorized.interceptor';
+import { CookieService } from 'ngx-cookie-service';
+import { UserGuard } from './guards/user.guard';
 
 export function initApp(settingsService: SettingsService) {
-  return () => settingsService.initialise();
+  return (): Promise<void> => { return settingsService.initialise() };
 }
 
 @NgModule({
   imports: [
     ComponentsModule,
     MatInputModule,
-    CommonModule,
     ReactiveFormsModule,
     HttpClientModule,
     MatSnackBarModule,
@@ -36,12 +36,13 @@ export function initApp(settingsService: SettingsService) {
       provide: HTTP_INTERCEPTORS,
       useClass: JwtAuthenticationInterceptor,
       multi: true,
-    }
+    },
+    CookieService,
+    UserGuard
   ],
   exports: [
     ComponentsModule,
     MatInputModule,
-    CommonModule,
     ReactiveFormsModule,
     HttpClientModule,
     MatSnackBarModule,

@@ -2,7 +2,9 @@ import { Injectable } from "@angular/core";
 import { Observable, pipe } from "rxjs";
 import { catchError } from 'rxjs/operators'
 import { BaseHttpClient } from "../shared/services/baseHttpClient.service";
+import { Login } from "./models/login";
 import { Register } from "./models/register"
+import { UserProfile } from "../shared/models/userprofile";
 
 @Injectable()
 export class AuthenticationService extends BaseHttpClient {
@@ -13,5 +15,9 @@ export class AuthenticationService extends BaseHttpClient {
 
   public checkDuplicateUsername(userName: string) : Observable<boolean> {
     return this.get<boolean>(`${this._settingsService.settings.apiUrl}/account/checkduplicateusername?userName=${userName}`);
+  }
+
+  public login(login: Login): Observable<UserProfile> {
+    return this._httpClient.post<UserProfile>(`${this._settingsService.settings.apiUrl}/account/login`, login);
   }
 }
