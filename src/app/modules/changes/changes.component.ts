@@ -3,9 +3,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { TrelloCard } from '../shared/models/trelloCard';
 import { SettingsService } from '../shared/services/settings.service';
 import { TrelloService } from './trello.service';
-import 'lodash'
-
-declare var _:any;
 
 @Component({
   styleUrls: ['./changes.component.scss'],
