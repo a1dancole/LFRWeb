@@ -1,8 +1,80 @@
-<mat-tab-group animationDuration="1000ms" mat-align-tabs="center">
-  <mat-tab label="Latest News">
-    <news-component></news-component>
-  </mat-tab>
-  <mat-tab label="Developer Blogs">
-    <blogs-component></blogs-component>
-  </mat-tab>
-</mat-tab-group>
+<br />
+<mat-grid-list cols="3" rowHeight="50vh">
+  <mat-grid-tile>
+    <mat-card class="home-card">
+      <mat-card-header>
+        <mat-card-title class="home-card-title">
+           <h1><b>Instant Level 80</b></h1>
+        </mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="../../../assets/images/dwarf_levelup.jpg" class="home-card-image">
+      <mat-card-content>
+        <p>
+          Get started gearing your character getting ready for raids within minutes.
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card class="home-card">
+      <mat-card-header>
+        <mat-card-title class="home-card-title">
+          <h1><b>5-Man Content</b></h1>
+       </mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="../../../assets/images/group_of_players.jpg" class="home-card-image">
+      <mat-card-content>
+        <p>
+          We're working hard to scale and script raids to be doable by 5 players, while still maintaining the mechanics
+          your familiar with all with a new challenge
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card class="home-card">
+      <mat-card-header>
+        <mat-card-title class="home-card-title">
+          <h1><b>Progressive</b></h1>
+       </mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="../../../assets/images/ulduar_combat.jpg" class="home-card-image">
+      <mat-card-content>
+        <p>
+          Content released in the same order as retail with additional attunements to allow new players to play the game
+          at their own pace and enjoy all Wrath of the Lich King content
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile class="home-tile-small">
+    <mat-card class="home-card-small">
+      <mat-card-content>
+        <div class="home-card-small-content" [routerLink]="['/register']">
+          <img src="../../../assets/images/register-logo.png" class="register-logo">
+          <span class="home-card-small-text"><b>Register</b></span>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile class="home-tile-small">
+    <mat-card class="home-card-small">
+      <mat-card-content>
+          <div class="home-card-small-content" (click)="downloadClient()">
+            <img src="../../../assets/images/download_logo.png" class="download-logo">
+            <span class="home-card-small-text"><b>Download</b></span>
+          </div>
+        </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile class="home-tile-small">
+    <mat-card class="home-card-small">
+      <mat-card-content>
+          <div class="home-card-small-content" (click)="openDiscordUrl()">
+            <img src="../../../assets/images/discord-logo.png" class="discord-logo">
+            <span class="home-card-small-text"><b>Discord</b></span>
+          </div>
+        </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

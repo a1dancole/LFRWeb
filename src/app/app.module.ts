@@ -14,6 +14,7 @@ import { DiscordModule } from './modules/discord/discord.module';
 import { HowToConnectModule } from './modules/howtoconnect/howtoconnect.module';
 import { ChangesModule } from './modules/changes/changes.module';
 import { AccountModule } from './modules/account/account.module';
+import { BlogsModule } from './modules/blogs/blogs.module';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { AccountModule } from './modules/account/account.module';
     DiscordModule,
     HowToConnectModule,
     ChangesModule,
-    AccountModule
+    AccountModule,
+    BlogsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

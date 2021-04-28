@@ -9,15 +9,17 @@ import { UserCookieService } from "../../services/userCookie.service";
 })
 export class ToolbarComponent {
   public isLoggedIn: boolean = false;
+  public sideMenuOpen: boolean = false;
 
   constructor(private _sideMenuService: SideMenuService, private _userCookieService: UserCookieService) {
     _userCookieService.isLoggedIn.subscribe(event => {
-      this.isLoggedIn = event;
+      this.isLoggedIn = event ?? false;
     })
   }
 
   public toggleSideMenu(): void {
     this._sideMenuService.toggleSideMenu();
+    this.sideMenuOpen = !this.sideMenuOpen;
   }
 
   public logOut(): void {

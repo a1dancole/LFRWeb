@@ -1,6 +1,6 @@
 <mat-toolbar class="sticky-toolbar">
   <button mat-icon-button (click)="toggleSideMenu()">
-    <mat-icon>menu</mat-icon>
+    <mat-icon>{{sideMenuOpen ? 'menu_open' : 'menu'}}</mat-icon>
   </button>
   <a routerLink="" class="menu-image"><img src="../../../../../assets/images/Color logo - no background.png"/></a>
   <button *ngIf="!isLoggedIn" mat-icon-button [matMenuTriggerFor]="loggedOutMenu">

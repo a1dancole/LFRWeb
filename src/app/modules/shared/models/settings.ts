@@ -9,5 +9,6 @@ export interface Settings {
   trelloAccessKey: string,
   trelloAccessToken: string,
   trelloBoardId: string,
-  trelloReleasedListId: string
+  trelloReleasedListId: string,
+  clientDownloadUrl: string
 }

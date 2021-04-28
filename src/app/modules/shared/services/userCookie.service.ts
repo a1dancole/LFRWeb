@@ -7,13 +7,12 @@ import { UserProfile } from '../models/userprofile';
 export class UserCookieService {
   private cookieName: string = 'lfr_loggedin';
 
-  public isLoggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
-    false
-  );
+  public isLoggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor(private _cookieService: CookieService) {
+    let foo = this._cookieService.get(this.cookieName);
     this.isLoggedIn.next(
-      this._cookieService.get(this.cookieName) !== undefined
+      this._cookieService.get(this.cookieName) !== ''
     );
   }
 

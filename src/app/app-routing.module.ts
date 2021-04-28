@@ -5,6 +5,7 @@ import { ChangePasswordComponent } from './modules/account/change-password/chang
 import { UnstuckComponent } from './modules/account/unstuck/unstuck.component';
 import { LoginComponent } from './modules/authentication/login/login.component';
 import { RegisterComponent } from './modules/authentication/register/register.component';
+import { BlogsComponent } from './modules/blogs/blogs.component';
 import { ChangesComponent } from './modules/changes/changes.component';
 import { DiscordComponent } from './modules/discord/discord.component';
 import { HomeComponent } from './modules/home/home.component';
@@ -16,6 +17,7 @@ import { UnderConstructionComponent } from './modules/underconstruction/undercon
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
+  { path: 'blogs', component: BlogsComponent },
   { path: 'register', component: RegisterComponent},
   { path: 'serverstatus', component: ServerStatusComponent},
   { path: 'underconstruction', component: UnderConstructionComponent},

@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { SettingsService } from "../shared/services/settings.service";
 
 @Component({
   styleUrls: ['./home.component.scss'],
@@ -6,4 +7,13 @@ import { Component } from "@angular/core";
 })
 export class HomeComponent {
 
+  constructor(private _settingsService: SettingsService) { }
+
+  public openDiscordUrl(): void {
+    window.open(this._settingsService.settings.discordJoinUrl, "_blank");
+  }
+
+  public downloadClient(): void {
+    window.open(this._settingsService.settings.clientDownloadUrl, "_blank");
+  }
 }
