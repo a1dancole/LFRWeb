@@ -6,9 +6,18 @@ mat-card {
 }
 
 .unstuck-select-list {
-  width: 50%;
+  width: 100%;
 }
 
 mat-card-actions {
   text-align: center;
+}
+
+.unstuck-character-image {
+  max-height:30vh;
+  filter:opacity(0.8);
+}
+
+.unstuck-card-content {
+  width:100%;
 }
