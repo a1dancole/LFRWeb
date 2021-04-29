@@ -16,10 +16,8 @@
 .home-card-small {
   height:5vh;
   width:90%;
-}
-
-.home-card:before {
-  box-shadow: 0 20px 0 0 #522d5b;
+  background: linear-gradient(to left, #39bbe6 -50%, #272727);
+  filter: drop-shadow(2px 4px 6px black)
 }
 
 .home-card-title {

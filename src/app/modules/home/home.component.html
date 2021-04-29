@@ -2,16 +2,20 @@
 <mat-grid-list cols="3" rowHeight="50vh">
   <mat-grid-tile>
     <mat-card class="home-card">
-      <mat-card-header>
+      <mat-card-header class="home-card-header">
         <mat-card-title class="home-card-title">
-           <h1><b>Instant Level 80</b></h1>
+          <h1><b>High Rates</b></h1>
         </mat-card-title>
       </mat-card-header>
       <img mat-card-image src="../../../assets/images/dwarf_levelup.jpg" class="home-card-image">
       <mat-card-content>
-        <p>
-          Get started gearing your character getting ready for raids within minutes.
-        </p>
+        <dl>
+          <dt>Instant 80</dt>
+          <dt>Instant 375 Professions</dt>
+          <dt>Instant Friendly with key Northrend reputations</dt>
+          <dt>Start with Northrend reputation tabards</dt>
+          <dt>Reduced Raid Lockouts</dt>
+        </dl>
       </mat-card-content>
     </mat-card>
   </mat-grid-tile>
@@ -20,13 +24,17 @@
       <mat-card-header>
         <mat-card-title class="home-card-title">
           <h1><b>5-Man Content</b></h1>
-       </mat-card-title>
+        </mat-card-title>
       </mat-card-header>
       <img mat-card-image src="../../../assets/images/group_of_players.jpg" class="home-card-image">
       <mat-card-content>
         <p>
-          We're working hard to scale and script raids to be doable by 5 players, while still maintaining the mechanics
-          your familiar with all with a new challenge
+          We're spending our time scaling and scripting every raid to be doable by 5 players. Enjoy developing your
+          characters and progressing through challenging content without the hassle of large groups.
+        </p>
+        <p>
+          25man difficulty is our idea of Challenge Mode, scaled for a challenge with additional mechanics added to
+          suite the theme of the fights.
         </p>
       </mat-card-content>
     </mat-card>
@@ -36,13 +44,16 @@
       <mat-card-header>
         <mat-card-title class="home-card-title">
           <h1><b>Progressive</b></h1>
-       </mat-card-title>
+        </mat-card-title>
       </mat-card-header>
       <img mat-card-image src="../../../assets/images/ulduar_combat.jpg" class="home-card-image">
       <mat-card-content>
         <p>
-          Content released in the same order as retail with additional attunements to allow new players to play the game
-          at their own pace and enjoy all Wrath of the Lich King content
+          We've rolled back the years, enjoy Wrath of the Lich King the way it was supposed to be. We've added
+          attunements and removed the catchup mechanics of Emblems of Triumph's from heroics so you can progress from
+          the start.
+
+
         </p>
       </mat-card-content>
     </mat-card>
@@ -60,21 +71,21 @@
   <mat-grid-tile class="home-tile-small">
     <mat-card class="home-card-small">
       <mat-card-content>
-          <div class="home-card-small-content" (click)="downloadClient()">
-            <img src="../../../assets/images/download_logo.png" class="download-logo">
-            <span class="home-card-small-text"><b>Download</b></span>
-          </div>
-        </mat-card-content>
+        <div class="home-card-small-content" (click)="downloadClient()">
+          <img src="../../../assets/images/download_logo.png" class="download-logo">
+          <span class="home-card-small-text"><b>Download</b></span>
+        </div>
+      </mat-card-content>
     </mat-card>
   </mat-grid-tile>
   <mat-grid-tile class="home-tile-small">
     <mat-card class="home-card-small">
       <mat-card-content>
-          <div class="home-card-small-content" (click)="openDiscordUrl()">
-            <img src="../../../assets/images/discord-logo.png" class="discord-logo">
-            <span class="home-card-small-text"><b>Discord</b></span>
-          </div>
-        </mat-card-content>
+        <div class="home-card-small-content" (click)="openDiscordUrl()">
+          <img src="../../../assets/images/discord-logo.png" class="discord-logo">
+          <span class="home-card-small-text"><b>Discord</b></span>
+        </div>
+      </mat-card-content>
     </mat-card>
   </mat-grid-tile>
 </mat-grid-list>
