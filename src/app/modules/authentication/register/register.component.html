@@ -1,36 +1,43 @@
-<mat-card class="register-card">
+<mat-card>
   <mat-card-header>
-    <mat-icon class="icon-right" (click)="openEncryptionInformationDialog()" matTooltip="Understand how we store your credentials">help</mat-icon>
     <mat-card-title>Register</mat-card-title>
     <mat-card-subtitle>Create an account to start playing</mat-card-subtitle>
+    <mat-icon class="icon-right" (click)="openEncryptionInformationDialog()" matTooltip="Understand how we store your credentials">help</mat-icon>
   </mat-card-header>
-  <form [formGroup]="form" (ngSubmit)="register()">
-  <mat-card-content>
-      <mat-form-field>
-        <mat-label>Username</mat-label>
-        <input type="text" matInput formControlName="userName" required placeholder="pottermage">
-        <mat-hint>The username to login to the game with</mat-hint>
-        <mat-error>Username is <strong>required</strong></mat-error>
-      </mat-form-field>
-      <br />
-      <mat-form-field>
-        <mat-label>Password</mat-label>
-        <input type="password" matInput formControlName="password" required>
-        <mat-hint>A password to login to the game with. </mat-hint>
-        <mat-error>Password is <strong>required</strong></mat-error>
-      </mat-form-field>
-      <br />
-      <mat-form-field>
-        <mat-label>Confirm Password</mat-label>
-        <input type="password" matInput formControlName="confirmPassword" required>
-        <mat-hint>Enter your password again. </mat-hint>
-        <mat-error>Password is <strong>required</strong></mat-error>
-      </mat-form-field>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-flat-button color="accent" [disabled]="registering">
-      Register
-    </button>
-  </mat-card-actions>
-</form>
+<mat-grid-list cols="2" rowHeight="35vh" gutterSize="1vw">
+  <mat-grid-tile>
+    <img src="../../../../assets/images/registration_image.jpg" class="register-image">
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <form [formGroup]="form" (ngSubmit)="register()" class="register-form">
+      <mat-card-content>
+          <mat-form-field>
+            <mat-label>Username</mat-label>
+            <input type="text" matInput formControlName="userName" required placeholder="pottermage">
+            <mat-hint>The username to login to the game with</mat-hint>
+            <mat-error>Username is <strong>required</strong></mat-error>
+          </mat-form-field>
+          <br />
+          <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input type="password" matInput formControlName="password" required>
+            <mat-hint>A password to login to the game with. </mat-hint>
+            <mat-error>Password is <strong>required</strong></mat-error>
+          </mat-form-field>
+          <br />
+          <mat-form-field>
+            <mat-label>Confirm Password</mat-label>
+            <input type="password" matInput formControlName="confirmPassword" required>
+            <mat-hint>Enter your password again. </mat-hint>
+            <mat-error>Password is <strong>required</strong></mat-error>
+          </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-flat-button color="accent" [disabled]="registering">
+          Register
+        </button>
+      </mat-card-actions>
+    </form>
+  </mat-grid-tile>
+</mat-grid-list>
 </mat-card>

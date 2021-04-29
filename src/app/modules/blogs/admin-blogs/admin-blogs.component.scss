@@ -1,12 +1,10 @@
-.news-card {
+.blog-card {
   max-width: 70vw;
   margin: 0 auto;
   border: 30px;
   border-radius: 30px;
 }
 
-.news-card-image {
-  height: auto;
-  max-width: 25vw;
-  margin: 0 auto;
+.blog-card-image {
+  filter:opacity(0.8);
 }
