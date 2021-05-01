@@ -30,6 +30,7 @@
               "src/favicon.ico",
               "src/assets/images",
               "src/assets/settings",
+              "src/assets/icons",
               "src/manifest.webmanifest"
             ],
             "styles": [
@@ -98,6 +99,7 @@
               "src/favicon.ico",
               "src/assets/images",
               "src/assets/settings",
+              "src/assets/icons",
               "src/manifest.webmanifest"
             ],
             "styles": [
