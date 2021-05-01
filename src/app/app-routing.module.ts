@@ -12,6 +12,7 @@ import { HomeComponent } from './modules/home/home.component';
 import { HowToConnectComponent } from './modules/howtoconnect/howtoconnect.component';
 import { ServerStatusComponent } from './modules/serverstatus/serverstatus.component';
 import { UserGuard } from './modules/shared/guards/user.guard';
+import { StoreComponent } from './modules/store/store.component';
 import { StreamComponent } from './modules/stream/stream.component';
 import { UnderConstructionComponent } from './modules/underconstruction/underconstruction.component';
 
@@ -28,7 +29,8 @@ const routes: Routes = [
   { path: 'login', component:LoginComponent },
   { path: 'account', component:AccountDashboardComponent, canActivate: [UserGuard] },
   { path: 'account/changepassword', component:ChangePasswordComponent, canActivate: [UserGuard] },
-  { path: 'account/unstuck', component:UnstuckComponent, canActivate: [UserGuard] }
+  { path: 'account/unstuck', component:UnstuckComponent, canActivate: [UserGuard] },
+  { path: 'store', component:StoreComponent, canActivate: [UserGuard]}
 ];
 
 @NgModule({

@@ -15,6 +15,7 @@ import { HowToConnectModule } from './modules/howtoconnect/howtoconnect.module';
 import { ChangesModule } from './modules/changes/changes.module';
 import { AccountModule } from './modules/account/account.module';
 import { BlogsModule } from './modules/blogs/blogs.module';
+import { StoreModule } from './modules/store/store.module'
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { BlogsModule } from './modules/blogs/blogs.module';
     HowToConnectModule,
     ChangesModule,
     AccountModule,
-    BlogsModule
+    BlogsModule,
+    StoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

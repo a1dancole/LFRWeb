@@ -3,10 +3,11 @@ import {
   HttpHandler,
   HttpInterceptor,
   HttpRequest,
+  HttpResponse,
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
-import { concatMap, map, retryWhen, switchMap } from 'rxjs/operators';
+import { catchError, concatMap, map, retryWhen, switchMap } from 'rxjs/operators';
 import { JwtAuthenticationService } from './jwtAuthentication.service';
 
 @Injectable({ providedIn: 'root' })
@@ -23,30 +24,19 @@ export class JwtAuthenticationInterceptor implements HttpInterceptor {
       return next.handle(req);
     }
 
-    return next
-      .handle(
-        req.clone({
-          setHeaders: {
-            Authorization: `Bearer ${this._jwtAuthenticationService.getToken()}`,
-          },
-        })
-      )
-      .pipe(
-        retryWhen((error) => {
-          return error.pipe(
-            concatMap((error, count) => {
-              if (count <= this.retryCount && error.status === 401) {
-                return this._jwtAuthenticationService.login().pipe(
-                  switchMap((response) => {
-                    return this.handle401Error(req, next);
-                  })
-                );
-              }
-              return throwError(error);
-            })
-          );
-        })
-      );
+    return next.handle(req.clone({
+      setHeaders: {
+        Authorization: `Bearer ${this._jwtAuthenticationService.getToken()}`,
+      },
+    })).pipe(catchError((response: HttpResponse<any>) => {
+      if(response && response.status === 401) {
+        return this._jwtAuthenticationService.authenticate().pipe(switchMap(() => {
+          return this.handle401Error(req, next)
+        }))
+      }
+
+      return throwError(response);
+    }))
   }
 
   handle401Error(req: HttpRequest<any>, next: HttpHandler) {

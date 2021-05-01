@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Router } from "@angular/router";
 import { SideMenuService } from "../../services/side-menu.service";
 import { UserCookieService } from "../../services/userCookie.service";
 
@@ -11,7 +12,7 @@ export class ToolbarComponent {
   public isLoggedIn: boolean = false;
   public sideMenuOpen: boolean = false;
 
-  constructor(private _sideMenuService: SideMenuService, private _userCookieService: UserCookieService) {
+  constructor(private _sideMenuService: SideMenuService, private _userCookieService: UserCookieService, private _router: Router) {
     _userCookieService.isLoggedIn.subscribe(event => {
       this.isLoggedIn = event ?? false;
     })
@@ -24,5 +25,6 @@ export class ToolbarComponent {
 
   public logOut(): void {
     this._userCookieService.logOut();
+    this._router.navigateByUrl('/');
   }
 }

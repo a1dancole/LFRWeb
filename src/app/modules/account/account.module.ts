@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { MatGridListModule } from "@angular/material/grid-list";
+import { RouterModule } from "@angular/router";
 import { SharedModule } from "../shared/shared.module";
 import { AccountService } from "./account.service";
 import { AccountDashboardComponent } from "./accountDashoard.component";
@@ -11,6 +12,6 @@ import { UnstuckComponent } from "./unstuck/unstuck.component";
   providers: [
     AccountService
   ],
-  imports: [SharedModule],
+  imports: [SharedModule, RouterModule],
 })
 export class AccountModule {}

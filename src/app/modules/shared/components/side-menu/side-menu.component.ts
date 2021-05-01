@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
+import { Router } from '@angular/router';
 import { SideMenuService } from '../../services/side-menu.service';
 import { UserCookieService } from '../../services/userCookie.service';
 
@@ -14,7 +15,8 @@ export class SideMenuComponent implements OnInit, OnDestroy {
 
   constructor(
     private _sideMenuService: SideMenuService,
-    private _userCookieService: UserCookieService
+    private _userCookieService: UserCookieService,
+    private _router: Router
   ) {
     _userCookieService.isLoggedIn.subscribe((event) => {
       this.isLoggedIn = event;
@@ -33,6 +35,7 @@ export class SideMenuComponent implements OnInit, OnDestroy {
 
   public logOut(): void {
     this._userCookieService.logOut();
+    this._router.navigateByUrl('/');
   }
 
   ngOnDestroy(): void {

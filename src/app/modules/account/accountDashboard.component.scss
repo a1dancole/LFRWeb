@@ -15,3 +15,7 @@
   color-stop(0.00,  rgba(0,0,0,0)),
   color-stop(1,  rgba(0,0,0,1)));;
 }
+
+.account-dashboard-card.disabled {
+  filter:grayscale(1);
+}

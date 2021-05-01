@@ -1,0 +1,42 @@
+<br />
+<mat-toolbar color="primary" *ngIf="cart.length > 0">
+  <mat-toolbar-row class="store-cart-toolbar">
+    <span>{{cartTotal()}}</span>
+    <mat-select placeholder="Character" class="store-cart-character-select" color="accent" [(value)]="selectedCharacter">
+      <mat-option *ngFor="let character of userProfile?.characters" [value]="character">{{character.name}}
+      </mat-option>
+    </mat-select>
+    <button (click)="openPaypalDialog()" class="store-cart-button" mat-flat-button><mat-icon class="store-cart-button-icon">payments</mat-icon>Checkout</button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<br />
+<mat-grid-list cols="4" rowHeight="15vh" gutterSize="1vw">
+  <mat-grid-tile *ngFor="let item of items" matTooltip="{{item.manualTooltip}}" matTooltipPosition="right" matTooltipClass="store-item-tooltip">
+    <mat-card class="store-item-card">
+      <mat-grid-list cols="3" rowHeight="100%" gutterSize="1vw">
+        <mat-grid-tile colspan="1">
+          <a href="#" [rel]="getRelString(item)"><img [src]="item.imageUri" class="store-item-image"></a>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="2">
+          <section class="store-item-section">
+            <div>
+              <mat-card-content>
+                <h3 class="store-item-title"><b>{{item.name}}</b></h3>
+                <p>{{item.cost | currency:'GBP'}}</p>
+              </mat-card-content>
+            </div>
+            <div>
+              <button (click)="increaseItemQuantity(item)" *ngIf="item.quantity <= 0" mat-mini-fab color="primary" class="store-item-button">
+                <mat-icon>add</mat-icon>
+              </button>
+              <button (click)="increaseItemQuantity(item)" (contextmenu)="decreaseItemQuantity($event, item)" *ngIf="item.quantity > 0" mat-mini-fab color="accent" class="store-item-button">
+                <b *ngIf="item.multiple" matTooltip="Right click to remove">{{item.quantity}}</b>
+                <mat-icon *ngIf="!item.multiple" matTooltip="Right click to remove">done_outline</mat-icon>
+              </button>
+            </div>
+          </section>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

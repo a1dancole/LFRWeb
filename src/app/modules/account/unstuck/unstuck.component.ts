@@ -31,6 +31,7 @@ export class UnstuckComponent implements OnInit {
         duration: 2000,
         panelClass: ['warning'],
       });
+      return;
     }
 
     let characterUnstuck: CharacterUnstuck = {
