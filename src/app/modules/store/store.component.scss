@@ -21,16 +21,21 @@
   width: 100%;
 }
 
-.store-item-button {
-  margin-left:50%;
-}
-
 .store-cart-button {
   margin-left: 2vw;
 }
 
+.store-cart-button.mobile {
+  margin-left: auto;
+  margin-right:1vw;
+}
+
 .store-cart-toolbar {
   background: linear-gradient(to left, #272727 20%, #39bbe6);
+}
+
+.store-cart-toolbar.mobile {
+  background: linear-gradient(to left, #272727 1%, #39bbe6);
 }
 
 .store-cart-button-icon {
@@ -44,6 +49,10 @@
   border: 3px solid #272727;
   border-radius: 10px;
   text-align: center;
+}
+
+.store-cart-character-select.mobile {
+  width:100%;
 }
 
 ::ng-deep .store-item-tooltip {

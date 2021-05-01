@@ -1,15 +1,16 @@
-<mat-card class="register-card">
-  <mat-card-header>
-    <mat-card-title>Login</mat-card-title>
-    <mat-card-subtitle>Login with your game account to to manage your account and characters</mat-card-subtitle>
-  </mat-card-header>
-  <mat-grid-list cols="2" rowHeight="35vh" gutterSize="1vw">
-    <mat-grid-tile>
-      <img src="../../../../assets/images/login.png" class="login-image">
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <form [formGroup]="form" (ngSubmit)="login()" class="login-form">
-        <mat-card-content>
+<div *ngIf="isDesktop();else mobile">
+  <mat-card class="register-card">
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+      <mat-card-subtitle>Login with your game account to to manage your account and characters</mat-card-subtitle>
+    </mat-card-header>
+    <mat-grid-list cols="2" rowHeight="35vh" gutterSize="1vw">
+      <mat-grid-tile>
+        <img src="../../../../assets/images/login.png" class="login-image">
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <form [formGroup]="form" (ngSubmit)="login()" class="login-form">
+          <mat-card-content>
             <mat-form-field>
               <mat-label>Username</mat-label>
               <input type="text" matInput formControlName="userName" required placeholder="potter">
@@ -23,13 +24,41 @@
               <mat-hint>The password you use to login to the game with.</mat-hint>
               <mat-error>Password is <strong>required</strong></mat-error>
             </mat-form-field>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-flat-button color="accent" [disabled]="loggingIn">
-            Login
-          </button>
-        </mat-card-actions>
-      </form>
-    </mat-grid-tile>
-  </mat-grid-list>
-</mat-card>
+          </mat-card-content>
+          <mat-card-actions>
+            <button class="login-form-button" mat-flat-button color="accent" [disabled]="loggingIn">
+              Login
+            </button>
+          </mat-card-actions>
+        </form>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card>
+</div>
+<!-- MOBILE -->
+<ng-template #mobile>
+  <h1>Login</h1>
+  <form [formGroup]="form" (ngSubmit)="login()" class="login-form">
+  <mat-card class="mobile">
+    <mat-card-content>
+        <mat-form-field>
+          <mat-label>Username</mat-label>
+          <input type="text" matInput formControlName="userName" required placeholder="potter">
+          <mat-error>Username is <strong>required</strong></mat-error>
+        </mat-form-field>
+        <br />
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input type="password" matInput formControlName="password" required>
+          <mat-error>Password is <strong>required</strong></mat-error>
+        </mat-form-field>
+
+  </mat-card-content>
+  <mat-card-actions>
+    <button class="login-form-button" mat-flat-button color="accent" [disabled]="loggingIn">
+      Login
+    </button>
+    </mat-card-actions>
+  </mat-card>
+</form>
+</ng-template>

@@ -15,4 +15,8 @@ export class AccountDashboardComponent {
   public navigateToUnstuck() {
     this._router.navigateByUrl('/account/unstuck');
   }
+
+  public isDesktop(): boolean {
+    return window.screen.width > 768;
+  }
 }

@@ -2,7 +2,8 @@
   <button mat-icon-button (click)="toggleSideMenu()">
     <mat-icon>{{sideMenuOpen ? 'menu_open' : 'menu'}}</mat-icon>
   </button>
-  <a routerLink="" class="menu-image"><img src="../../../../../assets/images/Color logo - no background.png"/></a>
+  <a *ngIf="isDesktop()" routerLink="" class="menu-image"><img src="../../../../../assets/images/Color logo - no background.png"/></a>
+  <a *ngIf="!isDesktop()" routerLink="" class="menu-image"><img src="../../../../../assets/images/logo_no_text.png"/></a>
   <button *ngIf="!isLoggedIn" mat-icon-button [matMenuTriggerFor]="loggedOutMenu">
     <mat-icon>account_circle</mat-icon>
   </button>

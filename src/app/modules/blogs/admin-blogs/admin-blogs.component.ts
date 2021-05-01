@@ -6,5 +6,7 @@ import { Component } from "@angular/core";
   templateUrl: './admin-blogs.component.html'
 })
 export class AdminBlogsComponent {
-
+  public isDesktop(): boolean {
+    return window.screen.width > 768;
+  }
 }

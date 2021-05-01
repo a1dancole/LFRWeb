@@ -27,4 +27,8 @@ export class ToolbarComponent {
     this._userCookieService.logOut();
     this._router.navigateByUrl('/');
   }
+
+  public isDesktop(): boolean {
+    return window.screen.width > 768;
+  }
 }

@@ -1,3 +1,4 @@
+<div *ngIf="isDesktop();else mobile">
 <br />
 <mat-card class="changes-card">
   <mat-card-header>
@@ -19,3 +20,19 @@
     </mat-accordion>
   </mat-card-content>
 </mat-card>
+</div>
+<ng-template #mobile>
+  <h1>Latest Changes</h1>
+      <mat-accordion>
+        <mat-expansion-panel *ngFor="let releasedCard of releasedCards">
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              {{releasedCard[1][0].dateLastActivity | date: 'longDate'}}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-nav-list>
+            <a mat-list-item [href]="card.shortUrl" target="_blank" *ngFor="let card of releasedCard[1]">{{card.name}}</a>
+         </mat-nav-list>
+        </mat-expansion-panel>
+      </mat-accordion>
+</ng-template>

@@ -8,7 +8,7 @@ import { Login } from '../models/login';
 
 @Component({
   styleUrls: ['./login.component.scss'],
-  templateUrl: './login.component.html',
+  templateUrl: './login.component.html'
 })
 export class LoginComponent implements OnInit {
   public form!: FormGroup;
@@ -61,5 +61,9 @@ export class LoginComponent implements OnInit {
       .add(() => {
         this.loggingIn = false;
       });
+  }
+
+  public isDesktop(): boolean {
+    return window.screen.width > 768;
   }
 }

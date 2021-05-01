@@ -5,6 +5,15 @@
   border-radius: 30px;
 }
 
+.blog-card.mobile {
+  max-width:90vw;
+  max-height: 40vh;
+  overflow: scroll;
+  border: 0px;
+  border-radius: 10px;
+  margin-top: 3vh;
+}
+
 .blog-card-image {
   filter:opacity(0.8);
 }

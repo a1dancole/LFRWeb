@@ -1,3 +1,4 @@
+<div *ngIf="isDesktop();else mobile">
 <mat-card>
   <mat-card-header>
     <mat-card-title>Register</mat-card-title>
@@ -33,7 +34,7 @@
           </mat-form-field>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-flat-button color="accent" [disabled]="registering">
+        <button class="register-form-button" mat-flat-button color="accent" [disabled]="registering">
           Register
         </button>
       </mat-card-actions>
@@ -41,3 +42,36 @@
   </mat-grid-tile>
 </mat-grid-list>
 </mat-card>
+</div>
+<ng-template #mobile>
+      <h1>Register</h1>
+      <form [formGroup]="form" (ngSubmit)="register()" class="register-form">
+<mat-card class="mobile">
+  <mat-card-content>
+      <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input type="text" matInput formControlName="userName" required placeholder="pottermage">
+        <mat-error>Username is <strong>required</strong></mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input type="password" matInput formControlName="password" required>
+        <mat-error>Password is <strong>required</strong></mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Confirm Password</mat-label>
+        <input type="password" matInput formControlName="confirmPassword" required>
+        <mat-error>Password is <strong>required</strong></mat-error>
+      </mat-form-field>
+  </mat-card-content>
+  <mat-card-actions>
+    <button class="register-form-button" mat-flat-button color="accent" [disabled]="registering">
+      Register
+    </button>
+  </mat-card-actions>
+</mat-card>
+
+</form>
+</ng-template>

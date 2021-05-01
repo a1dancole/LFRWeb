@@ -6,5 +6,7 @@ import { Component } from "@angular/core";
   templateUrl: './developer-blogs.component.html'
 })
 export class DeveloperBlogsComponent {
-
+  public isDesktop(): boolean {
+    return window.screen.width > 768;
+  }
 }

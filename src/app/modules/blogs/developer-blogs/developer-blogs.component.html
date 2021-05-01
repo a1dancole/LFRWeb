@@ -1,8 +1,9 @@
+<div *ngIf="isDesktop();else mobile">
 <br />
 <mat-card class="blog-card">
   <mat-card-header>
-    <mat-card-title>Welcome</mat-card-title>
-    <mat-card-subtitle>A quick introduction to the project</mat-card-subtitle>
+    <mat-card-title>Development start</mat-card-title>
+    <mat-card-subtitle>Potter working hard</mat-card-subtitle>
   </mat-card-header>
   <mat-grid-list cols="2" rowHeight="45vh" gutterSize="1vw">
     <mat-grid-tile>
@@ -29,4 +30,30 @@
     </mat-grid-tile>
   </mat-grid-list>
 </mat-card>
+</div>
+<ng-template #mobile>
+  <mat-card class="blog-card mobile">
+    <mat-card-header>
+      <mat-card-title>Development start</mat-card-title>
+      <mat-card-subtitle>Potter working hard</mat-card-subtitle>
+    </mat-card-header>
+        <mat-card-content>
+          <p>
+            The first week of development has come to a close. Although we've not made huge progressin terms of the 5man concept we've managed to put a lot of the core systems in place.
+          </p>
+          <p>
+            The website has been the main focus after many problems with the CMS's already out there just not being maintained enough to be up to date and following modern development practices. We've built this website from the ground up using modern web technologies and API's, it's basic at the moment but as LFR progresses more time will be invested into the website to add common functionality.
+          </p>
+          <p>
+            We've also added feedback loops through discord and into trello to allow us to easily capture suggestions and bugs from discord but manage them as a project team in project management tooling. We've also extended this tooling to players by allowing them to vote and comment on features to drive the development team on what the most in demand features are, this is a core system and will be the heart of our interactions with our players.
+          </p>
+          <p>
+            Finally core development has started at the back end of the week with a focus on key systems that will be in place throughout the project such as, the handling of loot, the 5man raid system and crucial mechanics inside raids.
+          </p>
+          <p>
+            Next week the focus will remain on the core and the core systems, maybe at the end of the week some fight mechanics.
+          </p>
+        </mat-card-content>
+  </mat-card>
+</ng-template>
 

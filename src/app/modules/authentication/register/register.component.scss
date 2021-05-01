@@ -5,6 +5,14 @@ mat-card {
   border-radius: 30px;
 }
 
+
+mat-card.mobile {
+  max-width: 90vw;
+  border: 10px;
+  border-radius: 10px;
+}
+
+
 mat-card-actions {
   text-align: center;
 }
@@ -24,4 +32,9 @@ mat-form-field {
 .register-image {
   max-height:30vh;
   filter:opacity(0.8);
+}
+
+.register-form-button {
+  width:100%;
+  margin-top:1vh;
 }

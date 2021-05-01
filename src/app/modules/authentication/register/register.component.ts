@@ -75,4 +75,8 @@ export class RegisterComponent implements OnInit {
   public openEncryptionInformationDialog() {
     const dialogRef = this._dialog.open(EncryptionDialogComponent);
   }
+
+  public isDesktop(): boolean {
+    return window.screen.width > 768;
+  }
 }

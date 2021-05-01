@@ -19,6 +19,10 @@ export class PaypalDialogComponent {
     this.payPalConfig = this.buildPaypalConfig();
   }
 
+  public isDesktop(): boolean {
+    return window.screen.width > 768;
+  }
+
   private buildPaypalConfig(): IPayPalConfig {
     let cartTotal = this._data.cart.reduce((i,o) => i + (o.cost * (o.itemStackSize ? (o.quantity / o.itemStackSize) : o.quantity)), 0);
 
@@ -32,8 +36,6 @@ export class PaypalDialogComponent {
         unit_amount: { currency_code: 'GBP', value: item.cost.toString() },
       };
     });
-
-    console.log(cartItems);
 
     return {
       currency: 'GBP',

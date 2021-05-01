@@ -38,6 +38,10 @@ export class SideMenuComponent implements OnInit, OnDestroy {
     this._router.navigateByUrl('/');
   }
 
+  public isDesktop(): boolean {
+    return window.screen.width > 768;
+  }
+
   ngOnDestroy(): void {
     if (this._sideMenuService) {
       this._sideMenuService.toggled.unsubscribe();

@@ -5,6 +5,12 @@ mat-card {
   border-radius: 30px;
 }
 
+mat-card.mobile {
+  max-width: 90vw;
+  border: 10px;
+  border-radius: 10px;
+}
+
 .unstuck-select-list {
   width: 100%;
 }
@@ -20,4 +26,8 @@ mat-card-actions {
 
 .unstuck-card-content {
   width:100%;
+}
+
+.unstuck-button {
+  width: 100%;
 }

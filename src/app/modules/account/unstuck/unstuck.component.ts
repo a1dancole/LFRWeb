@@ -58,4 +58,8 @@ export class UnstuckComponent implements OnInit {
       this.unstucking = false;
     });
   }
+
+  public isDesktop(): boolean {
+    return window.screen.width > 768;
+  }
 }

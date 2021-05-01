@@ -1,4 +1,12 @@
+<div *ngIf="isDesktop(); else mobile">
 <h2 mat-dialog-title>Checkout</h2>
 <mat-dialog-content class="mat-typography" style="height:30vh;width:30vw;">
   <ngx-paypal [config]="payPalConfig"></ngx-paypal>
 </mat-dialog-content>
+</div>
+<ng-template #mobile>
+  <h2 mat-dialog-title>Checkout</h2>
+<mat-dialog-content class="mat-typography">
+  <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+</mat-dialog-content>
+</ng-template>

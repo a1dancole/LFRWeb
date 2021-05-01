@@ -31,8 +31,6 @@ export class ChangesComponent implements OnInit {
           ).reduce(
             (entryMap, e) => entryMap.set(new Date(e.dateLastActivity)?.getDate(), [...entryMap.get(new Date(e.dateLastActivity)?.getDate())||[], e]),
             new Map()).entries());
-
-          console.log(this.releasedCards);
         },
         (error: any) => {
           this._snackBar.open(`${error.error.detail}`, 'Error', {
@@ -41,5 +39,9 @@ export class ChangesComponent implements OnInit {
           });
         }
       );
+  }
+
+  public isDesktop(): boolean {
+    return window.screen.width > 768;
   }
 }

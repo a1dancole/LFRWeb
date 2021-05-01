@@ -1,3 +1,7 @@
+.account-dashboard-desktop-container {
+  height:100vh;
+}
+
 .account-dashboard-grid {
   height: 80%;
 }
@@ -10,10 +14,23 @@
   cursor: pointer;
 }
 
+.account-dashboard-card.mobile {
+  height:auto;
+  width:90vw;
+  border:10px;
+  border-radius:25%;
+}
+
 .account-dashboard-image {
   mask-image: -webkit-gradient(linear, center bottom, center top,
   color-stop(0.00,  rgba(0,0,0,0)),
   color-stop(1,  rgba(0,0,0,1)));;
+}
+
+.account-dashboard-image.mobile {
+  position: fixed;
+  width: 140%;
+  margin-top: 30vh;
 }
 
 .account-dashboard-card.disabled {

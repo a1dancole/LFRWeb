@@ -95,6 +95,10 @@ export class StoreComponent implements OnInit {
     })
   }
 
+  public isDesktop(): boolean {
+    return window.screen.width > 768;
+  }
+
   private buildItems(): StoreItem[] {
     return [
       {cost: 3, name: "Call Filch", itemId: 500001, imageUri: "https://wow.zamimg.com/images/wow/icons/large/ability_hunter_beastcall.jpg", quantity: 0, multiple: false, manualTooltip: "Summon Filch for 30seconds. Provides buffs, bank, stables, auction house, group summons, group ressurect, repair and reagents. This item lasts 30days"},

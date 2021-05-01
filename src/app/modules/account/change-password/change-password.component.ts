@@ -78,4 +78,8 @@ export class ChangePasswordComponent implements OnInit {
         });
     } else this._router.navigateByUrl('/login');
   }
+
+  public isDesktop(): boolean {
+    return window.screen.width > 768;
+  }
 }

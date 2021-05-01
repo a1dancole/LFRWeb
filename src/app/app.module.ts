@@ -15,7 +15,9 @@ import { HowToConnectModule } from './modules/howtoconnect/howtoconnect.module';
 import { ChangesModule } from './modules/changes/changes.module';
 import { AccountModule } from './modules/account/account.module';
 import { BlogsModule } from './modules/blogs/blogs.module';
-import { StoreModule } from './modules/store/store.module'
+import { StoreModule } from './modules/store/store.module';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment'
 
 @NgModule({
   declarations: [
@@ -37,7 +39,13 @@ import { StoreModule } from './modules/store/store.module'
     ChangesModule,
     AccountModule,
     BlogsModule,
-    StoreModule
+    StoreModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -16,4 +16,8 @@ export class HomeComponent {
   public downloadClient(): void {
     window.open(this._settingsService.settings.clientDownloadUrl, "_blank");
   }
+
+  public isDesktop(): boolean {
+    return window.screen.width > 768;
+  }
 }
