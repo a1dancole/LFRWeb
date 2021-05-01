@@ -42,6 +42,10 @@ export class SideMenuComponent implements OnInit, OnDestroy {
     return window.screen.width > 768;
   }
 
+  public isPwa(): boolean {
+      return (window.matchMedia('(display-mode: standalone)').matches) || ((window.navigator as any).standalone) || document.referrer.includes('android-app://');
+  }
+
   ngOnDestroy(): void {
     if (this._sideMenuService) {
       this._sideMenuService.toggled.unsubscribe();

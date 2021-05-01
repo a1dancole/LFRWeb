@@ -1,8 +1,14 @@
 <mat-drawer-container>
   <mat-drawer #drawer mode="over">
     <mat-list>
-      <mat-list-item>
+      <mat-list-item *ngIf="!isPwa()">
         <button mat-menu-item routerLink="">
+          <mat-icon>home</mat-icon>
+          <span>Home</span>
+        </button>
+      </mat-list-item>
+      <mat-list-item *ngIf="isPwa()">
+        <button mat-menu-item routerLink="/account">
           <mat-icon>home</mat-icon>
           <span>Home</span>
         </button>
@@ -51,13 +57,13 @@
           <span>Login</span>
         </button>
       </mat-list-item>
-      <mat-list-item  *ngIf="!isLoggedIn">
+      <mat-list-item *ngIf="!isLoggedIn">
         <button mat-menu-item routerLink="/register">
           <mat-icon>create</mat-icon>
           <span>Register</span>
         </button>
       </mat-list-item>
-      <mat-list-item *ngIf="isLoggedIn">
+      <mat-list-item *ngIf="isLoggedIn && !isPwa()">
         <button mat-menu-item routerLink="/account">
           <mat-icon>apps</mat-icon>
           <span>Account</span>
