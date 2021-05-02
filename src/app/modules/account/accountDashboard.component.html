@@ -18,8 +18,8 @@
         <img mat-card-image src="../../../assets/images/character_unstuck.jpg" class="account-dashboard-image">
       </mat-card>
     </mat-grid-tile>
-    <mat-grid-tile [routerLink]="['/store']">
-      <mat-card matRipple class="account-dashboard-card">
+    <mat-grid-tile>
+      <mat-card matRipple class="account-dashboard-card" [routerLink]="['/store']">
         <mat-card-header>
           <mat-card-title>Store</mat-card-title>
         </mat-card-header>
@@ -27,7 +27,7 @@
       </mat-card>
     </mat-grid-tile>
     <mat-grid-tile>
-      <mat-card matRipple class="account-dashboard-card disabled">
+      <mat-card matRipple class="account-dashboard-card" [routerLink]="['/account/changefaction']">
         <mat-card-header>
           <mat-card-title>Faction Change</mat-card-title>
         </mat-card-header>
@@ -35,7 +35,7 @@
       </mat-card>
     </mat-grid-tile>
     <mat-grid-tile>
-      <mat-card matRipple class="account-dashboard-card disabled">
+      <mat-card matRipple class="account-dashboard-card" [routerLink]="['/account/changename']">
         <mat-card-header>
           <mat-card-title>Name Change</mat-card-title>
         </mat-card-header>
@@ -43,7 +43,7 @@
       </mat-card>
     </mat-grid-tile>
     <mat-grid-tile>
-      <mat-card matRipple class="account-dashboard-card disabled">
+      <mat-card matRipple class="account-dashboard-card" [routerLink]="['/account/changerace']">
         <mat-card-header>
           <mat-card-title>Race Change</mat-card-title>
         </mat-card-header>
@@ -80,8 +80,8 @@
         </mat-grid-list>
         </mat-card>
     </mat-grid-tile>
-    <mat-grid-tile [routerLink]="['/store']">
-      <mat-card matRipple class="account-dashboard-card mobile">
+    <mat-grid-tile>
+      <mat-card matRipple class="account-dashboard-card mobile" [routerLink]="['/store']">
         <mat-grid-list cols="3" rowHeight="20vh" gutterSize="1vw">
           <mat-grid-tile colspan="2">
             <img mat-card-image src="../../../assets/images/store.jpg" class="account-dashboard-image mobile">
@@ -93,7 +93,7 @@
         </mat-card>
     </mat-grid-tile>
     <mat-grid-tile>
-      <mat-card matRipple class="account-dashboard-card mobile disabled">
+      <mat-card matRipple class="account-dashboard-card mobile" [routerLink]="['/account/changefaction']">
         <mat-grid-list cols="3" rowHeight="20vh" gutterSize="1vw">
           <mat-grid-tile colspan="2">
             <img mat-card-image src="../../../assets/images/faction_change.jpg" class="account-dashboard-image mobile">
@@ -105,7 +105,7 @@
         </mat-card>
     </mat-grid-tile>
     <mat-grid-tile>
-      <mat-card matRipple class="account-dashboard-card mobile disabled">
+      <mat-card matRipple class="account-dashboard-card mobile" [routerLink]="['/account/changename']">
         <mat-grid-list cols="3" rowHeight="20vh" gutterSize="1vw">
           <mat-grid-tile colspan="2">
             <img mat-card-image src="../../../assets/images/name_change.jpg" class="account-dashboard-image mobile">
@@ -117,7 +117,7 @@
         </mat-card>
     </mat-grid-tile>
     <mat-grid-tile>
-      <mat-card matRipple class="account-dashboard-card mobile disabled">
+      <mat-card matRipple class="account-dashboard-card mobile" [routerLink]="['/account/changerace']">
         <mat-grid-list cols="3" rowHeight="20vh" gutterSize="1vw">
           <mat-grid-tile colspan="2">
             <img mat-card-image src="../../../assets/images/race_change.jpg" class="account-dashboard-image mobile">

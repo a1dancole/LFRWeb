@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccountDashboardComponent } from './modules/account/accountDashoard.component';
+import { ChangeFactionComponent } from './modules/account/change-faction/change-faction.component';
+import { ChangeNameComponent } from './modules/account/change-name/change-name.component';
 import { ChangePasswordComponent } from './modules/account/change-password/change-password.component';
+import { ChangeRaceComponent } from './modules/account/change-race/change-race.component';
+import { StoreComponent } from './modules/account/store/store.component';
 import { UnstuckComponent } from './modules/account/unstuck/unstuck.component';
 import { LoginComponent } from './modules/authentication/login/login.component';
 import { RegisterComponent } from './modules/authentication/register/register.component';
@@ -12,7 +16,6 @@ import { HomeComponent } from './modules/home/home.component';
 import { HowToConnectComponent } from './modules/howtoconnect/howtoconnect.component';
 import { ServerStatusComponent } from './modules/serverstatus/serverstatus.component';
 import { UserGuard } from './modules/shared/guards/user.guard';
-import { StoreComponent } from './modules/store/store.component';
 import { StreamComponent } from './modules/stream/stream.component';
 import { UnderConstructionComponent } from './modules/underconstruction/underconstruction.component';
 
@@ -30,6 +33,9 @@ const routes: Routes = [
   { path: 'account', component:AccountDashboardComponent, canActivate: [UserGuard] },
   { path: 'account/changepassword', component:ChangePasswordComponent, canActivate: [UserGuard] },
   { path: 'account/unstuck', component:UnstuckComponent, canActivate: [UserGuard] },
+  { path: 'account/changename', component:ChangeNameComponent, canActivate: [UserGuard] },
+  { path: 'account/changefaction', component:ChangeFactionComponent, canActivate: [UserGuard] },
+  { path: 'account/changerace', component:ChangeRaceComponent, canActivate: [UserGuard] },
   { path: 'store', component:StoreComponent, canActivate: [UserGuard]}
 ];
 

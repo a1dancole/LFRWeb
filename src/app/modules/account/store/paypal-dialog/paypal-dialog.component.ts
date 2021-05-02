@@ -1,12 +1,10 @@
 import { IPayPalConfig, ICreateOrderRequest, ITransactionItem } from 'ngx-paypal';
-
 import { Component, Inject } from "@angular/core";
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { StoreItem } from '../../shared/models/storeItem';
 import { PaypalDialogData } from './paypal-dialog-data';
 import { StoreService } from '../store.service';
-import { AuthorizedOrder } from '../../shared/models/authorizedOrder';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { AuthorizedOrder } from 'src/app/modules/shared/models/authorizedOrder';
 
 @Component({
   selector: 'paypal-dialog',
@@ -76,7 +74,7 @@ export class PaypalDialogComponent {
           })
         }, (error: any) => {
           console.log(error);
-          this._snackBar.open(`${error.error.detail}`, 'Error', { duration: 2000, panelClass:['warning'] })
+          this._snackBar.open(`${error.error.detail}`, undefined, { duration: 2000 })
         }).add(() => {
           this._dialogRef.close(true);
         });

@@ -1,0 +1,37 @@
+mat-card {
+  max-width: 40vw;
+  margin: 10vh auto;
+  border: 30px;
+  border-radius: 30px;
+}
+
+mat-card.mobile {
+  max-width: 90vw;
+  border: 10px;
+  border-radius: 10px;
+}
+
+.race-change-select-list {
+  width: 100%;
+}
+
+mat-card-actions {
+  text-align: center;
+}
+
+mat-card-header.mobile {
+  justify-content: center;
+}
+
+.race-change-character-image {
+  max-height:30vh;
+  filter:opacity(0.8);
+}
+
+.race-change-card-content {
+  width:100%;
+}
+
+.race-change-button {
+  width: 100%;
+}

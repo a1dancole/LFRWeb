@@ -1,12 +1,12 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
-import { StoreItem } from "../shared/models/storeItem";
 import { MatDialog } from "@angular/material/dialog";
 import { PaypalDialogComponent } from "./paypal-dialog/paypal-dialog.component";
-import { UserProfile } from "../shared/models/userprofile";
-import { UserCookieService } from "../shared/services/userCookie.service";
-import { Character } from "../shared/models/character";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { PaypalDialogData } from "./paypal-dialog/paypal-dialog-data";
+import { Character } from "../../shared/models/character";
+import { StoreItem } from "../../shared/models/storeItem";
+import { UserProfile } from "../../shared/models/userprofile";
+import { UserCookieService } from "../../shared/services/userCookie.service";
 
 @Component({
   styleUrls: ['./store.component.scss'],
@@ -102,7 +102,7 @@ export class StoreComponent implements OnInit {
   private buildItems(): StoreItem[] {
     return [
       {cost: 3, name: "Call Filch", itemId: 500001, imageUri: "https://wow.zamimg.com/images/wow/icons/large/ability_hunter_beastcall.jpg", quantity: 0, multiple: false, manualTooltip: "Summon Filch for 30seconds. Provides buffs, bank, stables, auction house, group summons, group ressurect, repair and reagents. This item lasts 30days"},
-      {cost: 10, name: "Swift Spectral Tiger", itemId: 33225, imageUri: "https://wow.zamimg.com/images/wow/icons/large/ability_mount_spectraltiger.jpg", quantity: 0, multiple: false},
+      {cost: 10, name: "Swift Spectral Tiger", itemId: 33225, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/ability_mount_spectraltiger.jpg", quantity: 0, multiple: false},
       {cost: 5, name: "Foror's Endless Storage", itemId: 23162, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/inv_crate_04.jpg", quantity: 0, multiple: true},
       {cost: 10, name: "Big Battle Bear", itemId: 38576, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/ability_druid_challangingroar.jpg", quantity: 0, multiple: false},
       {cost: 10, name: "X-51 Nether-Rocket X-TREME", itemId: 35226, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/ability_mount_rocketmount.jpg", quantity: 0, multiple: false},
@@ -115,6 +115,9 @@ export class StoreComponent implements OnInit {
       {cost: 10, name: "Amani War Bear", itemId: 33809, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/ability_druid_challangingroar.jpg", quantity: 0, multiple: false},
       {cost: 10, name: "Swift Nether Drake", itemId: 30609, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/ability_mount_netherdrakeelite.jpg", quantity: 0, multiple: false},
       {cost: 10, name: "Magic Rooster Egg", itemId: 46778, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/inv_egg_03.jpg", quantity: 0, multiple: false},
+      {cost: 10, name: "Ashes of Al'ar", itemId: 32458, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/inv_misc_summerfest_brazierorange.jpg", quantity: 0, multiple: false},
+      {cost: 10, name: "Celestial Steed", itemId: 54811, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/ability_mount_celestialhorse.jpg", quantity: 0, multiple: false},
+      {cost: 10, name: "Swift White Hawkstrider", itemId: 35513, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/ability_mount_cockatricemountelite_white.jpg", quantity: 0, multiple: false},
       {cost: 1, name: "Graccu's Mince Meat Fruitcake", itemId: 21215, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/inv_food_christmasfruitcake_01.jpg", quantity: 0, multiple: true, itemStackSize: 20},
     ]
   }
