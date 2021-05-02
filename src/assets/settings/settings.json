@@ -1,6 +1,6 @@
 {
-  "_apiUrl": "https://lfrapi.azurewebsites.net",
-  "apiUrl": "http://localhost:50418",
+  "apiUrl": "https://lfrapi.azurewebsites.net",
+  "_apiUrl": "http://localhost:50418",
   "applicationName": "LookingForRaid",
   "wpaSecret": "TN,+CFS=t+vxk22-;r&ZWjmds,L(YesK`C*Bid?`KAVYPv!Qu:xh&yA/@M*g#G|",
   "dashboardUrl": "https://play.grafana.org/d/000000012/grafana-play-home?orgId=1&from=1613518541823&to=1613522141824",
