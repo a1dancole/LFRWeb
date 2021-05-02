@@ -37,9 +37,11 @@
 </div>
 <!-- MOBILE -->
 <ng-template #mobile>
-  <h1>Login</h1>
   <form [formGroup]="form" (ngSubmit)="login()" class="login-form">
   <mat-card class="mobile">
+    <mat-card-header class="mobile">
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
     <mat-card-content>
         <mat-form-field>
           <mat-label>Username</mat-label>

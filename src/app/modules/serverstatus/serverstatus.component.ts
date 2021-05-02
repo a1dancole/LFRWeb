@@ -7,11 +7,12 @@ import { SettingsService } from "../shared/services/settings.service";
   templateUrl: './serverstatus.component.html',
 })
 export class ServerStatusComponent implements OnInit {
-  public dashboardUrl!: SafeResourceUrl;
-  constructor(private _settingsService: SettingsService, private _domSanitizer: DomSanitizer) {
+
+
+  constructor() {
 
   }
+
   ngOnInit(): void {
-    this.dashboardUrl = this._domSanitizer.bypassSecurityTrustResourceUrl(this._settingsService.settings?.dashboardUrl)
   }
 }

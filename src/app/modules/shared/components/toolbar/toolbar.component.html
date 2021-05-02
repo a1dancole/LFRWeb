@@ -3,11 +3,12 @@
     <mat-icon>{{sideMenuOpen ? 'menu_open' : 'menu'}}</mat-icon>
   </button>
   <a *ngIf="isDesktop()" routerLink="" class="menu-image"><img src="../../../../../assets/images/Color logo - no background.png"/></a>
-  <a *ngIf="!isDesktop()" routerLink="" class="menu-image"><img src="../../../../../assets/images/logo_no_text.png"/></a>
-  <button *ngIf="!isLoggedIn" mat-icon-button [matMenuTriggerFor]="loggedOutMenu">
+  <a *ngIf="!isDesktop() && !isPwa()" routerLink="" class="menu-image"><img src="../../../../../assets/images/logo_no_text.png"/></a>
+  <a *ngIf="!isDesktop() && isPwa()" routerLink="/account" class="menu-image"><img src="../../../../../assets/images/logo_no_text.png"/></a>
+  <button *ngIf="!isLoggedIn && !isPwa()" mat-icon-button [matMenuTriggerFor]="loggedOutMenu">
     <mat-icon>account_circle</mat-icon>
   </button>
-  <button *ngIf="isLoggedIn"  mat-icon-button [matMenuTriggerFor]="loggedInMenu">
+  <button *ngIf="isLoggedIn && !isPwa()" mat-icon-button [matMenuTriggerFor]="loggedInMenu">
     <mat-icon>account_circle</mat-icon>
   </button>
   <mat-menu #loggedOutMenu="matMenu">

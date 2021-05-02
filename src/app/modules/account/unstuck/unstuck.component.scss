@@ -19,6 +19,10 @@ mat-card-actions {
   text-align: center;
 }
 
+mat-card-header.mobile {
+  justify-content: center;
+}
+
 .unstuck-character-image {
   max-height:30vh;
   filter:opacity(0.8);

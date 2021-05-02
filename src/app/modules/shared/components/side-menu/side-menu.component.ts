@@ -35,7 +35,11 @@ export class SideMenuComponent implements OnInit, OnDestroy {
 
   public logOut(): void {
     this._userCookieService.logOut();
-    this._router.navigateByUrl('/');
+
+    if(this.isPwa())
+      this._router.navigateByUrl('/account');
+    else
+      this._router.navigateByUrl('/');
   }
 
   public isDesktop(): boolean {

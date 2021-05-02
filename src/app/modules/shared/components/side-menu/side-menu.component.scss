@@ -4,10 +4,10 @@
   margin: 0 auto;
 }
 
-::ng-deep .mat-drawer-backdrop.mat-drawer-shown {
+.mat-drawer-content::-webkit-scrollbar {
   display: none;
 }
 
-// ::ng-deep .mat-drawer-content {
-//   overflow: hidden !important;
-// }
+::ng-deep .mat-drawer-backdrop.mat-drawer-shown {
+  display: none;
+}

@@ -44,10 +44,12 @@
 </mat-card>
 </div>
 <ng-template #mobile>
-      <h1>Register</h1>
       <form [formGroup]="form" (ngSubmit)="register()" class="register-form">
 <mat-card class="mobile">
   <mat-card-content>
+    <mat-card-header class="mobile">
+      <mat-card-title>Register</mat-card-title>
+    </mat-card-header>
       <mat-form-field>
         <mat-label>Username</mat-label>
         <input type="text" matInput formControlName="userName" required placeholder="pottermage">

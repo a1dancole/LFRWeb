@@ -18,6 +18,14 @@
         <img mat-card-image src="../../../assets/images/character_unstuck.jpg" class="account-dashboard-image">
       </mat-card>
     </mat-grid-tile>
+    <mat-grid-tile [routerLink]="['/store']">
+      <mat-card matRipple class="account-dashboard-card">
+        <mat-card-header>
+          <mat-card-title>Store</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="../../../assets/images/store.jpg" class="account-dashboard-image">
+      </mat-card>
+    </mat-grid-tile>
     <mat-grid-tile>
       <mat-card matRipple class="account-dashboard-card disabled">
         <mat-card-header>
@@ -40,14 +48,6 @@
           <mat-card-title>Race Change</mat-card-title>
         </mat-card-header>
         <img mat-card-image src="../../../assets/images/race_change.jpg" class="account-dashboard-image">
-      </mat-card>
-    </mat-grid-tile>
-    <mat-grid-tile [routerLink]="['/store']">
-      <mat-card matRipple class="account-dashboard-card">
-        <mat-card-header>
-          <mat-card-title>Store</mat-card-title>
-        </mat-card-header>
-        <img mat-card-image src="../../../assets/images/store.jpg" class="account-dashboard-image">
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>
@@ -76,6 +76,18 @@
           </mat-grid-tile>
           <mat-grid-tile colspan="1">
             <h3><b>Character Unstuck</b></h3>
+          </mat-grid-tile>
+        </mat-grid-list>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [routerLink]="['/store']">
+      <mat-card matRipple class="account-dashboard-card mobile">
+        <mat-grid-list cols="3" rowHeight="20vh" gutterSize="1vw">
+          <mat-grid-tile colspan="2">
+            <img mat-card-image src="../../../assets/images/store.jpg" class="account-dashboard-image mobile">
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1">
+            <h3><b>Store</b></h3>
           </mat-grid-tile>
         </mat-grid-list>
         </mat-card>
@@ -112,18 +124,6 @@
           </mat-grid-tile>
           <mat-grid-tile colspan="1">
             <h3><b>Race Change</b></h3>
-          </mat-grid-tile>
-        </mat-grid-list>
-        </mat-card>
-    </mat-grid-tile>
-    <mat-grid-tile [routerLink]="['/store']">
-      <mat-card matRipple class="account-dashboard-card mobile">
-        <mat-grid-list cols="3" rowHeight="20vh" gutterSize="1vw">
-          <mat-grid-tile colspan="2">
-            <img mat-card-image src="../../../assets/images/store.jpg" class="account-dashboard-image mobile">
-          </mat-grid-tile>
-          <mat-grid-tile colspan="1">
-            <h3><b>Store</b></h3>
           </mat-grid-tile>
         </mat-grid-list>
         </mat-card>
