@@ -16,11 +16,13 @@ export class ToolbarComponent {
     _userCookieService.isLoggedIn.subscribe(event => {
       this.isLoggedIn = event ?? false;
     })
+    _sideMenuService.toggled.subscribe(toggled => {
+      this.sideMenuOpen = toggled;
+    })
   }
 
   public toggleSideMenu(): void {
     this._sideMenuService.toggleSideMenu();
-    this.sideMenuOpen = !this.sideMenuOpen;
   }
 
   public logOut(): void {

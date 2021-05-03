@@ -77,7 +77,7 @@
       </mat-list-item>
     </mat-list>
   </mat-drawer>
-  <mat-drawer-content>
+  <mat-drawer-content (click)="closeSideMenu()">
     <div class="site-body">
       <router-outlet></router-outlet>
     </div>
