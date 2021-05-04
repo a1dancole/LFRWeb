@@ -18,6 +18,20 @@ import { ServerStatusComponent } from './modules/serverstatus/serverstatus.compo
 import { UserGuard } from './modules/shared/guards/user.guard';
 import { StreamComponent } from './modules/stream/stream.component';
 import { UnderConstructionComponent } from './modules/underconstruction/underconstruction.component';
+import { WikiClassesDruidComponent } from './modules/wiki/classes/druid/wiki-classes-druid.component';
+import { WikiClassesHunterComponent } from './modules/wiki/classes/hunter/wiki-classes-hunter.component';
+import { WikiClassesMageComponent } from './modules/wiki/classes/mage/wiki-classes-mage.component';
+import { WikiClassesPaladinComponent } from './modules/wiki/classes/paladin/wiki-classes-paladin.component';
+import { WikiClassesPriestComponent } from './modules/wiki/classes/priest/wiki-classes-priest.component';
+import { WikiClassesShamanComponent } from './modules/wiki/classes/shaman/wiki-classes-shaman.component';
+import { WikiClassesWarlockComponent } from './modules/wiki/classes/warlock/wiki-classes-warlock.component';
+import { WikiClassesComponent } from './modules/wiki/classes/wiki-classes.component';
+import { WikiGeneralComponent } from './modules/wiki/general/wiki-general.component';
+import { WikiEyeOfEternityComponent } from './modules/wiki/raids/eye-of-eternity/wiki-eye-of-eternity.component';
+import { WikiNaxxramasComponent } from './modules/wiki/raids/naxxramas/wiki-naxxramas.component';
+import { WikiObsidianSanctumComponent } from './modules/wiki/raids/obsidian-sanctum/wiki-obsidian-sanctum.component';
+import { WikiRaidsComponent } from './modules/wiki/raids/wiki-raids.component';
+import { WikiComponent } from './modules/wiki/wiki.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -36,7 +50,21 @@ const routes: Routes = [
   { path: 'account/changename', component:ChangeNameComponent, canActivate: [UserGuard] },
   { path: 'account/changefaction', component:ChangeFactionComponent, canActivate: [UserGuard] },
   { path: 'account/changerace', component:ChangeRaceComponent, canActivate: [UserGuard] },
-  { path: 'store', component:StoreComponent, canActivate: [UserGuard]}
+  { path: 'store', component:StoreComponent, canActivate: [UserGuard]},
+  { path: 'wiki', component:WikiComponent },
+  { path: 'wiki/general', component: WikiGeneralComponent },
+  { path: 'wiki/raids', component: WikiRaidsComponent },
+  { path: 'wiki/raids/naxxramas', component: WikiNaxxramasComponent },
+  { path: 'wiki/raids/obsidian-sanctum', component: WikiObsidianSanctumComponent },
+  { path: 'wiki/raids/eye-of-eternity', component: WikiEyeOfEternityComponent },
+  { path: 'wiki/classes', component: WikiClassesComponent },
+  { path: 'wiki/classes/mage', component: WikiClassesMageComponent },
+  { path: 'wiki/classes/hunter', component: WikiClassesHunterComponent },
+  { path: 'wiki/classes/priest', component: WikiClassesPriestComponent },
+  { path: 'wiki/classes/paladin', component: WikiClassesPaladinComponent },
+  { path: 'wiki/classes/warlock', component: WikiClassesWarlockComponent },
+  { path: 'wiki/classes/druid', component: WikiClassesDruidComponent },
+  { path: 'wiki/classes/shaman', component: WikiClassesShamanComponent }
 ];
 
 @NgModule({

@@ -1,0 +1,71 @@
+<div *ngIf="isDesktop();else mobile" class="wiki-raids-desktop-container">
+  <br />
+  <br />
+  <mat-grid-list cols="3" rowHeight="fit" class="wiki-raids-grid" gutterSize="3%">
+    <mat-grid-tile>
+      <mat-card matRipple class="wiki-raids-card" [routerLink]="['/wiki/raids/naxxramas']">
+        <mat-card-header>
+          <mat-card-title>Naxxramas</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="../../../../assets/images/naxxramasjpg.jpg" class="wiki-raids-image">
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="wiki-raids-card" [routerLink]="['/wiki/raids/obsidian-sanctum']">
+        <mat-card-header>
+          <mat-card-title>Obsidian Sanctum</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="../../../../assets/images/obsidian-sanctum.jpg" class="wiki-raids-image">
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="wiki-raids-card" [routerLink]="['/wiki/raids/eye-of-eternity']">
+        <mat-card-header>
+          <mat-card-title>Eye of Eternity</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="../../../../assets/images/eye-of-eternity.jpg" class="wiki-raids-image">
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+<ng-template #mobile>
+  <br />
+  <mat-grid-list cols="1" rowHeight="20vh" class="wiki-raids-grid mobile" gutterSize="1vh">
+    <mat-grid-tile>
+      <mat-card matRipple class="wiki-raids-card mobile" [routerLink]="['/wiki/raids/naxxramas']">
+        <mat-grid-list cols="3" rowHeight="20vh" gutterSize="1vw">
+          <mat-grid-tile colspan="2">
+            <img mat-card-image src="../../../../assets/images/naxxramasjpg.jpg" class="wiki-raids-image mobile">
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1">
+            <h3><b>Naxxramas</b></h3>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="wiki-raids-card mobile" [routerLink]="['/wiki/raids/obsidian-sanctum']">
+        <mat-grid-list cols="3" rowHeight="20vh" gutterSize="1vw">
+          <mat-grid-tile colspan="2">
+            <img mat-card-image src="../../../../assets/images/obsidian-sanctum.jpg" class="wiki-raids-image mobile">
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1">
+            <h3><b>Obsidian Sanctum</b></h3>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="wiki-raids-card mobile" [routerLink]="['/wiki/raids/eye-of-eternity']">
+        <mat-grid-list cols="3" rowHeight="20vh" gutterSize="1vw">
+          <mat-grid-tile colspan="2">
+            <img mat-card-image src="../../../../assets/images/eye-of-eternity.jpg" class="wiki-raids-image mobile eye-of-eternity">
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1">
+            <h3><b>Eye of Eternity</b></h3>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</ng-template>

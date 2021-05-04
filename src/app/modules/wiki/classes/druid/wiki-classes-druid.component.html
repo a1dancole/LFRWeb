@@ -1,0 +1,37 @@
+<div *ngIf="isDesktop();else mobile">
+  <br />
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Druid</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              Restoration
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Start with Cleanse only usable in raids and if restoration spec</mat-list-item>
+           </mat-list>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-card-content>
+  </mat-card>
+  </div>
+  <ng-template #mobile>
+    <h1>Druid</h1>
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-description>
+            Restoration
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Start with Cleanse only usable in raids and if restoration spec</mat-list-item>
+         </mat-list>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </ng-template>

@@ -1,0 +1,71 @@
+<div *ngIf="isDesktop();else mobile" class="wiki-desktop-container">
+  <br />
+  <br />
+  <mat-grid-list cols="3" rowHeight="fit" class="wiki-grid" gutterSize="3%">
+    <mat-grid-tile>
+      <mat-card matRipple class="wiki-card" [routerLink]="['/wiki/general']">
+        <mat-card-header>
+          <mat-card-title>General</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="../../../assets/images/general.jpg" class="wiki-image">
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="wiki-card" [routerLink]="['/wiki/raids']">
+        <mat-card-header>
+          <mat-card-title>Raids</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="../../../assets/images/raid.jpg" class="wiki-image">
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="wiki-card" [routerLink]="['/wiki/classes']">
+        <mat-card-header>
+          <mat-card-title>Classes</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="../../../assets/images/classes.jpg" class="wiki-image">
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+<ng-template #mobile>
+  <br />
+  <mat-grid-list cols="1" rowHeight="20vh" class="wiki-grid mobile" gutterSize="1vh">
+    <mat-grid-tile>
+      <mat-card matRipple class="wiki-card mobile" [routerLink]="['/wiki/general']">
+        <mat-grid-list cols="3" rowHeight="20vh" gutterSize="1vw">
+          <mat-grid-tile colspan="2">
+            <img mat-card-image src="../../../assets/images/general.jpg" class="wiki-image mobile">
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1">
+            <h3><b>General</b></h3>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="wiki-card mobile" [routerLink]="['/wiki/raids']">
+        <mat-grid-list cols="3" rowHeight="20vh" gutterSize="1vw">
+          <mat-grid-tile colspan="2">
+            <img mat-card-image src="../../../assets/images/raid.jpg" class="wiki-image mobile raid">
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1">
+            <h3><b>Raids</b></h3>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="wiki-card mobile" [routerLink]="['/wiki/classes']">
+        <mat-grid-list cols="3" rowHeight="20vh" gutterSize="1vw">
+          <mat-grid-tile colspan="2">
+            <img mat-card-image src="../../../assets/images/classes.jpg" class="wiki-image mobile">
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1">
+            <h3><b>Classes</b></h3>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</ng-template>

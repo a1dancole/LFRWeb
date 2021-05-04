@@ -1,0 +1,18 @@
+mat-card {
+  max-width: 70vw;
+  margin: 0 auto;
+  border: 30px;
+  border-radius: 30px;
+}
+
+.no-decoration {
+  color: white;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  mat-list-item {
+    height: fit-content !important;
+    margin-top: 1vh;
+  }
+}

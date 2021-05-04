@@ -1,0 +1,47 @@
+.wiki-raids-desktop-container {
+  height:100vh;
+}
+
+.wiki-raids-grid {
+  height: 80%;
+}
+
+.wiki-raids-card {
+  height: 30vh;
+  width: 20vw;
+  border: 30px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.wiki-raids-card.mobile {
+  height:auto;
+  width:90vw;
+  border:10px;
+  border-radius:25%;
+}
+
+
+.wiki-raids-image {
+  mask-image: -webkit-gradient(linear, center bottom, center top,
+  color-stop(0.00,  rgba(0,0,0,0)),
+  color-stop(1,  rgba(0,0,0,1)));;
+}
+
+.wiki-raids-image.mobile {
+  position: fixed;
+  width: 140%;
+  margin-top: -5vh;
+}
+
+.wiki-raids-image.mobile.eye-of-eternity {
+  margin-top: 5vh;
+}
+
+.wiki-raids-image.mobile.raid {
+  margin-top: 15vh;
+}
+
+.wiki-raids-card.disabled {
+  filter:grayscale(1);
+}

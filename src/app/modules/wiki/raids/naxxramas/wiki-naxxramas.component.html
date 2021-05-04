@@ -1,0 +1,240 @@
+<div *ngIf="isDesktop();else mobile">
+  <br />
+  <mat-card class="wiki-general-card">
+    <mat-card-header>
+      <mat-card-title>Naxxramas (10-man)</mat-card-title>
+      <mat-card-subtitle>Naxxramas changes that have been made to the server. If boss is not listed assume the only changes are to scaling</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              General
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>You can not enter Sapphiron's lair without clearing all four quarters</mat-list-item>
+           </mat-list>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              Thaddius
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Feugen and Stalagg will only move if players are on their platform</mat-list-item>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Magnetic pull will move a whole group over to the opposite platform at a time</mat-list-item>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>When either Feugen or Stalagg are killed the group will have Magnetic Pull cast on them if the oppsit creature is alive</mat-list-item>
+           </mat-list>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              Four Horsemen
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Baron Rivendare & Lady Blaumeux will engage when the encounter starts</mat-list-item>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Thane Korth'azz will engage once Baron Rivendare is killed</mat-list-item>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Sir Zeliek will engage once Lady Blaumeux is killed</mat-list-item>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>The range on marks has been reduced to 44yds</mat-list-item>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>The tank tanking Baron Rivendare or Thane Korth'azz will receive 75% damage reduction from marks</mat-list-item>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Each horseman has had it's enrage timer reduced to 2.5minutes, down from 5</mat-list-item>
+           </mat-list>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              Gothik the Harvester
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>A portal will spawn in either side of the gate that only healers can use to transport between sides</mat-list-item>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Spectral Trainee's cast Arcane Bolt</mat-list-item>
+           </mat-list>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              Maexxna
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Web wrap will not target the healer</mat-list-item>
+           </mat-list>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              Loatheb
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Spore will only apply Fungal Bloom to the nearest 1 player</mat-list-item>
+           </mat-list>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              Patchwerk
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Hateful Strike will target any players not in melee range and do 90% reduced damage. If there is no player in melee range Hateful Strike will target the tank for 100% damage</mat-list-item>
+           </mat-list>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              Gluth
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Zombie Chow move at 70% reduced movement speed, stacks with other movement speed reducing debuffs</mat-list-item>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Mortal Wound will only stack to 5stacks before dropping off</mat-list-item>
+           </mat-list>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              Noth the Plaguebringer
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Each wave of adds during the platform phase is a completely random combination</mat-list-item>
+           </mat-list>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              Sapphiron
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Icebolt will not be cast on healers</mat-list-item>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Life drain will be cast on 2 players</mat-list-item>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Healing affect of Life Drain increased by 30%</mat-list-item>
+           </mat-list>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-card-content>
+  </mat-card>
+  </div>
+  <ng-template #mobile>
+    <h1>Naxxramas (10-man)</h1>
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-description>
+            General
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>You can not enter Sapphiron's lair without clearing all four quarters</mat-list-item>
+         </mat-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-description>
+            Thaddius
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Feugen and Stalagg will only move if players are on their platform</mat-list-item>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Magnetic pull will move a whole group over to the opposite platform at a time</mat-list-item>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>When either Feugen or Stalagg are killed the group will have Magnetic Pull cast on them if the oppsit creature is alive</mat-list-item>
+         </mat-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-description>
+            Four Horsemen
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Baron Rivendare & Lady Blaumeux will engage when the encounter starts</mat-list-item>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Thane Korth'azz will engage once Baron Rivendare is killed</mat-list-item>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Sir Zeliek will engage once Lady Blaumeux is killed</mat-list-item>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>The range on marks has been reduced to 44yds</mat-list-item>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>The tank tanking Baron Rivendare or Thane Korth'azz will receive 75% damage reduction from marks</mat-list-item>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Each horseman has had it's enrage timer reduced to 2.5minutes, down from 5</mat-list-item>
+         </mat-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-description>
+            Gothik the Harvester
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>A portal will spawn in either side of the gate that only healers can use to transport between sides</mat-list-item>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Spectral Trainee's cast Arcane Bolt</mat-list-item>
+         </mat-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-description>
+            Maexxna
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Web wrap will not target the healer</mat-list-item>
+         </mat-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-description>
+            Loatheb
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Spore will only apply Fungal Bloom to the nearest 1 player</mat-list-item>
+         </mat-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-description>
+            Patchwerk
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Hateful Strike will target any players not in melee range and do 90% reduced damage. If there is no player in melee range Hateful Strike will target the tank for 100% damage</mat-list-item>
+         </mat-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-description>
+            Gluth
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Zombie Chow move at 70% reduced movement speed, stacks with other movement speed reducing debuffs</mat-list-item>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Mortal Wound will only stack to 5stacks before dropping off</mat-list-item>
+         </mat-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-description>
+            Noth the Plaguebringer
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Each wave of adds during the platform phase is a completely random combination</mat-list-item>
+         </mat-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-description>
+            Sapphiron
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Icebolt will not be cast on healers</mat-list-item>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Life drain will be cast on 2 players</mat-list-item>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Healing affect of Life Drain increased by 30%</mat-list-item>
+         </mat-list>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </ng-template>

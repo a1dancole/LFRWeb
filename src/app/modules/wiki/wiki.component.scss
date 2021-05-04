@@ -1,0 +1,42 @@
+.wiki-desktop-container {
+  height:100vh;
+}
+
+.wiki-grid {
+  height: 80%;
+}
+
+.wiki-card {
+  height: 30vh;
+  width: 20vw;
+  border: 30px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.wiki-card.mobile {
+  height:auto;
+  width:90vw;
+  border:10px;
+  border-radius:25%;
+}
+
+.wiki-image {
+  mask-image: -webkit-gradient(linear, center bottom, center top,
+  color-stop(0.00,  rgba(0,0,0,0)),
+  color-stop(1,  rgba(0,0,0,1)));;
+}
+
+.wiki-image.mobile {
+  position: fixed;
+  width: 140%;
+  margin-top: -5vh;
+}
+
+.wiki-image.mobile.raid {
+  margin-top: 15vh;
+}
+
+.wiki-card.disabled {
+  filter:grayscale(1);
+}

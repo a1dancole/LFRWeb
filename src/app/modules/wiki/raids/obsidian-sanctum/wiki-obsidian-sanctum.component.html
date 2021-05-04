@@ -1,0 +1,80 @@
+<div *ngIf="isDesktop();else mobile">
+  <br />
+  <mat-card class="wiki-general-card">
+    <mat-card-header>
+      <mat-card-title>Obsidian Sanctum (10-man)</mat-card-title>
+      <mat-card-subtitle>Obsidian Sanctum changes that have been made to the server. If boss is not listed assume the only changes are to scaling</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              Sartharion
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>If any additional drakes join the encounter Sartharion will fly into the air and cast Flame Bombs on the group. He will land 45seconds after the final drake has entered the fight.</mat-list-item>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>If any additional drakes join the encounter and Sartharion is in the air no Flame Strikes or Lava Blaze will spawn.</mat-list-item>
+           </mat-list>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              Vesperon
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Acolyte of Vesperon will not attack anyone inside the portal, instead channel a shadow spell</mat-list-item>
+           </mat-list>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              Shadron
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Acolyte of Shadron will not attack anyone inside the portal, instead channel a shadow spell</mat-list-item>
+           </mat-list>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-card-content>
+  </mat-card>
+  </div>
+  <ng-template #mobile>
+    <h1>Obsidian Sanctum (10-man)</h1>
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-description>
+            Sartharion
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>If any additional drakes join the encounter Sartharion will fly into the air and cast Flame Bombs on the group. He will land 45seconds after the final drake has entered the fight.</mat-list-item>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>If any additional drakes join the encounter and Sartharion is in the air no Flame Strikes or Lava Blaze will spawn.</mat-list-item>
+         </mat-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-description>
+            Vesperon
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Acolyte of Vesperon will not attack anyone inside the portal, instead channel a shadow spell</mat-list-item>
+         </mat-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-description>
+            Shadron
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Acolyte of Shadron will not attack anyone inside the portal, instead channel a shadow spell</mat-list-item>
+         </mat-list>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </ng-template>

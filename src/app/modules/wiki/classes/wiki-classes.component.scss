@@ -1,0 +1,59 @@
+.wiki-classes-desktop-container {
+  height:100vh;
+}
+
+.wiki-classes-grid {
+  height: 100%;
+}
+
+.wiki-classes-card {
+  height: 30vh;
+  width: 20vw;
+  border: 30px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.wiki-classes-card.mobile {
+  height:auto;
+  width:90vw;
+  border:10px;
+  border-radius:25%;
+}
+
+.wiki-classes-image {
+  mask-image: -webkit-gradient(linear, center bottom, center top,
+  color-stop(0.00,  rgba(0,0,0,0)),
+  color-stop(1,  rgba(0,0,0,1)));;
+}
+
+.wiki-classes-image.mobile {
+  position: fixed;
+  width: 140%;
+  margin-top: -5vh;
+}
+
+.wiki-classes-image.mobile.mage {
+  margin-top: 8vh;
+}
+
+.wiki-classes-image.mobile.shaman {
+  margin-top: 8vh;
+}
+
+.wiki-classes-image.mobile.paladin {
+  margin-top: 8vh;
+}
+
+.wiki-classes-image.mobile.warlock {
+  margin-top: 3vh;
+  margin-left: 50vw;
+}
+
+.wiki-classes-image.mobile.raid {
+  margin-top: 15vh;
+}
+
+.wiki-classes-card.disabled {
+  filter:grayscale(1);
+}

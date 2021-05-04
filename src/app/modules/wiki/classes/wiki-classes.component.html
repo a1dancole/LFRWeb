@@ -1,0 +1,151 @@
+<div *ngIf="isDesktop();else mobile" class="wiki-classes-desktop-container">
+  <br />
+  <br />
+  <mat-grid-list cols="3" rowHeight="fit" class="wiki-classes-grid" gutterSize="3%">
+    <mat-grid-tile>
+      <mat-card matRipple class="wiki-classes-card" [routerLink]="['/wiki/classes/mage']">
+        <mat-card-header>
+          <mat-card-title>Mage</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="../../../../assets/images/mage.jpg" class="wiki-classes-image">
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="wiki-classes-card" [routerLink]="['/wiki/classes/hunter']">
+        <mat-card-header>
+          <mat-card-title>Hunter</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="../../../../assets/images/hunter.jpg" class="wiki-classes-image">
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="wiki-classes-card" [routerLink]="['/wiki/classes/shaman']">
+        <mat-card-header>
+          <mat-card-title>Shaman</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="../../../../assets/images/shaman.jpg" class="wiki-classes-image">
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="wiki-classes-card" [routerLink]="['/wiki/classes/priest']">
+        <mat-card-header>
+          <mat-card-title>Priest</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="../../../../assets/images/priest.jpg" class="wiki-classes-image">
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="wiki-classes-card" [routerLink]="['/wiki/classes/paladin']">
+        <mat-card-header>
+          <mat-card-title>Paladin</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="../../../../assets/images/paladin.jpg" class="wiki-classes-image">
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="wiki-classes-card" [routerLink]="['/wiki/classes/druid']">
+        <mat-card-header>
+          <mat-card-title>Druid</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="../../../../assets/images/druid.jpg" class="wiki-classes-image">
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="wiki-classes-card" [routerLink]="['/wiki/classes/warlock']">
+        <mat-card-header>
+          <mat-card-title>Warlock</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="../../../../assets/images/warlock.jpg" class="wiki-classes-image">
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+<ng-template #mobile>
+  <br />
+  <mat-grid-list cols="1" rowHeight="20vh" class="wiki-classes-grid mobile" gutterSize="1vh">
+    <mat-grid-tile>
+      <mat-card matRipple class="wiki-classes-card mobile" [routerLink]="['/wiki/classes/mage']">
+        <mat-grid-list cols="3" rowHeight="20vh" gutterSize="1vw">
+          <mat-grid-tile colspan="2">
+            <img mat-card-image src="../../../../assets/images/mage.jpg" class="wiki-classes-image mobile mage">
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1">
+            <h3><b>Mage</b></h3>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="wiki-classes-card mobile" [routerLink]="['/wiki/classes/hunter']">
+        <mat-grid-list cols="3" rowHeight="20vh" gutterSize="1vw">
+          <mat-grid-tile colspan="2">
+            <img mat-card-image src="../../../../assets/images/hunter.jpg" class="wiki-classes-image mobile">
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1">
+            <h3><b>Hunter</b></h3>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="wiki-classes-card mobile" [routerLink]="['/wiki/classes/shaman']">
+        <mat-grid-list cols="3" rowHeight="20vh" gutterSize="1vw">
+          <mat-grid-tile colspan="2">
+            <img mat-card-image src="../../../../assets/images/shaman.jpg" class="wiki-classes-image mobile shaman">
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1">
+            <h3><b>Shaman</b></h3>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="wiki-classes-card mobile" [routerLink]="['/wiki/classes/priest']">
+        <mat-grid-list cols="3" rowHeight="20vh" gutterSize="1vw">
+          <mat-grid-tile colspan="2">
+            <img mat-card-image src="../../../../assets/images/priest.jpg" class="wiki-classes-image mobile">
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1">
+            <h3><b>Priest</b></h3>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="wiki-classes-card mobile" [routerLink]="['/wiki/classes/paladin']">
+        <mat-grid-list cols="3" rowHeight="20vh" gutterSize="1vw">
+          <mat-grid-tile colspan="2">
+            <img mat-card-image src="../../../../assets/images/paladin.jpg" class="wiki-classes-image mobile paladin">
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1">
+            <h3><b>Paladin</b></h3>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="wiki-classes-card mobile" [routerLink]="['/wiki/classes/druid']">
+        <mat-grid-list cols="3" rowHeight="20vh" gutterSize="1vw">
+          <mat-grid-tile colspan="2">
+            <img mat-card-image src="../../../../assets/images/druid.jpg" class="wiki-classes-image mobile">
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1">
+            <h3><b>Druid</b></h3>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="wiki-classes-card mobile" [routerLink]="['/wiki/classes/warlock']">
+        <mat-grid-list cols="3" rowHeight="20vh" gutterSize="1vw">
+          <mat-grid-tile colspan="2">
+            <img mat-card-image src="../../../../assets/images/warlock.jpg" class="wiki-classes-image mobile warlock">
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1">
+            <h3><b>Warlock</b></h3>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</ng-template>
