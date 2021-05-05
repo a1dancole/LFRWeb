@@ -57,8 +57,33 @@
         </button>
       </mat-list-item>
       <mat-divider></mat-divider>
+      <a *ngIf="!isPwa()" href="https://www.youtube.com/channel/UCOaJC3M74tpjCF7hq-YV-bQ" target="_blank">
+        <mat-list-item>
+          <button mat-menu-item>
+            <mat-icon>ondemand_video</mat-icon>
+            <span>Youtube</span>
+          </button>
+        </mat-list-item>
+      </a>
+      <a *ngIf="isPwa()" href="vnd.youtube://channel/UCOaJC3M74tpjCF7hq-YV-bQ" target="_blank">
+        <mat-list-item>
+          <button mat-menu-item>
+            <mat-icon>ondemand_video</mat-icon>
+            <span>Youtube</span>
+          </button>
+        </mat-list-item>
+      </a>
+      <a *ngIf="!isPwa()" href="https://trello.com/b/X7CLHLQQ/backlog" target="_blank">
+        <mat-list-item>
+          <button mat-menu-item>
+            <mat-icon>bug_report</mat-icon>
+            <span>Trello</span>
+          </button>
+        </mat-list-item>
+      </a>
+      <mat-divider></mat-divider>
       <mat-list-item *ngIf="!isLoggedIn">
-        <button mat-menu-item routerLink="/login">
+        <button mat-menu-item>
           <mat-icon>login</mat-icon>
           <span>Login</span>
         </button>
@@ -75,7 +100,7 @@
           <span>Account</span>
         </button>
       </mat-list-item>
-      <mat-list-item  *ngIf="isLoggedIn">
+      <mat-list-item *ngIf="isLoggedIn">
         <button mat-menu-item (click)="logOut()">
           <mat-icon>logout</mat-icon>
           <span>Logout</span>

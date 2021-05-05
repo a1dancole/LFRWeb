@@ -19,7 +19,8 @@
 
 .home-tile-small >::ng-deep .mat-figure {
   align-items: initial;
-  padding-top: 3vh;
+  padding-top: 2vh;
+  height: calc(15vh + 0px) !important;
 }
 
 .home-card-small {
@@ -72,4 +73,10 @@
   max-height: 5vh;
   vertical-align: bottom;
   filter: drop-shadow(2px 4px 6px black);
+}
+
+iframe {
+  height: 100% !important;
+  width: 100% !important;
+  border-radius: 60px 60px 10px 10px !important;
 }
