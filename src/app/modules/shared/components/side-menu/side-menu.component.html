@@ -76,13 +76,13 @@
       <a *ngIf="!isPwa()" href="https://trello.com/b/X7CLHLQQ/backlog" target="_blank">
         <mat-list-item>
           <button mat-menu-item>
-            <mat-icon>bug_report</mat-icon>
+            <mat-icon>developer_board</mat-icon>
             <span>Trello</span>
           </button>
         </mat-list-item>
       </a>
       <mat-divider></mat-divider>
-      <mat-list-item *ngIf="!isLoggedIn">
+      <mat-list-item *ngIf="!isLoggedIn" routerLink="/register">
         <button mat-menu-item>
           <mat-icon>login</mat-icon>
           <span>Login</span>
