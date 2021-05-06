@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { environment } from 'src/environments/environment';
 import { TrelloCard } from '../shared/models/trelloCard';
-import { SettingsService } from '../shared/services/settings.service';
 import { TrelloService } from './trello.service';
 
 @Component({
@@ -13,13 +13,12 @@ export class ChangesComponent implements OnInit {
 
   constructor(
     private _trelloService: TrelloService,
-    private _settingsService: SettingsService,
     private _snackBar: MatSnackBar
   ) {}
 
   public ngOnInit() {
     this._trelloService
-      .GetCardsInList(this._settingsService.settings.trelloReleasedListId)
+      .GetCardsInList(environment.trelloReleasedListId)
       .subscribe(
         (response) => {
           this.releasedCards = Array.from<[any, TrelloCard[]]>(response.sort(

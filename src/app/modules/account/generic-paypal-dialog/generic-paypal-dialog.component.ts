@@ -4,6 +4,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { GenericPaypalDialogData } from './generic-paypal-dialog-data';
 import { StoreService } from '../store/store.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'generic-paypal-dialog',
@@ -23,7 +24,7 @@ export class GenericPaypalDialogComponent {
   private buildPaypalConfig(): IPayPalConfig {
     return {
       currency: 'GBP',
-      clientId: 'AdZ9udKQuSQU_I45wLdTA2TqrrNz8C-51MU4N-cbLUyukdp_w3pS96bQh5C1_CwioTWBKhVkwfXQsTnq',
+      clientId: environment.paypalClientId,
       createOrderOnClient: () => <ICreateOrderRequest> {
           intent: 'CAPTURE',
           purchase_units: [{

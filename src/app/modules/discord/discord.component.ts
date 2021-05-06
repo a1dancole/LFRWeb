@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
-import { SettingsService } from "../shared/services/settings.service";
+import { environment } from "src/environments/environment";
 
 @Component({
   styleUrls: ['./discord.component.scss'],
@@ -10,10 +10,10 @@ export class DiscordComponent implements OnInit {
   public discordUrl: SafeResourceUrl = {};
   public discordJoinUrl: string = '';
 
-  constructor(private _domSanitizer: DomSanitizer, private _settingsService: SettingsService) { }
+  constructor(private _domSanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
-    this.discordUrl = this._domSanitizer.bypassSecurityTrustResourceUrl(`https://e.widgetbot.io/channels/${this._settingsService.settings.discordServerId}/${this._settingsService.settings.discordDefaultChannelId}`);
-    this.discordJoinUrl = this._settingsService.settings.discordJoinUrl;
+    this.discordUrl = this._domSanitizer.bypassSecurityTrustResourceUrl(`https://e.widgetbot.io/channels/${environment.discordServerId}/${environment.discordDefaultChannelId}`);
+    this.discordJoinUrl = environment.discordJoinUrl;
   }
 }

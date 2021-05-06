@@ -1,19 +1,17 @@
 import { HttpClient, HttpErrorResponse, HttpHandler, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { RequestOptions } from "http";
-import { Observable, throwError } from "rxjs";
-import { Settings } from "../models/settings";
-import { SettingsService } from "./settings.service";
+import { throwError } from "rxjs";
+import { environment } from "src/environments/environment";
 
 @Injectable()
 export class BaseHttpClient extends HttpClient {
 
-  constructor(protected _httpClient: HttpClient, protected _httpHandler: HttpHandler, protected _settingsService: SettingsService) {
+  constructor(protected _httpClient: HttpClient, protected _httpHandler: HttpHandler) {
     super(_httpHandler);
   }
 
   public getAndSubscribe<T>(url: string,  callback: (response: T) => void, headers?: HttpHeaders): void {
-    super.get<T>(`${this._settingsService.settings.apiUrl}/${url}`, { headers: this.buildRequestHeaders(headers)}).subscribe(response => callback(response));
+    super.get<T>(`${environment.apiUrl}/${url}`, { headers: this.buildRequestHeaders(headers)}).subscribe(response => callback(response));
   }
 
   private buildRequestHeaders(headers?: HttpHeaders): HttpHeaders {

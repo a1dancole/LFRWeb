@@ -5,6 +5,7 @@ import { PaypalDialogData } from './paypal-dialog-data';
 import { StoreService } from '../store.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AuthorizedOrder } from 'src/app/modules/shared/models/authorizedOrder';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'paypal-dialog',
@@ -15,6 +16,7 @@ export class PaypalDialogComponent {
 
   constructor(@Inject(MAT_DIALOG_DATA)private _data: PaypalDialogData, private _dialogRef: MatDialogRef<PaypalDialogComponent>, private _storeService: StoreService, private _snackBar: MatSnackBar) {
     this.payPalConfig = this.buildPaypalConfig();
+    console.log(this.payPalConfig);
   }
 
   public isDesktop(): boolean {
@@ -37,7 +39,7 @@ export class PaypalDialogComponent {
 
     return {
       currency: 'GBP',
-      clientId: 'AdZ9udKQuSQU_I45wLdTA2TqrrNz8C-51MU4N-cbLUyukdp_w3pS96bQh5C1_CwioTWBKhVkwfXQsTnq',
+      clientId: environment.paypalClientId,
       createOrderOnClient: () => <ICreateOrderRequest> {
           intent: 'CAPTURE',
           purchase_units: [{

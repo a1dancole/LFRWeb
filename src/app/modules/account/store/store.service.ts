@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
+import { environment } from "src/environments/environment";
 import { AuthorizedOrder } from "../../shared/models/authorizedOrder";
 import { BaseHttpClient } from "../../shared/services/baseHttpClient.service";
 import { CharacterService } from "../generic-paypal-dialog/generic-paypal-dialog-data";
@@ -8,19 +9,19 @@ import { CharacterService } from "../generic-paypal-dialog/generic-paypal-dialog
 export class StoreService extends BaseHttpClient {
 
   public processOrder(authorizedOrder: AuthorizedOrder): Observable<boolean> {
-    return this._httpClient.post<boolean>(`${this._settingsService.settings.apiUrl}/store/processorder`, authorizedOrder);
+    return this._httpClient.post<boolean>(`${environment.apiUrl}/store/processorder`, authorizedOrder);
   }
 
   public processCharacterService(characterName: string, characterService: CharacterService) {
     switch(characterService) {
       case CharacterService.NameChange: {
-        return this._httpClient.post<boolean>(`${this._settingsService.settings.apiUrl}/store/namechange/${characterName}`, {});
+        return this._httpClient.post<boolean>(`${environment.apiUrl}/store/namechange/${characterName}`, {});
       }
       case CharacterService.FactionChange: {
-        return this._httpClient.post<boolean>(`${this._settingsService.settings.apiUrl}/store/factionchange/${characterName}`, {});
+        return this._httpClient.post<boolean>(`${environment.apiUrl}/store/factionchange/${characterName}`, {});
       }
       case CharacterService.RaceChange: {
-        return this._httpClient.post<boolean>(`${this._settingsService.settings.apiUrl}/store/racechange/${characterName}`, {});
+        return this._httpClient.post<boolean>(`${environment.apiUrl}/store/racechange/${characterName}`, {});
       }
       default:
         return of(false);

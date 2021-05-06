@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import { environment } from "src/environments/environment";
 import { BaseHttpClient } from "../shared/services/baseHttpClient.service";
 import { ChangePassword } from "./models/changePassword";
 import { CharacterUnstuck } from "./models/characterUnstuck";
@@ -8,10 +9,10 @@ import { CharacterUnstuck } from "./models/characterUnstuck";
 export class AccountService extends BaseHttpClient {
 
   public changePassword(changePassword: ChangePassword): Observable<boolean> {
-    return this._httpClient.post<boolean>(`${this._settingsService.settings.apiUrl}/account/changepassword`, changePassword);
+    return this._httpClient.post<boolean>(`${environment.apiUrl}/account/changepassword`, changePassword);
   }
 
   public characterUnstuck(characterUnstuck: CharacterUnstuck) {
-    return this._httpClient.post<boolean>(`${this._settingsService.settings.apiUrl}/account/characterunstuck`, characterUnstuck)
+    return this._httpClient.post<boolean>(`${environment.apiUrl}/account/characterunstuck`, characterUnstuck)
   }
 }

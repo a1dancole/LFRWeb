@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BaseHttpClient } from '../baseHttpClient.service';
-import { map, tap } from 'rxjs/operators';
-import { HttpHeaders } from '@angular/common/http';
+import { map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class JwtAuthenticationService extends BaseHttpClient {
@@ -13,11 +13,11 @@ export class JwtAuthenticationService extends BaseHttpClient {
 
   public authenticate() {
     let key = Buffer.from(
-      `${this._settingsService.settings.applicationName}:${this._settingsService.settings.wpaSecret}`
+      `${environment.applicationName}:${environment.wpaSecret}`
     ).toString('base64');
 
     return this.get(
-      `${this._settingsService.settings.apiUrl}/authentication/authenticate?key=${key}`,
+      `${environment.apiUrl}/authentication/authenticate?key=${key}`,
       { responseType: 'text' }
     ).pipe(
       map((jwt) => {
