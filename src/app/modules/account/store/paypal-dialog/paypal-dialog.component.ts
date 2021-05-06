@@ -37,7 +37,7 @@ export class PaypalDialogComponent {
 
     return {
       currency: 'GBP',
-      clientId: 'sb',
+      clientId: 'AdZ9udKQuSQU_I45wLdTA2TqrrNz8C-51MU4N-cbLUyukdp_w3pS96bQh5C1_CwioTWBKhVkwfXQsTnq',
       createOrderOnClient: () => <ICreateOrderRequest> {
           intent: 'CAPTURE',
           purchase_units: [{
