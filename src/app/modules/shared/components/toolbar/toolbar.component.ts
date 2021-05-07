@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { SideMenuService } from "../../services/side-menu.service";
 import { UserCookieService } from "../../services/userCookie.service";
@@ -15,10 +15,11 @@ export class ToolbarComponent {
   constructor(private _sideMenuService: SideMenuService, private _userCookieService: UserCookieService, private _router: Router) {
     _userCookieService.isLoggedIn.subscribe(event => {
       this.isLoggedIn = event ?? false;
-    })
+    });
+
     _sideMenuService.toggled.subscribe(toggled => {
       this.sideMenuOpen = toggled;
-    })
+    });
   }
 
   public toggleSideMenu(): void {

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 import { SideMenuService } from '../../services/side-menu.service';
@@ -24,9 +24,9 @@ export class SideMenuComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this._sideMenuService.toggled.subscribe((toggle) =>
-      this.toggleDrawer(toggle)
-    );
+    this._sideMenuService.toggled.subscribe((toggle) => {
+      this.toggleDrawer(toggle);
+    });
   }
 
   public toggleDrawer(toggle: boolean): void {
@@ -36,10 +36,8 @@ export class SideMenuComponent implements OnInit, OnDestroy {
   public logOut(): void {
     this._userCookieService.logOut();
 
-    if(this.isPwa())
-      this._router.navigateByUrl('/account');
-    else
-      this._router.navigateByUrl('/');
+    if (this.isPwa()) this._router.navigateByUrl('/account');
+    else this._router.navigateByUrl('/');
   }
 
   public isDesktop(): boolean {
@@ -47,11 +45,15 @@ export class SideMenuComponent implements OnInit, OnDestroy {
   }
 
   public isPwa(): boolean {
-      return (window.matchMedia('(display-mode: standalone)').matches) || ((window.navigator as any).standalone) || document.referrer.includes('android-app://');
+    return (
+      window.matchMedia('(display-mode: standalone)').matches ||
+      (window.navigator as any).standalone ||
+      document.referrer.includes('android-app://')
+    );
   }
 
   public closeSideMenu(): void {
-    if((!this.isDesktop() || this.isPwa()) && this.drawer.opened)
+    if ((!this.isDesktop() || this.isPwa()) && this.drawer.opened)
       this._sideMenuService.toggleSideMenu();
   }
 
