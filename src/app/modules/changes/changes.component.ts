@@ -9,7 +9,7 @@ import { TrelloService } from './trello.service';
   templateUrl: './changes.component.html',
 })
 export class ChangesComponent implements OnInit {
-  public releasedCards: [any, TrelloCard[]][] = [];
+  public releasedCards: TrelloCard[] = [];
 
   constructor(
     private _trelloService: TrelloService,
@@ -21,21 +21,7 @@ export class ChangesComponent implements OnInit {
       .GetCardsInList(environment.trelloReleasedListId)
       .subscribe(
         (response) => {
-          this.releasedCards = Array.from<[any, TrelloCard[]]>(response.sort(
-            (c1: TrelloCard, c2: TrelloCard) => {
-              if (c1.dateLastActivity < c2.dateLastActivity) return 1;
-              if (c1.dateLastActivity > c2.dateLastActivity) return -1;
-              return 0;
-            }
-          ).reduce(
-            (entryMap, e) => entryMap.set(new Date(e.dateLastActivity)?.getDate(), [...entryMap.get(new Date(e.dateLastActivity)?.getDate())||[], e]),
-            new Map()).entries());
-        },
-        (error: any) => {
-          this._snackBar.open(`${error.error.detail}`, 'Error', {
-            duration: 2000,
-            panelClass: ['warning'],
-          });
+          this.releasedCards = response.filter((o,index) => index < 50);
         }
       );
   }

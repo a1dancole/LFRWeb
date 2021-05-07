@@ -19,7 +19,7 @@ import { GoldPaypalDialog } from './gold-paypal-dialog/generic-paypal-dialog.com
 export class GoldComponent implements OnInit {
   public userProfile!: UserProfile | undefined;
   public selectedCharacter!: Character;
-  public goldAmount!: number;
+  public goldAmount: number = 0;
 
   constructor(
     private _userCookieService: UserCookieService,
