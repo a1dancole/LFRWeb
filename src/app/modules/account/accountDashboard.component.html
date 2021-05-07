@@ -101,10 +101,22 @@
         </mat-card>
     </mat-grid-tile>
     <mat-grid-tile>
+      <mat-card matRipple class="account-dashboard-card mobile" [routerLink]="['/account/gold']">
+        <mat-grid-list cols="3" rowHeight="20vh" gutterSize="1vw">
+          <mat-grid-tile colspan="2">
+            <img mat-card-image src="../../../assets/images/gold.jpg" class="account-dashboard-image mobile">
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1">
+            <h3><b>Gold</b></h3>
+          </mat-grid-tile>
+        </mat-grid-list>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
       <mat-card matRipple class="account-dashboard-card mobile" [routerLink]="['/account/changefaction']">
         <mat-grid-list cols="3" rowHeight="20vh" gutterSize="1vw">
           <mat-grid-tile colspan="2">
-            <img mat-card-image src="../../../assets/images/faction_change.jpg" class="account-dashboard-image mobile">
+            <img mat-card-image src="../../../assets/images/faction_change.jpg" class="account-dashboard-image mobile gold">
           </mat-grid-tile>
           <mat-grid-tile colspan="1">
             <h3><b>Faction Change</b></h3>
