@@ -9,6 +9,8 @@ import { ChangeNameComponent } from './change-name/change-name.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { ChangeRaceComponent } from './change-race/change-race.component';
 import { GenericPaypalDialogComponent } from './generic-paypal-dialog/generic-paypal-dialog.component';
+import { GoldPaypalDialog } from './gold/gold-paypal-dialog/generic-paypal-dialog.component';
+import { GoldComponent } from './gold/gold.component';
 import { PaypalDialogComponent } from './store/paypal-dialog/paypal-dialog.component';
 import { StoreComponent } from './store/store.component';
 import { StoreService } from './store/store.service';
@@ -24,7 +26,9 @@ import { UnstuckComponent } from './unstuck/unstuck.component';
     ChangeNameComponent,
     GenericPaypalDialogComponent,
     ChangeFactionComponent,
-    ChangeRaceComponent
+    ChangeRaceComponent,
+    GoldComponent,
+    GoldPaypalDialog
   ],
   providers: [AccountService, StoreService],
   imports: [SharedModule, RouterModule, NgxPayPalModule],

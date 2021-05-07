@@ -16,7 +16,7 @@ export const environment = {
   trelloBoardId: "ea7f21fe2c6b3a6bc4977cb397d48012",
   trelloReleasedListId: "60229b6668a92c60ff2de9b6",
   clientDownloadUrl: "https://wow.gamefreedom.net/WoW-WotLK-(Classic-Textures).7z",
-  paypalClientId: "AdZ9udKQuSQU_I45wLdTA2TqrrNz8C-51MU4N-cbLUyukdp_w3pS96bQh5C1_CwioTWBKhVkwfXQsTnq"
+  paypalClientId: "sb"
 };
 
 /*

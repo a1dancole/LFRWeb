@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
 import { environment } from "src/environments/environment";
 import { AuthorizedOrder } from "../../shared/models/authorizedOrder";
+import { GoldOrder } from "../../shared/models/goldOrder";
 import { BaseHttpClient } from "../../shared/services/baseHttpClient.service";
 import { CharacterService } from "../generic-paypal-dialog/generic-paypal-dialog-data";
 
@@ -26,6 +27,10 @@ export class StoreService extends BaseHttpClient {
       default:
         return of(false);
     }
+  }
+
+  public processGold(order: GoldOrder): Observable<boolean> {
+    return this._httpClient.post<boolean>(`${environment.apiUrl}/store/processgold`, order);
   }
 
 }

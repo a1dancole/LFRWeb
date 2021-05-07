@@ -51,7 +51,6 @@ export class LoginComponent implements OnInit {
           this._router.navigate(['/account']);
         },
         (error: any) => {
-          console.log(error);
           this._snackBar.open(`${error.error.detail}`, 'Error', {
             duration: 2000,
             panelClass: ['warning'],

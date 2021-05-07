@@ -5,6 +5,7 @@ import { ChangeFactionComponent } from './modules/account/change-faction/change-
 import { ChangeNameComponent } from './modules/account/change-name/change-name.component';
 import { ChangePasswordComponent } from './modules/account/change-password/change-password.component';
 import { ChangeRaceComponent } from './modules/account/change-race/change-race.component';
+import { GoldComponent } from './modules/account/gold/gold.component';
 import { StoreComponent } from './modules/account/store/store.component';
 import { UnstuckComponent } from './modules/account/unstuck/unstuck.component';
 import { LoginComponent } from './modules/authentication/login/login.component';
@@ -50,6 +51,7 @@ const routes: Routes = [
   { path: 'account/changename', component:ChangeNameComponent, canActivate: [UserGuard] },
   { path: 'account/changefaction', component:ChangeFactionComponent, canActivate: [UserGuard] },
   { path: 'account/changerace', component:ChangeRaceComponent, canActivate: [UserGuard] },
+  { path: 'account/gold', component:GoldComponent, canActivate: [UserGuard] },
   { path: 'store', component:StoreComponent, canActivate: [UserGuard]},
   { path: 'wiki', component:WikiComponent },
   { path: 'wiki/general', component: WikiGeneralComponent },
