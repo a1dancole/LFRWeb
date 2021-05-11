@@ -53,8 +53,10 @@ export class GoldComponent implements OnInit {
       character: this.selectedCharacter.name,
       itemCost: this.calculateTotal(),
       itemName: `${this.goldAmount} Gold`,
-      goldAmount: this.goldAmount
+      goldAmount: Math.round((this.goldAmount + Number.EPSILON) * 100) / 100
     };
+
+    console.log(paypalDialogData);
 
     const dialogRef = this._dialog
       .open(GoldPaypalDialog, {
