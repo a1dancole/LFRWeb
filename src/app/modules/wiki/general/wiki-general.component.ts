@@ -15,6 +15,6 @@ export class WikiGeneralComponent implements OnInit {
   }
 
   public isDesktop(): boolean {
-    return window.screen.width > 768;
+    return window.screen.width >= 768;
   }
 }
