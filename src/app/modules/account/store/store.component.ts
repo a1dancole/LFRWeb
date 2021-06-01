@@ -108,7 +108,7 @@ export class StoreComponent implements OnInit {
       {cost: 10, name: "X-51 Nether-Rocket X-TREME", itemId: 35226, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/ability_mount_rocketmount.jpg", quantity: 0, multiple: false},
       {cost: 10, name: "Riding Turtle", itemId: 23720, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/ability_hunter_pet_turtle.jpg", quantity: 0, multiple: false},
       {cost: 10, name: "X-53 Touring Rocket", itemId: 54860, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/ability_mount_rocketmount2.jpg", quantity: 0, multiple: false},
-      {cost: 2, name: "Landro's Gift Box", itemId: 54218, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/inv_box_03.jpg", quantity: 0, multiple: false},
+      {cost: 2, name: "Landro's Gift Box", itemId: 54218, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/inv_box_03.jpg", quantity: 0, multiple: true},
       {cost: 10, name: "Swift Razzashi Raptor", itemId: 19872, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/ability_mount_raptor.jpg", quantity: 0, multiple: false},
       {cost: 10, name: "Swift Zulian Tiger", itemId: 19902, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/ability_mount_jungletiger.jpg", quantity: 0, multiple: false},
       {cost: 10, name: "Black Qiraji Battle Tank", itemId: 21176, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/inv_misc_qirajicrystal_05.jpg", quantity: 0, multiple: false},
