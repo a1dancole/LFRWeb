@@ -12,24 +12,20 @@
   <mat-grid-tile>
     <form [formGroup]="form" (ngSubmit)="register()" class="register-form">
       <mat-card-content>
+          <br />
           <mat-form-field>
             <mat-label>Username</mat-label>
             <input type="text" matInput formControlName="userName" required placeholder="pottermage">
-            <mat-hint>The username to login to the game with</mat-hint>
             <mat-error>Username is <strong>required</strong></mat-error>
           </mat-form-field>
-          <br />
           <mat-form-field>
             <mat-label>Password</mat-label>
             <input type="password" matInput formControlName="password" required>
-            <mat-hint>A password to login to the game with. </mat-hint>
             <mat-error>Password is <strong>required</strong></mat-error>
           </mat-form-field>
-          <br />
           <mat-form-field>
             <mat-label>Confirm Password</mat-label>
             <input type="password" matInput formControlName="confirmPassword" required>
-            <mat-hint>Enter your password again. </mat-hint>
             <mat-error>Password is <strong>required</strong></mat-error>
           </mat-form-field>
       </mat-card-content>
