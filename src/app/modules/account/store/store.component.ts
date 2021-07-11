@@ -118,7 +118,7 @@ export class StoreComponent implements OnInit {
       {cost: 10, name: "Ashes of Al'ar", itemId: 32458, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/inv_misc_summerfest_brazierorange.jpg", quantity: 0, multiple: false},
       {cost: 10, name: "Celestial Steed", itemId: 54811, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/ability_mount_celestialhorse.jpg", quantity: 0, multiple: false},
       {cost: 10, name: "Swift White Hawkstrider", itemId: 35513, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/ability_mount_cockatricemountelite_white.jpg", quantity: 0, multiple: false},
-      {cost: 1, name: "Graccu's Mince Meat Fruitcake (x20)", itemId: 21215, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/inv_food_christmasfruitcake_01.jpg", quantity: 0, multiple: true, itemStackSize: 20},
+      {cost: 3, name: "Graccu's Mince Meat Fruitcake", itemId: 500002, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/inv_food_christmasfruitcake_01.jpg", quantity: 0, multiple: false, manualTooltip: "Restores 10% of your health and mana per second for 20 sec. Unlimited charges. This item lasts 30days"},
     ]
   }
 
