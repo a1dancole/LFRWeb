@@ -7,6 +7,8 @@ import { Character } from "../../shared/models/character";
 import { StoreItem } from "../../shared/models/storeItem";
 import { UserProfile } from "../../shared/models/userprofile";
 import { UserCookieService } from "../../shared/services/userCookie.service";
+import { AuthorizedOrder } from "../../shared/models/authorizedOrder";
+import { StoreService } from "./store.service";
 
 @Component({
   styleUrls: ['./store.component.scss'],
@@ -20,7 +22,7 @@ export class StoreComponent implements OnInit {
   public userProfile!: UserProfile | undefined;
   public selectedCharacter!: Character;
 
-  constructor(private _dialog: MatDialog, private _userCookieService: UserCookieService, private _snackBar: MatSnackBar) {
+  constructor(private _dialog: MatDialog, private _userCookieService: UserCookieService, private _snackBar: MatSnackBar, private _storeService: StoreService) {
     this.items = this.buildItems();
   }
 
@@ -83,6 +85,26 @@ export class StoreComponent implements OnInit {
       return;
     }
 
+    if(this.cart.length > 0 && this.cart.reduce((sum, x) => sum + x.cost, 0) == 0) {
+      let authorizedOrder: AuthorizedOrder = {
+        characterName: this.selectedCharacter.name,
+        items: this.cart,
+        validationId: Math.random().toString(36).substring(7),
+        validationTime: new Date()
+      }
+      this._storeService.processOrder(authorizedOrder).subscribe(response => {
+        this._snackBar.open(`Items sent`, undefined, {
+          duration: 2000,
+        })
+      }, (error: any) => {
+        console.log(error);
+        this._snackBar.open(`${error.error.detail}`, undefined, { duration: 2000 })
+      }).add(() => {
+        this.resetCart();
+      });
+      return;
+    }
+
     let payPalDialogData: PaypalDialogData = { cart: this.getCartForServerPosting(), character: this.selectedCharacter.name }
 
     const dialogRef = this._dialog.open(PaypalDialogComponent, {
@@ -101,7 +123,7 @@ export class StoreComponent implements OnInit {
 
   private buildItems(): StoreItem[] {
     return [
-      {cost: 3, name: "Call Filch", itemId: 500001, imageUri: "https://wow.zamimg.com/images/wow/icons/large/ability_hunter_beastcall.jpg", quantity: 0, multiple: false, manualTooltip: "Summon Filch for 30seconds. Provides buffs, bank, stables, auction house, group summons, group ressurect, repair and reagents. This item lasts 30days"},
+      {cost: 0, name: "Call Filch", itemId: 500001, imageUri: "https://wow.zamimg.com/images/wow/icons/large/ability_hunter_beastcall.jpg", quantity: 0, multiple: false, manualTooltip: "Summon Filch for 30seconds. Provides buffs, bank, stables, auction house, group summons, group ressurect, repair and reagents. This item lasts 30days"},
       {cost: 10, name: "Swift Spectral Tiger", itemId: 33225, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/ability_mount_spectraltiger.jpg", quantity: 0, multiple: false},
       {cost: 5, name: "Foror's Endless Storage", itemId: 23162, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/inv_crate_04.jpg", quantity: 0, multiple: true},
       {cost: 10, name: "Big Battle Bear", itemId: 38576, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/ability_druid_challangingroar.jpg", quantity: 0, multiple: false},
@@ -118,7 +140,7 @@ export class StoreComponent implements OnInit {
       {cost: 10, name: "Ashes of Al'ar", itemId: 32458, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/inv_misc_summerfest_brazierorange.jpg", quantity: 0, multiple: false},
       {cost: 10, name: "Celestial Steed", itemId: 54811, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/ability_mount_celestialhorse.jpg", quantity: 0, multiple: false},
       {cost: 10, name: "Swift White Hawkstrider", itemId: 35513, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/ability_mount_cockatricemountelite_white.jpg", quantity: 0, multiple: false},
-      {cost: 3, name: "Graccu's Mince Meat Fruitcake", itemId: 500002, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/inv_food_christmasfruitcake_01.jpg", quantity: 0, multiple: false, manualTooltip: "Restores 10% of your health and mana per second for 20 sec. Unlimited charges. This item lasts 30days"},
+      {cost: 0, name: "Graccu's Mince Meat Fruitcake", itemId: 500002, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/inv_food_christmasfruitcake_01.jpg", quantity: 0, multiple: false, manualTooltip: "Restores 10% of your health and mana per second for 20 sec. Unlimited charges. This item lasts 30days"},
     ]
   }
 
