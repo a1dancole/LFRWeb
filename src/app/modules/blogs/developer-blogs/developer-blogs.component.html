@@ -2,6 +2,40 @@
 <br />
 <mat-card class="blog-card">
   <mat-card-header>
+    <mat-card-title>Recent downtime</mat-card-title>
+    <mat-card-subtitle>Lessons learned</mat-card-subtitle>
+  </mat-card-header>
+  <mat-grid-list cols="2" rowHeight="45vh" gutterSize="1vw">
+    <mat-grid-tile>
+      <img mat-card-image src="https://cybercom.com/images/18.403ac7ba177db4f8d1a35bae/1614864782653/CI_CD_przezroczyste.png" class="blog-card-image">
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card-content>
+        <p>
+          Firstly, let me apologise for the recent downtime caused due a changes. I should be holding myself in higher esteem and shouldn't be allowing such mistakes to impact your playtime.
+        </p>
+        <p>
+          Secondly, although I've implemented what I thought was a robust release pipeline with multiple gates and automated test processes to protect serious issues reaching the live server, this failed.
+        </p>
+        <p>
+          What I can say from this experience is that lessons have been learned and additional automated checks and protections to stop this happening again have been put in place.
+        </p>
+        <p>
+          I hope that this experience hasn't tainted your views of Looking For Raid, if it has though I will be working tirelessly to redeeem your trust in the product over the coming weeks.
+        </p>
+        <p>
+          25-man content will be hitting the live server for open testing before the end of this month, with a continued focus on getting all of T7 released before autumn.
+        </p>
+        <p>
+          With sincerest apologies, <br> Potter.
+        </p>
+      </mat-card-content>
+    </mat-grid-tile>
+  </mat-grid-list>
+</mat-card>
+<br />
+<mat-card class="blog-card">
+  <mat-card-header>
     <mat-card-title>Development start</mat-card-title>
     <mat-card-subtitle>Potter working hard</mat-card-subtitle>
   </mat-card-header>
@@ -32,6 +66,33 @@
 </mat-card>
 </div>
 <ng-template #mobile>
+  <mat-card class="blog-card mobile">
+    <mat-card-header>
+      <mat-card-title>Recent downtime</mat-card-title>
+      <mat-card-subtitle>Lessons learned</mat-card-subtitle>
+    </mat-card-header>
+        <mat-card-content>
+          <p>
+            Firstly, let me apologise for the recent downtime caused due a changes. I should be holding myself in higher esteem and shouldn't be allowing such mistakes to impact your playtime.
+          </p>
+          <p>
+            Secondly, although I've implemented what I thought was a robust release pipeline with multiple gates and automated test processes to protect serious issues reaching the live server, this failed.
+          </p>
+          <p>
+            What I can say from this experience is that lessons have been learned and additional automated checks and protections to stop this happening again have been put in place.
+          </p>
+          <p>
+            I hope that this experience hasn't tainted your views of Looking For Raid, if it has though I will be working tirelessly to redeeem your trust in the product over the coming weeks.
+          </p>
+          <p>
+            25-man content will be hitting the live server for open testing before the end of this month, with a continued focus on getting all of T7 released before autumn.
+          </p>
+          <p>
+            With sincerest apologies, <br> Potter.
+          </p>
+        </mat-card-content>
+  </mat-card>
+  <br />
   <mat-card class="blog-card mobile">
     <mat-card-header>
       <mat-card-title>Development start</mat-card-title>
