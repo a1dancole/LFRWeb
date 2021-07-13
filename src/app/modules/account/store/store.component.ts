@@ -123,7 +123,8 @@ export class StoreComponent implements OnInit {
 
   private buildItems(): StoreItem[] {
     return [
-      {cost: 0, name: "Call Filch", itemId: 500001, imageUri: "https://wow.zamimg.com/images/wow/icons/large/ability_hunter_beastcall.jpg", quantity: 0, multiple: false, manualTooltip: "Summon Filch for 30seconds. Provides buffs, bank, stables, auction house, group summons, group ressurect, repair and reagents. This item lasts 30days"},
+      {cost: 3, name: "Call Filch", itemId: 500001, imageUri: "https://wow.zamimg.com/images/wow/icons/large/ability_hunter_beastcall.jpg", quantity: 0, multiple: false, manualTooltip: "Summon Filch for 30seconds. Provides buffs, bank, stables, auction house, group summons, group ressurect, repair and reagents. This item lasts 30days"},
+      {cost: 3, name: "Graccu's Mince Meat Fruitcake", itemId: 500002, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/inv_food_christmasfruitcake_01.jpg", quantity: 0, multiple: false, manualTooltip: "Restores 10% of your health and mana per second for 20 sec. Unlimited charges. This item lasts 30days"},
       {cost: 10, name: "Swift Spectral Tiger", itemId: 33225, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/ability_mount_spectraltiger.jpg", quantity: 0, multiple: false},
       {cost: 5, name: "Foror's Endless Storage", itemId: 23162, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/inv_crate_04.jpg", quantity: 0, multiple: true},
       {cost: 10, name: "Big Battle Bear", itemId: 38576, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/ability_druid_challangingroar.jpg", quantity: 0, multiple: false},
@@ -140,7 +141,6 @@ export class StoreComponent implements OnInit {
       {cost: 10, name: "Ashes of Al'ar", itemId: 32458, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/inv_misc_summerfest_brazierorange.jpg", quantity: 0, multiple: false},
       {cost: 10, name: "Celestial Steed", itemId: 54811, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/ability_mount_celestialhorse.jpg", quantity: 0, multiple: false},
       {cost: 10, name: "Swift White Hawkstrider", itemId: 35513, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/ability_mount_cockatricemountelite_white.jpg", quantity: 0, multiple: false},
-      {cost: 0, name: "Graccu's Mince Meat Fruitcake", itemId: 500002, imageUri: "https://wotlkdb.com/static/images/wow/icons/large/inv_food_christmasfruitcake_01.jpg", quantity: 0, multiple: false, manualTooltip: "Restores 10% of your health and mana per second for 20 sec. Unlimited charges. This item lasts 30days"},
     ]
   }
 
