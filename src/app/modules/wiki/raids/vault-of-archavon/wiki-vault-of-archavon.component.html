@@ -1,0 +1,120 @@
+<div *ngIf="isDesktop();else mobile">
+  <br />
+  <mat-card class="wiki-general-card">
+    <mat-card-header>
+      <mat-card-title>Vault of Archavon (10-man)</mat-card-title>
+      <mat-card-subtitle>Vault of Archavon changes that have been made to the server. If boss is not listed assume the only changes are to scaling</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              Archavon
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Stomp will only target dps, not the tank or healer. The target affected by stomp will also be the Impale target.</mat-list-item>
+           </mat-list>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              Emalon
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Is currently unavailable.</mat-list-item>
+           </mat-list>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              Koralon
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Is currently unavailable.</mat-list-item>
+           </mat-list>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              Toravon
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Is currently unavailable.</mat-list-item>
+           </mat-list>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              General
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>You can access Vault of Archavon via a portal inside The Violet Citadel within Dalaran.</mat-list-item>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Shield Crush debuff reduced from 100% down from 300% (This is not reflected in the tooltip)</mat-list-item>
+           </mat-list>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-card-content>
+  </mat-card>
+  </div>
+  <ng-template #mobile>
+    <h1>Obsidian Sanctum (10-man)</h1>
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-description>
+            Archavon
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Stomp will only target dps, not the tank or healer. The target affected by stomp will also be the Impale target.</mat-list-item>
+         </mat-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-description>
+            Emalon
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Is currently unavailable.</mat-list-item>
+         </mat-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-description>
+            Koralon
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Is currently unavailable.</mat-list-item>
+         </mat-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-description>
+            Toravon
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Is currently unavailable.</mat-list-item>
+         </mat-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-description>
+            General
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>You can access Vault of Archavon via a portal inside The Violet Citadel within Dalaran.</mat-list-item>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Shield Crush debuff reduced from 100% down from 300% (This is not reflected in the tooltip)</mat-list-item>
+         </mat-list>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </ng-template>

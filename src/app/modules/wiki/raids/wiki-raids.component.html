@@ -26,6 +26,14 @@
         <img mat-card-image src="../../../../assets/images/eye-of-eternity.jpg" class="wiki-raids-image">
       </mat-card>
     </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="wiki-raids-card" [routerLink]="['/wiki/raids/vault-of-archavon']">
+        <mat-card-header>
+          <mat-card-title>Vault of Archavon</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="../../../../assets/images/vault-of-archavon.jpg" class="wiki-raids-image">
+      </mat-card>
+    </mat-grid-tile>
   </mat-grid-list>
 </div>
 <ng-template #mobile>
@@ -63,6 +71,18 @@
           </mat-grid-tile>
           <mat-grid-tile colspan="1">
             <h3><b>Eye of Eternity</b></h3>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="wiki-raids-card mobile" [routerLink]="['/wiki/raids/vault-of-archavon']">
+        <mat-grid-list cols="3" rowHeight="20vh" gutterSize="1vw">
+          <mat-grid-tile colspan="2">
+            <img mat-card-image src="../../../../assets/images/vault-of-archavon.jpg" class="wiki-raids-image mobile">
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1">
+            <h3><b>Vault of Archavon</b></h3>
           </mat-grid-tile>
         </mat-grid-list>
       </mat-card>
