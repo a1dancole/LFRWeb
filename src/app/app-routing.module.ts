@@ -53,7 +53,7 @@ const routes: Routes = [
   { path: 'account/changefaction', component:ChangeFactionComponent, canActivate: [UserGuard] },
   { path: 'account/changerace', component:ChangeRaceComponent, canActivate: [UserGuard] },
   { path: 'account/gold', component:GoldComponent, canActivate: [UserGuard] },
-  { path: 'store', component:StoreComponent, canActivate: [UserGuard]},
+  { path: 'store', component:StoreComponent, canActivate: [UserGuard] },
   { path: 'wiki', component:WikiComponent },
   { path: 'wiki/general', component: WikiGeneralComponent },
   { path: 'wiki/raids', component: WikiRaidsComponent },
