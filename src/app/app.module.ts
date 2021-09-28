@@ -18,6 +18,7 @@ import { BlogsModule } from './modules/blogs/blogs.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment'
 import { WikiModule } from './modules/wiki/wiki.module';
+import { AnalyticsModule } from './modules/analytics/analytics.module';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { WikiModule } from './modules/wiki/wiki.module';
     AccountModule,
     BlogsModule,
     WikiModule,
+    AnalyticsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable

@@ -8,6 +8,8 @@ import { ChangeRaceComponent } from './modules/account/change-race/change-race.c
 import { GoldComponent } from './modules/account/gold/gold.component';
 import { StoreComponent } from './modules/account/store/store.component';
 import { UnstuckComponent } from './modules/account/unstuck/unstuck.component';
+import { AnalyticsComponent } from './modules/analytics/analytics.component';
+import { RaidsComponent } from './modules/analytics/raids/raids.component';
 import { LoginComponent } from './modules/authentication/login/login.component';
 import { RegisterComponent } from './modules/authentication/register/register.component';
 import { BlogsComponent } from './modules/blogs/blogs.component';
@@ -68,7 +70,9 @@ const routes: Routes = [
   { path: 'wiki/classes/paladin', component: WikiClassesPaladinComponent },
   { path: 'wiki/classes/warlock', component: WikiClassesWarlockComponent },
   { path: 'wiki/classes/druid', component: WikiClassesDruidComponent },
-  { path: 'wiki/classes/shaman', component: WikiClassesShamanComponent }
+  { path: 'wiki/classes/shaman', component: WikiClassesShamanComponent },
+  { path: 'analytics', component: AnalyticsComponent },
+  { path: 'analytics/raids', component: RaidsComponent }
 ];
 
 @NgModule({

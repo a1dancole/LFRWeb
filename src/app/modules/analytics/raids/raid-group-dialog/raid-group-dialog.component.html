@@ -1,0 +1,25 @@
+<div *ngIf="isDesktop(); else mobile">
+  <h2 mat-dialog-title>{{encounter.bossName}}</h2>
+  <mat-table [dataSource]="encounter.groupMembers" class="mat-elevation-z8" style="width:25vw">
+    <ng-container matColumnDef="playerName">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.playerName}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="playerClass">
+      <mat-header-cell *matHeaderCellDef> Class </mat-header-cell>
+      <mat-cell *matCellDef="let element"> <img [src]="getClassIconUri(element)" [matTooltip]="element.playerClass" style="width:3vh;height:3vh;"/> </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="playerSpec">
+      <mat-header-cell *matHeaderCellDef> Spec</mat-header-cell>
+      <mat-cell *matCellDef="let element"><img [src]="getSpecIconUri(element)" [matTooltip]="element.playerSpec" style="width:3vh;height:3vh;"/></mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="playerGuild">
+      <mat-header-cell *matHeaderCellDef> Guild </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.playerGuild}} </mat-cell>
+    </ng-container>
+    <mat-row *matRowDef="let row; columns: ['playerName', 'playerClass', 'playerSpec', 'playerGuild'];"></mat-row>
+  </mat-table>
+  </div>
+  <ng-template #mobile>
+    <h2 mat-dialog-title>{{encounter.bossName}}</h2>
+  </ng-template>

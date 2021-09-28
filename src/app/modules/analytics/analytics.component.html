@@ -1,0 +1,111 @@
+<div *ngIf="isDesktop();else mobile" class="analytics-desktop-container">
+  <br />
+  <br />
+  <mat-grid-list cols="3" rowHeight="fit" class="analytics-grid" gutterSize="3%">
+    <mat-grid-tile>
+      <mat-card matRipple class="analytics-card" [routerLink]="['/analytics/raids']">
+        <mat-card-header>
+          <mat-card-title>Raids</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="../../../assets/images/raids.jpg" class="analytics-image">
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="analytics-card disabled">
+        <mat-card-header>
+          <mat-card-title>Pvp</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="../../../assets/images/pvp.png" class="analytics-image">
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="analytics-card disabled">
+        <mat-card-header>
+          <mat-card-title>Achievements</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="../../../assets/images/achievement.jpg" class="analytics-image">
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="analytics-card disabled">
+        <mat-card-header>
+          <mat-card-title>Server</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="../../../assets/images/server.jpg" class="analytics-image">
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="analytics-card disabled">
+        <mat-card-header>
+          <mat-card-title>Host</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="../../../assets/images/host.jpg" class="analytics-image">
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+<ng-template #mobile>
+  <br />
+  <mat-grid-list cols="1" rowHeight="20vh" class="analytics-grid mobile" gutterSize="1vh">
+    <mat-grid-tile>
+      <mat-card matRipple class="analytics-card mobile" [routerLink]="['/analytics/raids']">
+        <mat-grid-list cols="3" rowHeight="20vh" gutterSize="1vw">
+          <mat-grid-tile colspan="2">
+            <img mat-card-image src="../../../assets/images/raids.jpg" class="analytics-image mobile">
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1">
+            <h3><b>Raids</b></h3>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="analytics-card mobile disabled">
+        <mat-grid-list cols="3" rowHeight="20vh" gutterSize="1vw">
+          <mat-grid-tile colspan="2">
+            <img mat-card-image src="../../../assets/images/pvp.png" class="analytics-image mobile">
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1">
+            <h3><b>Pvp</b></h3>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="analytics-card mobile disabled">
+        <mat-grid-list cols="3" rowHeight="20vh" gutterSize="1vw">
+          <mat-grid-tile colspan="2">
+            <img mat-card-image src="../../../assets/images/achievement.jpg" class="analytics-image mobile">
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1">
+            <h3><b>Achievements</b></h3>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="analytics-card mobile disabled">
+        <mat-grid-list cols="3" rowHeight="20vh" gutterSize="1vw">
+          <mat-grid-tile colspan="2">
+            <img mat-card-image src="../../../assets/images/server.jpg" class="analytics-image mobile">
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1">
+            <h3><b>Server</b></h3>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="analytics-card mobile disabled">
+        <mat-grid-list cols="3" rowHeight="20vh" gutterSize="1vw">
+          <mat-grid-tile colspan="2">
+            <img mat-card-image src="../../../assets/images/host.jpg" class="analytics-image mobile">
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1">
+            <h3><b>Host</b></h3>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</ng-template>

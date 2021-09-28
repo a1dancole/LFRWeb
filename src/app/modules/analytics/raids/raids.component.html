@@ -1,0 +1,53 @@
+
+<div *ngIf="isDesktop();else mobile">
+  <br />
+  <mat-card class="wiki-general-card">
+    <mat-card-header>
+      <mat-card-title>Raid Analytics</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field appearance="fill" class="raid-search-input">
+        <mat-label>Search</mat-label>
+        <input matInput [(ngModel)]="searchTerm" (ngModelChange)="loadData()">
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="raid-search-input">
+        <mat-label>Raid</mat-label>
+        <mat-select [(ngModel)]="selectedRaid" (ngModelChange)="loadData()">
+          <mat-option *ngFor="let raid of raids" [value]="raid">
+            {{raid.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="raid-search-input">
+        <mat-label>Difficulty</mat-label>
+        <mat-select [(ngModel)]="selectedDifficulty" (ngModelChange)="loadData()">
+          <mat-option *ngFor="let difficulty of raidDifficulties" [value]="difficulty">
+            {{difficulty.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-table [dataSource]="encounters" class="mat-elevation-z8">
+        <ng-container matColumnDef="bossName">
+          <mat-header-cell *matHeaderCellDef> Boss </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.bossName}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="wingName">
+          <mat-header-cell *matHeaderCellDef> Wing </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.wingName}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="guild">
+          <mat-header-cell *matHeaderCellDef> Guild</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.guildName}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="killTime">
+          <mat-header-cell *matHeaderCellDef> Time </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.killTime * 1000 | date:'mm:ss'}} </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="['bossName', 'wingName', 'guild', 'killTime']; sticky: true"></mat-header-row>
+        <mat-row matRipple *matRowDef="let row; columns: ['bossName', 'wingName', 'guild', 'killTime'];" (click)="loadGroup(row)"></mat-row>
+      </mat-table>
+    </mat-card-content>
+  </mat-card>
+  </div>
+  <ng-template #mobile>
+  </ng-template>

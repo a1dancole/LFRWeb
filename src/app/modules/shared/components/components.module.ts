@@ -20,6 +20,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSelectModule } from '@angular/material/select'
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { MatTableModule } from '@angular/material/table';
 
 const globalRippleConfig: RippleGlobalOptions = {
   disabled: false,
@@ -47,6 +48,7 @@ const globalRippleConfig: RippleGlobalOptions = {
     MatExpansionModule,
     MatGridListModule,
     MatRippleModule,
+    MatTableModule,
     CommonModule,
     FormsModule,
     MatSelectModule
@@ -73,6 +75,7 @@ const globalRippleConfig: RippleGlobalOptions = {
     MatExpansionModule,
     MatGridListModule,
     MatRippleModule,
+    MatTableModule,
     CommonModule,
     FormsModule,
     MatSelectModule

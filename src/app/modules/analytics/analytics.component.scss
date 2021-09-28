@@ -1,0 +1,42 @@
+.analytics-desktop-container {
+  height:100vh;
+}
+
+.analytics-grid {
+  height: 80%;
+}
+
+.analytics-card {
+  height: 30vh;
+  width: 20vw;
+  border: 30px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.analytics-card.mobile {
+  height:auto;
+  width:90vw;
+  border:10px;
+  border-radius:25%;
+}
+
+.analytics-image {
+  mask-image: -webkit-gradient(linear, center bottom, center top,
+  color-stop(0.00,  rgba(0,0,0,0)),
+  color-stop(1,  rgba(0,0,0,1)));;
+}
+
+.analytics-image.mobile {
+  position: fixed;
+  width: 140%;
+  margin-top: -5vh;
+}
+
+.analytics-image.mobile.raid {
+  margin-top: 15vh;
+}
+
+.analytics-card.disabled {
+  filter:grayscale(1);
+}
