@@ -43,8 +43,12 @@
           <mat-header-cell *matHeaderCellDef> Time </mat-header-cell>
           <mat-cell *matCellDef="let element"> {{element.killTime * 1000 | date:'mm:ss'}} </mat-cell>
         </ng-container>
-        <mat-header-row *matHeaderRowDef="['bossName', 'wingName', 'guild', 'killTime']; sticky: true"></mat-header-row>
-        <mat-row matRipple *matRowDef="let row; columns: ['bossName', 'wingName', 'guild', 'killTime'];" (click)="loadGroup(row)"></mat-row>
+        <ng-container matColumnDef="killDate">
+          <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.killDate | date:'d/M/yy'}} </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="['bossName', 'wingName', 'guild', 'killTime', 'killDate']; sticky: true"></mat-header-row>
+        <mat-row matRipple *matRowDef="let row; columns: ['bossName', 'wingName', 'guild', 'killTime', 'killDate'];" (click)="loadGroup(row)"></mat-row>
       </mat-table>
     </mat-card-content>
   </mat-card>

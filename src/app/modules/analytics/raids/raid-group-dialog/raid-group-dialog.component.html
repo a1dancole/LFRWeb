@@ -1,25 +1,20 @@
 <div *ngIf="isDesktop(); else mobile">
-  <h2 mat-dialog-title>{{encounter.bossName}}</h2>
-  <mat-table [dataSource]="encounter.groupMembers" class="mat-elevation-z8" style="width:25vw">
+  <h2 mat-dialog-title>{{encounter.bossName}} - {{encounter.killTime * 1000 | date:'mm:ss'}}</h2>
+  <h2 mat-dialog-title>{{encounter.guildName}} </h2>
+  <mat-table [dataSource]="encounter.groupMembers" class="mat-elevation-z8" style="width:15vw">
     <ng-container matColumnDef="playerName">
       <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.playerName}} </mat-cell>
     </ng-container>
     <ng-container matColumnDef="playerClass">
       <mat-header-cell *matHeaderCellDef> Class </mat-header-cell>
-      <mat-cell *matCellDef="let element"> <img [src]="getClassIconUri(element)" [matTooltip]="element.playerClass" style="width:3vh;height:3vh;"/> </mat-cell>
+      <mat-cell *matCellDef="let element"> <img [src]="getClassIconUri(element)" [matTooltip]="element.playerClass"
+          style="width:3vh;height:3vh;" /><img [src]="getSpecIconUri(element)" [matTooltip]="element.playerSpec"
+          style="width:3vh;height:3vh;" /> </mat-cell>
     </ng-container>
-    <ng-container matColumnDef="playerSpec">
-      <mat-header-cell *matHeaderCellDef> Spec</mat-header-cell>
-      <mat-cell *matCellDef="let element"><img [src]="getSpecIconUri(element)" [matTooltip]="element.playerSpec" style="width:3vh;height:3vh;"/></mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="playerGuild">
-      <mat-header-cell *matHeaderCellDef> Guild </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.playerGuild}} </mat-cell>
-    </ng-container>
-    <mat-row *matRowDef="let row; columns: ['playerName', 'playerClass', 'playerSpec', 'playerGuild'];"></mat-row>
+    <mat-row *matRowDef="let row; columns: ['playerName', 'playerClass'];"></mat-row>
   </mat-table>
-  </div>
-  <ng-template #mobile>
-    <h2 mat-dialog-title>{{encounter.bossName}}</h2>
-  </ng-template>
+</div>
+<ng-template #mobile>
+  <h2 mat-dialog-title>{{encounter.bossName}}</h2>
+</ng-template>

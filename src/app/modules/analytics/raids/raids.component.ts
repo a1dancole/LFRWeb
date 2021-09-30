@@ -26,6 +26,7 @@ export class RaidsComponent implements OnInit {
     { id: 0, name: '10 Man' },
     { id: 1, name: '25 Man' },
   ];
+
   //Default to 10-Man
   public selectedDifficulty: RaidDifficulty = {
     id: 0,
@@ -51,26 +52,12 @@ export class RaidsComponent implements OnInit {
         searchTerm: this.searchTerm,
       })
       .subscribe((response) => {
-        response.forEach(
-          o => (o.guildName = this.getGuildNameByMode(o) ?? '')
-        );
         this.encounters = response;
       });
   }
 
   public isDesktop(): boolean {
     return window.screen.width > 768;
-  }
-
-  public getGuildNameByMode(encounter: Encounter): string | undefined {
-    const groupMembers = [...encounter.groupMembers];
-    return groupMembers
-      .sort(
-        (a, b) =>
-          groupMembers.filter((o) => o === a).length -
-          groupMembers.filter((o) => o === b).length
-      )
-      .pop()?.playerGuild;
   }
 
   public loadGroup(encounter: Encounter): void {

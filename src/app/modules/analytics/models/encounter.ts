@@ -7,5 +7,6 @@ export interface Encounter {
   difficulty: string;
   killTime: number;
   guildName: string;
+  killDate: Date;
   groupMembers: GroupMember[];
 }
