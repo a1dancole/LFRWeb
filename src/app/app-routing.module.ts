@@ -17,6 +17,7 @@ import { ChangesComponent } from './modules/changes/changes.component';
 import { DiscordComponent } from './modules/discord/discord.component';
 import { HomeComponent } from './modules/home/home.component';
 import { HowToConnectComponent } from './modules/howtoconnect/howtoconnect.component';
+import { LeaderboardsComponent } from './modules/leaderboards/leaderboards.component';
 import { ServerStatusComponent } from './modules/serverstatus/serverstatus.component';
 import { UserGuard } from './modules/shared/guards/user.guard';
 import { StreamComponent } from './modules/stream/stream.component';
@@ -72,7 +73,8 @@ const routes: Routes = [
   { path: 'wiki/classes/druid', component: WikiClassesDruidComponent },
   { path: 'wiki/classes/shaman', component: WikiClassesShamanComponent },
   { path: 'analytics', component: AnalyticsComponent },
-  { path: 'analytics/raids', component: RaidsComponent }
+  { path: 'analytics/raids', component: RaidsComponent },
+  { path: 'leaderboards', component: LeaderboardsComponent }
 ];
 
 @NgModule({

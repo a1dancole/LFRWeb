@@ -26,10 +26,16 @@
           <span>Wiki</span>
         </button>
       </mat-list-item>
-      <mat-list-item>
+      <mat-list-item *ngIf="isDesktop()">
         <button mat-menu-item routerLink="/analytics">
-          <mat-icon>leaderboard</mat-icon>
+          <mat-icon>timeline</mat-icon>
           <span>Analytics</span>
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-menu-item routerLink="/leaderboards">
+          <mat-icon>leaderboard</mat-icon>
+          <span>Leaderboards</span>
         </button>
       </mat-list-item>
       <!-- <mat-list-item>

@@ -37,6 +37,8 @@ export class RaidGroupDialogComponent {
         return 'https://wow.zamimg.com/images/wow/icons/large/classicon_shaman.jpg';
       case 'Paladin':
         return 'https://wow.zamimg.com/images/wow/icons/large/classicon_paladin.jpg';
+      case 'Death knight':
+        return 'https://wow.zamimg.com/images/wow/icons/large/classicon_deathknight.jpg'
     }
     return '';
   }

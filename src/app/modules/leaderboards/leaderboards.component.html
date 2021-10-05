@@ -1,0 +1,92 @@
+<div *ngIf="isDesktop();else mobile" class="leaderboards-desktop-container">
+  <br />
+  <mat-card class="wiki-general-card">
+    <mat-card-header>
+      <mat-card-title>Raid Leaderboard</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field appearance="fill" class="leaderboards-input">
+        <mat-label>Raid</mat-label>
+        <mat-select [(ngModel)]="selectedRaid" (ngModelChange)="loadData()">
+          <mat-option *ngFor="let raid of raids" [value]="raid">
+            {{raid.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="leaderboards-input">
+        <mat-label>Difficulty</mat-label>
+        <mat-select [(ngModel)]="selectedDifficulty" (ngModelChange)="loadData()">
+          <mat-option *ngFor="let difficulty of raidDifficulties" [value]="difficulty">
+            {{difficulty.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="leaderboards-input">
+        <mat-label>Wing</mat-label>
+        <mat-select [(ngModel)]="selectedWing" (ngModelChange)="loadData()">
+          <mat-option *ngFor="let wing of getWingsForSelectedMap()" [value]="wing">
+            {{wing.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-grid-list cols="3" rowHeight="fit" class="leaderboards-grid" gutterSize="1vw">
+        <mat-grid-tile *ngFor="let wing of topThree; let i = index">
+          <mat-card class="leaderboards-card">
+            <mat-grid-list cols="4" rowHeight="8vh">
+              <mat-grid-tile colspan="2" rowspan="2">
+                <img mat-card-image [src]="getTrophyForIndex(i)" class="leaderboards-image">
+              </mat-grid-tile>
+              <mat-grid-tile colspan="1" class="leaderboards-text-tile">
+                <div>
+                  <h3><b>{{wing.guildName}}</b></h3>
+                </div>
+              </mat-grid-tile>
+              <mat-grid-tile colspan="1" class="leaderboards-text-tile">
+                <h3><b>{{wing.timer | minuteSeconds}}</b></h3>
+              </mat-grid-tile>
+              <mat-grid-tile colspan="2">
+                <div>
+                  <img *ngFor="let groupMember of wing.encounters.slice(-1)[0].groupMembers" [src]="getClassIconUri(groupMember.playerClass)" style="width:3vh;height:3vh;padding-right: 1px;">
+                </div>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </mat-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <br />
+      <mat-table [dataSource]="wings" class="mat-elevation-z8">
+        <ng-container matColumnDef="guildName">
+          <mat-header-cell *matHeaderCellDef> Guild </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.guildName}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="timer">
+          <mat-header-cell *matHeaderCellDef> Time </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.timer | minuteSeconds}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="killDate">
+          <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.clearDate | date:'d/M/yy'}} </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="['guildName', 'timer', 'killDate']; sticky: true"></mat-header-row>
+        <mat-row matRipple *matRowDef="let row; columns: ['guildName', 'timer', 'killDate'];" (click)="loadGroup(row.encounters.slice(-1)[0])"></mat-row>
+      </mat-table>
+    </mat-card-content>
+  </mat-card>
+</div>
+<ng-template #mobile>
+  <br />
+  <mat-grid-list cols="1" rowHeight="20vh" class="leaderboards-grid mobile" gutterSize="1vh">
+    <mat-grid-tile>
+      <mat-card matRipple class="leaderboards-card mobile" [routerLink]="['/analytics/raids']">
+        <mat-grid-list cols="3" rowHeight="20vh" gutterSize="1vw">
+          <mat-grid-tile colspan="2">
+            <img mat-card-image src="../../../assets/images/raids.jpg" class="leaderboards-image mobile">
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1">
+            <h3><b>Raids</b></h3>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</ng-template>

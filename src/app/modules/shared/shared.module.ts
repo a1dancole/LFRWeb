@@ -9,6 +9,7 @@ import { JwtAuthenticationService } from './services/authentication/jwtAuthentic
 import { UnauthorizedInterceptor } from './services/authentication/unauthorized.interceptor';
 import { CookieService } from 'ngx-cookie-service';
 import { UserGuard } from './guards/user.guard';
+import { MinuteSecondsPipe } from './pipes/minuteSeconds.pipe';
 
 @NgModule({
   imports: [
@@ -28,12 +29,16 @@ import { UserGuard } from './guards/user.guard';
     CookieService,
     UserGuard
   ],
+  declarations: [
+    MinuteSecondsPipe
+  ],
   exports: [
     ComponentsModule,
     MatInputModule,
     ReactiveFormsModule,
     HttpClientModule,
     MatSnackBarModule,
+    MinuteSecondsPipe
   ],
 })
 export class SharedModule {
