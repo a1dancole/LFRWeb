@@ -13,6 +13,10 @@
   background: linear-gradient(to left, #39bbe6 -50%, #272727);
 }
 
+.leaderboards-card.mobile {
+  width: 100%;
+}
+
 .leaderboards-image {
   align-self: flex-end;
   width: 8vw;
@@ -23,10 +27,31 @@
   margin-top: 2vh;
 }
 
+.leaderboards-text-tile.mobile {
+  margin-top: 4vh;
+}
+
+
 .leaderboards-header {
   font-size:1vw;
 }
 
 .leaderboards-input {
   padding-right: 0.5vw;
+}
+
+.leaderboards-input.mobile {
+  width:100%;
+}
+
+.leaderboards-image.mobile {
+  align-self: flex-end;
+  width: 75%;
+}
+
+.leaderboards-button {
+  width:100%;
+  position: absolute;
+  bottom: 10vh;
+  height: 5vh;
 }

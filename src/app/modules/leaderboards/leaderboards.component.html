@@ -75,18 +75,29 @@
 </div>
 <ng-template #mobile>
   <br />
-  <mat-grid-list cols="1" rowHeight="20vh" class="leaderboards-grid mobile" gutterSize="1vh">
-    <mat-grid-tile>
-      <mat-card matRipple class="leaderboards-card mobile" [routerLink]="['/analytics/raids']">
-        <mat-grid-list cols="3" rowHeight="20vh" gutterSize="1vw">
-          <mat-grid-tile colspan="2">
-            <img mat-card-image src="../../../assets/images/raids.jpg" class="leaderboards-image mobile">
+  <mat-grid-list cols="1" rowHeight="20vh" class="leaderboards-grid" gutterSize="1vw">
+    <mat-grid-tile *ngFor="let wing of topThree; let i = index">
+      <mat-card class="leaderboards-card mobile">
+        <mat-grid-list cols="4" rowHeight="10vh">
+          <mat-grid-tile colspan="2" rowspan="2">
+            <img mat-card-image [src]="getTrophyForIndex(i)" class="leaderboards-image mobile">
           </mat-grid-tile>
-          <mat-grid-tile colspan="1">
-            <h3><b>Raids</b></h3>
+          <mat-grid-tile colspan="1" class="leaderboards-text-tile mobile">
+            <div>
+              <h4><b>{{wing.guildName}}</b></h4>
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1" class="leaderboards-text-tile mobile">
+            <h4><b>{{wing.timer | minuteSeconds}}</b></h4>
+          </mat-grid-tile>
+          <mat-grid-tile colspan="2">
+            <div>
+              <img *ngFor="let groupMember of wing.encounters.slice(-1)[0].groupMembers" [src]="getClassIconUri(groupMember.playerClass)" style="width:3vh;height:3vh;padding-right: 1px;">
+            </div>
           </mat-grid-tile>
         </mat-grid-list>
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>
+  <button mat-raised-button (click)="openSearchBottomSheet()" class="leaderboards-button">Search</button>
 </ng-template>

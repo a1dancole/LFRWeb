@@ -27,7 +27,7 @@
       </mat-card>
     </mat-grid-tile>
     <mat-grid-tile>
-      <mat-card matRipple class="analytics-card disabled">
+      <mat-card matRipple class="analytics-card" [routerLink]="['/analytics/server']">
         <mat-card-header>
           <mat-card-title>Server</mat-card-title>
         </mat-card-header>
@@ -84,7 +84,7 @@
       </mat-card>
     </mat-grid-tile>
     <mat-grid-tile>
-      <mat-card matRipple class="analytics-card mobile disabled">
+      <mat-card matRipple class="analytics-card mobile" [routerLink]="['/analytics/server']">
         <mat-grid-list cols="3" rowHeight="20vh" gutterSize="1vw">
           <mat-grid-tile colspan="2">
             <img mat-card-image src="../../../assets/images/server.jpg" class="analytics-image mobile">

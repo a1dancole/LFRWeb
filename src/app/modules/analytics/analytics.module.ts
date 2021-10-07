@@ -5,9 +5,10 @@ import { AnalyticsComponent } from "./analytics.component";
 import { AnalyticsService } from "./analytics.service";
 import { RaidGroupDialogComponent } from "./raids/raid-group-dialog/raid-group-dialog.component";
 import { RaidsComponent } from "./raids/raids.component";
+import { ServerComponent } from "./server/server.component";
 
 @NgModule({
-  declarations: [AnalyticsComponent, RaidsComponent, RaidGroupDialogComponent],
+  declarations: [AnalyticsComponent, RaidsComponent, ServerComponent, RaidGroupDialogComponent],
   providers: [
     AnalyticsService
   ],

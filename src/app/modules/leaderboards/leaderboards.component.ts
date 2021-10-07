@@ -1,19 +1,20 @@
-import { Component, OnInit } from "@angular/core";
-import { MatDialog } from "@angular/material/dialog";
-import { AnalyticsService } from "../analytics/analytics.service";
-import { Encounter } from "../analytics/models/encounter";
-import { Raid } from "../analytics/models/raid";
-import { RaidDifficulty } from "../analytics/models/raidDifficulty";
-import { Wing } from "../analytics/models/wing";
-import { WingSelectList } from "../analytics/models/wingSelectList";
-import { RaidGroupDialogComponent } from "../analytics/raids/raid-group-dialog/raid-group-dialog.component";
+import { Component, OnInit } from '@angular/core';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { MatDialog } from '@angular/material/dialog';
+import { AnalyticsService } from '../analytics/analytics.service';
+import { Encounter } from '../analytics/models/encounter';
+import { Raid } from '../analytics/models/raid';
+import { RaidDifficulty } from '../analytics/models/raidDifficulty';
+import { Wing } from '../analytics/models/wing';
+import { WingSelectList } from '../analytics/models/wingSelectList';
+import { RaidGroupDialogComponent } from '../analytics/raids/raid-group-dialog/raid-group-dialog.component';
+import { LeaderboardBottomsheetComponent } from './bottom-sheet/leaderboard-bottomsheet.component';
 
 @Component({
   styleUrls: ['./leaderboards.component.scss'],
   templateUrl: './leaderboards.component.html',
 })
 export class LeaderboardsComponent implements OnInit {
-
   public topThree: Wing[] = [];
   public wings: Wing[] = [];
   public raids: Raid[] = [
@@ -38,39 +39,56 @@ export class LeaderboardsComponent implements OnInit {
   };
 
   public wingsSelectList: WingSelectList[] = [
-    { mapId: 533, name: "The Arachnid Quarter"},
-    { mapId: 533, name: "The Construct Quarter"},
-    { mapId: 533, name: "The Plague Quarter"},
-    { mapId: 533, name: "The Military Quarter"},
-    { mapId: 533, name: "The Upper Necropolis"}
+    { mapId: 533, name: 'The Arachnid Quarter' },
+    { mapId: 533, name: 'The Construct Quarter' },
+    { mapId: 533, name: 'The Plague Quarter' },
+    { mapId: 533, name: 'The Military Quarter' },
+    { mapId: 533, name: 'The Upper Necropolis' },
   ];
 
   public selectedWing: WingSelectList = {
-    mapId: 533, name: "The Arachnid Quarter"
-  }
+    mapId: 533,
+    name: 'The Arachnid Quarter',
+  };
 
-  constructor(private _analyticsService: AnalyticsService, private _dialog: MatDialog) {
-  }
+  constructor(
+    private _analyticsService: AnalyticsService,
+    private _dialog: MatDialog,
+    private _bottomsheet: MatBottomSheet
+  ) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   public isDesktop(): boolean {
     return window.screen.width > 768;
   }
 
   public loadData(): void {
-    this._analyticsService.getTopThreeGroupsForWing({map: this.selectedRaid.mapId, difficulty: this.selectedDifficulty.id, wing: this.selectedWing.name}).subscribe(response => {
-      this.topThree = response;
-    });
+    this._analyticsService
+      .getTopThreeGroupsForWing({
+        map: this.selectedRaid.mapId,
+        difficulty: this.selectedDifficulty.id,
+        wing: this.selectedWing.name,
+      })
+      .subscribe((response) => {
+        this.topThree = response;
+      });
 
-    this._analyticsService.getTopGroupsForWing({map: this.selectedRaid.mapId, difficulty: this.selectedDifficulty.id, wing: this.selectedWing.name}).subscribe(response => {
-      this.wings = response;
-    });
+    this._analyticsService
+      .getTopGroupsForWing({
+        map: this.selectedRaid.mapId,
+        difficulty: this.selectedDifficulty.id,
+        wing: this.selectedWing.name,
+      })
+      .subscribe((response) => {
+        this.wings = response;
+      });
   }
 
-  public getWingsForSelectedMap() : WingSelectList[] {
-    return this.wingsSelectList.filter(o => o.mapId == this.selectedRaid.mapId)
+  public getWingsForSelectedMap(): WingSelectList[] {
+    return this.wingsSelectList.filter(
+      (o) => o.mapId == this.selectedRaid.mapId
+    );
   }
 
   public loadGroup(encounter: Encounter): void {
@@ -83,13 +101,13 @@ export class LeaderboardsComponent implements OnInit {
   }
 
   public getTrophyForIndex(index: number): string {
-    switch(index) {
+    switch (index) {
       case 0:
-        return "../../../assets/images/first.png"
+        return '../../../assets/images/first.png';
       case 1:
-        return "../../../assets/images/second.png"
+        return '../../../assets/images/second.png';
       case 2:
-        return "../../../assets/images/third.png"
+        return '../../../assets/images/third.png';
     }
 
     return '';
@@ -116,8 +134,28 @@ export class LeaderboardsComponent implements OnInit {
       case 'Paladin':
         return 'https://wow.zamimg.com/images/wow/icons/large/classicon_paladin.jpg';
       case 'Death knight':
-        return 'https://wow.zamimg.com/images/wow/icons/large/classicon_deathknight.jpg'
+        return 'https://wow.zamimg.com/images/wow/icons/large/classicon_deathknight.jpg';
     }
     return '';
+  }
+
+  openSearchBottomSheet(): void {
+    const bottomSheetRef = this._bottomsheet.open(
+      LeaderboardBottomsheetComponent,
+      {
+        data: {
+          _raids: this.raids,
+          _raidDifficulties: this.raidDifficulties,
+          _wingSelectList: this.wingsSelectList
+        },
+      }
+    );
+    bottomSheetRef.afterDismissed().subscribe((data) => {
+      console.log(data);
+      this.selectedRaid = data._selectedRaid;
+      this.selectedDifficulty = data._selectedDifficulty;
+      this.selectedWing = data._selectedWing;
+      this.loadData();
+    });
   }
 }

@@ -1,0 +1,25 @@
+<mat-form-field appearance="fill" class="leaderboards-bottomsheet-input">
+  <mat-label>Raid</mat-label>
+  <mat-select [(ngModel)]="selectedRaid">
+    <mat-option *ngFor="let raid of raids" [value]="raid">
+      {{raid.name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field appearance="fill" class="leaderboards-bottomsheet-input">
+  <mat-label>Difficulty</mat-label>
+  <mat-select [(ngModel)]="selectedDifficulty">
+    <mat-option *ngFor="let difficulty of raidDifficulties" [value]="difficulty">
+      {{difficulty.name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field appearance="fill" class="leaderboards-bottomsheet-input">
+  <mat-label>Wing</mat-label>
+  <mat-select [(ngModel)]="selectedWing">
+    <mat-option *ngFor="let wing of getWingsForSelectedMap()" [value]="wing">
+      {{wing.name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<button mat-raised-button (click)="dismiss()" class="leaderboards-bottomsheet-button" color="accent">Search</button>

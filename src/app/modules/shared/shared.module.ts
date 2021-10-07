@@ -10,6 +10,8 @@ import { UnauthorizedInterceptor } from './services/authentication/unauthorized.
 import { CookieService } from 'ngx-cookie-service';
 import { UserGuard } from './guards/user.guard';
 import { MinuteSecondsPipe } from './pipes/minuteSeconds.pipe';
+import { SafePipe } from './pipes/safe.pipe';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 
 @NgModule({
   imports: [
@@ -18,6 +20,7 @@ import { MinuteSecondsPipe } from './pipes/minuteSeconds.pipe';
     ReactiveFormsModule,
     HttpClientModule,
     MatSnackBarModule,
+    MatBottomSheetModule
   ],
   providers: [
     JwtAuthenticationService,
@@ -30,7 +33,8 @@ import { MinuteSecondsPipe } from './pipes/minuteSeconds.pipe';
     UserGuard
   ],
   declarations: [
-    MinuteSecondsPipe
+    MinuteSecondsPipe,
+    SafePipe
   ],
   exports: [
     ComponentsModule,
@@ -38,7 +42,9 @@ import { MinuteSecondsPipe } from './pipes/minuteSeconds.pipe';
     ReactiveFormsModule,
     HttpClientModule,
     MatSnackBarModule,
-    MinuteSecondsPipe
+    MinuteSecondsPipe,
+    SafePipe,
+    MatBottomSheetModule
   ],
 })
 export class SharedModule {

@@ -10,6 +10,7 @@ import { StoreComponent } from './modules/account/store/store.component';
 import { UnstuckComponent } from './modules/account/unstuck/unstuck.component';
 import { AnalyticsComponent } from './modules/analytics/analytics.component';
 import { RaidsComponent } from './modules/analytics/raids/raids.component';
+import { ServerComponent } from './modules/analytics/server/server.component';
 import { LoginComponent } from './modules/authentication/login/login.component';
 import { RegisterComponent } from './modules/authentication/register/register.component';
 import { BlogsComponent } from './modules/blogs/blogs.component';
@@ -74,6 +75,7 @@ const routes: Routes = [
   { path: 'wiki/classes/shaman', component: WikiClassesShamanComponent },
   { path: 'analytics', component: AnalyticsComponent },
   { path: 'analytics/raids', component: RaidsComponent },
+  { path: 'analytics/server', component: ServerComponent },
   { path: 'leaderboards', component: LeaderboardsComponent }
 ];
 
