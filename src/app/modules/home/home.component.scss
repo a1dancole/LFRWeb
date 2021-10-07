@@ -52,27 +52,16 @@
   cursor: pointer;
 }
 
-.discord-logo {
+.logo {
   max-height: 5vh;
   vertical-align: bottom;
   filter: drop-shadow(2px 4px 6px black);
+  padding-left:1vw;
 }
 
 .home-card-small-text {
   font: 400 24px/32px Roboto;
   padding-left: 3vw;
-}
-
-.register-logo {
-  max-height: 5vh;
-  vertical-align: bottom;
-  filter: drop-shadow(2px 4px 6px black);
-}
-
-.download-logo {
-  max-height: 5vh;
-  vertical-align: bottom;
-  filter: drop-shadow(2px 4px 6px black);
 }
 
 iframe {
