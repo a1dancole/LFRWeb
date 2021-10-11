@@ -21,7 +21,7 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
-      <mat-form-field appearance="fill" class="leaderboards-input">
+      <mat-form-field *ngIf="doesRaidHaveWings()" appearance="fill" class="leaderboards-input">
         <mat-label>Wing</mat-label>
         <mat-select [(ngModel)]="selectedWing" (ngModelChange)="loadData()">
           <mat-option *ngFor="let wing of getWingsForSelectedMap()" [value]="wing">

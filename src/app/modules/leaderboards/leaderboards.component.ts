@@ -19,7 +19,7 @@ export class LeaderboardsComponent implements OnInit {
   public wings: Wing[] = [];
   public raids: Raid[] = [
     { mapId: 533, name: 'Naxxramas' },
-    { mapId: 615, name: 'Eye of Eternity' },
+    { mapId: 616, name: 'Eye of Eternity' }
   ];
   //Default to Naxx
   public selectedRaid: Raid = {
@@ -68,7 +68,7 @@ export class LeaderboardsComponent implements OnInit {
       .getTopThreeGroupsForWing({
         map: this.selectedRaid.mapId,
         difficulty: this.selectedDifficulty.id,
-        wing: this.selectedWing.name,
+        wing: this.doesRaidHaveWings() ? this.selectedWing.name : '',
       })
       .subscribe((response) => {
         this.topThree = response;
@@ -78,7 +78,7 @@ export class LeaderboardsComponent implements OnInit {
       .getTopGroupsForWing({
         map: this.selectedRaid.mapId,
         difficulty: this.selectedDifficulty.id,
-        wing: this.selectedWing.name,
+        wing: this.doesRaidHaveWings() ? this.selectedWing.name : '',
       })
       .subscribe((response) => {
         this.wings = response;
@@ -89,6 +89,10 @@ export class LeaderboardsComponent implements OnInit {
     return this.wingsSelectList.filter(
       (o) => o.mapId == this.selectedRaid.mapId
     );
+  }
+
+  public doesRaidHaveWings(): boolean {
+    return this.wingsSelectList.some(o => o.mapId == this.selectedRaid.mapId);
   }
 
   public loadGroup(encounter: Encounter): void {

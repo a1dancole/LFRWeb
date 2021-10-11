@@ -14,7 +14,8 @@ export class RaidsComponent implements OnInit {
   public encounters: Encounter[] = [];
   public raids: Raid[] = [
     { mapId: 533, name: 'Naxxramas' },
-    { mapId: 615, name: 'Eye of Eternity' },
+    { mapId: 615, name: 'Obsidian Sanctum'},
+    { mapId: 616, name: 'Eye of Eternity' },
   ];
   //Default to Naxx
   public selectedRaid: Raid = {
