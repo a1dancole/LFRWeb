@@ -35,6 +35,9 @@ export class RaidsComponent implements OnInit {
   };
 
   public searchTerm: string = '';
+  public pageSize: number = 10;
+  public length: number = 10;
+  public pageNumber: number = 1;
 
   constructor(
     private _analyticsService: AnalyticsService,
@@ -45,15 +48,23 @@ export class RaidsComponent implements OnInit {
     this.loadData();
   }
 
+  public paginatorPaged(event: any) {
+    this.pageNumber = event.pageIndex;
+    this.loadData();
+  }
+
   public loadData(): void {
     this._analyticsService
       .getEncounters({
         mapId: this.selectedRaid.mapId,
         difficultyId: this.selectedDifficulty.id,
         searchTerm: this.searchTerm,
+        pageSize: this.pageSize,
+        pageNumber: this.pageNumber
       })
       .subscribe((response) => {
-        this.encounters = response;
+        this.encounters = response.data;
+        this.length = response.length;
       });
   }
 

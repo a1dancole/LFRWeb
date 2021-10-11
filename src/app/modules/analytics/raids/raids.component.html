@@ -1,7 +1,7 @@
 
 <div *ngIf="isDesktop();else mobile">
   <br />
-  <mat-card class="wiki-general-card">
+  <mat-card>
     <mat-card-header>
       <mat-card-title>Raid Analytics</mat-card-title>
     </mat-card-header>
@@ -51,6 +51,7 @@
         <mat-row matRipple *matRowDef="let row; columns: ['bossName', 'wingName', 'guild', 'killTime', 'killDate'];" (click)="loadGroup(row)"></mat-row>
       </mat-table>
     </mat-card-content>
+    <mat-paginator (page)="paginatorPaged($event)" [length]="length" [pageSize]="pageSize"></mat-paginator>
   </mat-card>
   </div>
   <ng-template #mobile>

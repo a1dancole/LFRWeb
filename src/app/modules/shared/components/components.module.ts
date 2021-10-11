@@ -21,6 +21,7 @@ import { MatSelectModule } from '@angular/material/select'
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 const globalRippleConfig: RippleGlobalOptions = {
   disabled: false,
@@ -51,7 +52,8 @@ const globalRippleConfig: RippleGlobalOptions = {
     MatTableModule,
     CommonModule,
     FormsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatPaginatorModule
   ],
   declarations: [ToolbarComponent, SideMenuComponent],
   providers: [
@@ -78,7 +80,8 @@ const globalRippleConfig: RippleGlobalOptions = {
     MatTableModule,
     CommonModule,
     FormsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatPaginatorModule
   ],
 })
 export class ComponentsModule {}
