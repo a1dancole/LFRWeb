@@ -2,11 +2,133 @@
   <br />
   <mat-card class="wiki-general-card">
     <mat-card-header>
-      <mat-card-title>Obsidian Sanctum (10-man)</mat-card-title>
-      <mat-card-subtitle>Obsidian Sanctum changes that have been made to the server. If boss is not listed assume the only changes are to scaling</mat-card-subtitle>
+      <mat-card-title>Obsidian Sanctum</mat-card-title>
+      <mat-card-subtitle>Obsidian Sanctum changes that have been made to the server. If boss is not listed assume the
+        only changes are to scaling</mat-card-subtitle>
     </mat-card-header>
-    <mat-card-content>
-      <mat-accordion multi="true">
+    <mat-tab-group animationDuration="1000ms" mat-align-tabs="center">
+      <mat-card-content>
+        <mat-tab label="10-man">
+          <mat-accordion multi="true">
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-description>
+                  Sartharion
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <mat-list>
+                <mat-list-item>
+                  <mat-icon matListIcon>horizontal_rule</mat-icon>If any additional drakes join the encounter Sartharion
+                  will fly into the air and cast Flame Bombs on the group. He will land 45seconds after the final drake
+                  has entered the fight.
+                </mat-list-item>
+                <mat-list-item>
+                  <mat-icon matListIcon>horizontal_rule</mat-icon>If any additional drakes join the encounter and
+                  Sartharion is in the air no Flame Strikes or Lava Blaze will spawn.
+                </mat-list-item>
+              </mat-list>
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-description>
+                  Vesperon
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <mat-list>
+                <mat-list-item>
+                  <mat-icon matListIcon>horizontal_rule</mat-icon>Acolyte of Vesperon will not attack anyone inside the
+                  portal, instead channel a shadow spell
+                </mat-list-item>
+              </mat-list>
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-description>
+                  Shadron
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <mat-list>
+                <mat-list-item>
+                  <mat-icon matListIcon>horizontal_rule</mat-icon>Acolyte of Shadron will not attack anyone inside the
+                  portal, instead channel a shadow spell
+                </mat-list-item>
+              </mat-list>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </mat-tab>
+        <mat-tab label="25-man">
+          <mat-accordion multi="true">
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-description>
+                  Sartharion
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <mat-list>
+                <mat-list-item>
+                  <mat-icon matListIcon>horizontal_rule</mat-icon>Two additional flame walls will spawn. Starting either
+                  East or West of the platform and travelling East or West along the platform.
+                </mat-list-item>
+              </mat-list>
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-description>
+                  Vesperon
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <mat-list>
+                <mat-list-item>
+                  <mat-icon matListIcon>horizontal_rule</mat-icon>Vesperon will randomly teleport two players to each
+                  other, these players will deal damage to each other if they are closer than 25yards apart.
+                </mat-list-item>
+                <mat-list-item>
+                  <mat-icon matListIcon>horizontal_rule</mat-icon>Acolyte of Vesperon will cast Shadow Crash on a random
+                  player
+                </mat-list-item>
+              </mat-list>
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-description>
+                  Shadron
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <mat-list>
+                <mat-list-item>
+                  <mat-icon matListIcon>horizontal_rule</mat-icon>Shadron will spawn a Shield Orb that rotates around
+                  Shadron, casting AOE shadow bolt.
+                </mat-list-item>
+                <mat-list-item>
+                  <mat-icon matListIcon>horizontal_rule</mat-icon>Acolyte of Shadron will cast Shadow Crash on a random
+                  player
+                </mat-list-item>
+              </mat-list>
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-description>
+                  Tenebron
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <mat-list>
+                <mat-list-item>
+                  <mat-icon matListIcon>horizontal_rule</mat-icon>Twilight Whelps become unstable below 10% and began
+                  casting Explosion every 1second until killed.
+                </mat-list-item>
+              </mat-list>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </mat-tab>
+      </mat-card-content>
+    </mat-tab-group>
+  </mat-card>
+</div>
+<ng-template #mobile>
+  <h1>Obsidian Sanctum</h1>
+  <mat-tab-group animationDuration="1000ms" mat-align-tabs="center">
+    <mat-tab label="10-man">
+      <mat-accordion>
         <mat-expansion-panel>
           <mat-expansion-panel-header>
             <mat-panel-description>
@@ -14,9 +136,19 @@
             </mat-panel-description>
           </mat-expansion-panel-header>
           <mat-list>
-            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>If any additional drakes join the encounter Sartharion will fly into the air and cast Flame Bombs on the group. He will land 45seconds after the final drake has entered the fight.</mat-list-item>
-            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>If any additional drakes join the encounter and Sartharion is in the air no Flame Strikes or Lava Blaze will spawn.</mat-list-item>
-           </mat-list>
+            <mat-list-item>
+              <mat-icon matListIcon>horizontal_rule</mat-icon>If any additional drakes join the encounter Sartharion
+              will
+              fly into the air and cast Flame Bombs on the group. He will land 45seconds after the final drake has
+              entered
+              the fight.
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon matListIcon>horizontal_rule</mat-icon>If any additional drakes join the encounter and Sartharion
+              is
+              in the air no Flame Strikes or Lava Blaze will spawn.
+            </mat-list-item>
+          </mat-list>
         </mat-expansion-panel>
         <mat-expansion-panel>
           <mat-expansion-panel-header>
@@ -25,8 +157,12 @@
             </mat-panel-description>
           </mat-expansion-panel-header>
           <mat-list>
-            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Acolyte of Vesperon will not attack anyone inside the portal, instead channel a shadow spell</mat-list-item>
-           </mat-list>
+            <mat-list-item>
+              <mat-icon matListIcon>horizontal_rule</mat-icon>Acolyte of Vesperon will not attack anyone inside the
+              portal,
+              instead channel a shadow spell
+            </mat-list-item>
+          </mat-list>
         </mat-expansion-panel>
         <mat-expansion-panel>
           <mat-expansion-panel-header>
@@ -35,46 +171,78 @@
             </mat-panel-description>
           </mat-expansion-panel-header>
           <mat-list>
-            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Acolyte of Shadron will not attack anyone inside the portal, instead channel a shadow spell</mat-list-item>
-           </mat-list>
+            <mat-list-item>
+              <mat-icon matListIcon>horizontal_rule</mat-icon>Acolyte of Shadron will not attack anyone inside the
+              portal,
+              instead channel a shadow spell
+            </mat-list-item>
+          </mat-list>
         </mat-expansion-panel>
       </mat-accordion>
-    </mat-card-content>
-  </mat-card>
-  </div>
-  <ng-template #mobile>
-    <h1>Obsidian Sanctum (10-man)</h1>
-    <mat-accordion>
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-description>
-            Sartharion
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <mat-list>
-          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>If any additional drakes join the encounter Sartharion will fly into the air and cast Flame Bombs on the group. He will land 45seconds after the final drake has entered the fight.</mat-list-item>
-          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>If any additional drakes join the encounter and Sartharion is in the air no Flame Strikes or Lava Blaze will spawn.</mat-list-item>
-         </mat-list>
-      </mat-expansion-panel>
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-description>
-            Vesperon
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <mat-list>
-          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Acolyte of Vesperon will not attack anyone inside the portal, instead channel a shadow spell</mat-list-item>
-         </mat-list>
-      </mat-expansion-panel>
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-description>
-            Shadron
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <mat-list>
-          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Acolyte of Shadron will not attack anyone inside the portal, instead channel a shadow spell</mat-list-item>
-         </mat-list>
-      </mat-expansion-panel>
-    </mat-accordion>
-  </ng-template>
+    </mat-tab>
+    <mat-tab label="25-man">
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              Sartharion
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item>
+              <mat-icon matListIcon>horizontal_rule</mat-icon>Two additional flame walls will spawn. Starting either
+              East or West of the platform and travelling East or West along the platform.
+            </mat-list-item>
+          </mat-list>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              Vesperon
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item>
+              <mat-icon matListIcon>horizontal_rule</mat-icon>Vesperon will randomly teleport two players to each
+              other, these players will deal damage to each other if they are closer than 25yards apart.
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon matListIcon>horizontal_rule</mat-icon>Acolyte of Vesperon will cast Shadow Crash on a random
+              player
+            </mat-list-item>
+          </mat-list>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              Shadron
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item>
+              <mat-icon matListIcon>horizontal_rule</mat-icon>Shadron will spawn a Shield Orb that rotates around
+              Shadron, casting AOE shadow bolt.
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon matListIcon>horizontal_rule</mat-icon>Acolyte of Shadron will cast Shadow Crash on a random
+              player
+            </mat-list-item>
+          </mat-list>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              Tenebron
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item>
+              <mat-icon matListIcon>horizontal_rule</mat-icon>Twilight Whelps become unstable below 10% and began
+              casting Explosion every 1second until killed.
+            </mat-list-item>
+          </mat-list>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-tab>
+  </mat-tab-group>
+</ng-template>
