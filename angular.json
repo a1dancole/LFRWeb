@@ -31,9 +31,7 @@
               "src/assets/images",
               "src/assets/settings",
               "src/assets/icons",
-              "src/manifest.webmanifest",
-              "src/assets/onesignal/OneSignalSDKUpdaterWorker.js",
-              "src/assets/onesignal/OneSignalSDKWorker.js"
+              "src/manifest.webmanifest"
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
