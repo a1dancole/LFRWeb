@@ -2,11 +2,90 @@
   <br />
   <mat-card class="wiki-general-card">
     <mat-card-header>
-      <mat-card-title>Eye of Eternity (10-man)</mat-card-title>
-      <mat-card-subtitle>Eye of Eternity changes that have been made to the server. If boss is not listed assume the only changes are to scaling</mat-card-subtitle>
+      <mat-card-title>Eye of Eternity</mat-card-title>
+      <mat-card-subtitle>Eye of Eternity changes that have been made to the server. If boss is not listed assume the
+        only changes are to scaling</mat-card-subtitle>
     </mat-card-header>
-    <mat-card-content>
-      <mat-accordion multi="true">
+    <mat-tab-group animationDuration="1000ms" mat-align-tabs="center">
+      <mat-card-content>
+        <mat-tab label="10-man">
+          <mat-accordion multi="true">
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-description>
+                  General
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <mat-list>
+                <mat-list-item>
+                  <mat-icon matListIcon>horizontal_rule</mat-icon>Players can only enter the Eye of Eternity if they
+                  have cleared Naxxramas
+                </mat-list-item>
+              </mat-list>
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-description>
+                  Malygos
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <mat-list>
+                <mat-list-item>
+                  <mat-icon matListIcon>horizontal_rule</mat-icon>Flame Spike (Dragon ability) damage doubled
+                </mat-list-item>
+              </mat-list>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </mat-tab>
+        <mat-tab label="25-man">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-description>
+                Malygos
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <mat-list>
+              <mat-list-item>
+                <mat-icon matListIcon>horizontal_rule</mat-icon>During Vortex all healing received is reduced by 90%
+              </mat-list-item>
+              <mat-list-item>
+                <mat-icon matListIcon>horizontal_rule</mat-icon>Each portal in Phase 1 has a chance of spawning a
+                Corrupt Power Spark
+              </mat-list-item>
+              <mat-list-item>
+                <mat-icon matListIcon>horizontal_rule</mat-icon>Corrupt Power Spark will cast Arcane Barrage on the raid
+                when killed
+              </mat-list-item>
+              <mat-list-item>
+                <mat-icon matListIcon>horizontal_rule</mat-icon>Corrupt Power Spark will cast Power Spark on Malygos
+                when killed
+              </mat-list-item>
+              <mat-list-item>
+                <mat-icon matListIcon>horizontal_rule</mat-icon>Corrupt Power Spark will cast Spell Vulneribility on
+                Malygos when it reaches Malygos, increasing melee and spell damage taken by Malygos
+              </mat-list-item>
+              <mat-list-item>
+                <mat-icon matListIcon>horizontal_rule</mat-icon>During Phase 2 Azure Captains will spawn and cast Arcane
+                Beam on an individual. If the person is on a Disk the disk will take the damage of the spell.
+              </mat-list-item>
+              <mat-list-item>
+                <mat-icon matListIcon>horizontal_rule</mat-icon>When inside a Static Field all healing is reduced by 50%
+              </mat-list-item>
+              <mat-list-item>
+                <mat-icon matListIcon>horizontal_rule</mat-icon>Delayed reinforcements increased to 30seconds
+              </mat-list-item>
+            </mat-list>
+          </mat-expansion-panel>
+        </mat-tab>
+      </mat-card-content>
+    </mat-tab-group>
+  </mat-card>
+</div>
+<ng-template #mobile>
+  <h1>Eye of Eternity</h1>
+  <mat-tab-group animationDuration="1000ms" mat-align-tabs="center">
+    <mat-tab label="10-man">
+      <mat-accordion>
         <mat-expansion-panel>
           <mat-expansion-panel-header>
             <mat-panel-description>
@@ -14,8 +93,11 @@
             </mat-panel-description>
           </mat-expansion-panel-header>
           <mat-list>
-            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Players can only enter the Eye of Eternity if they have Key to the Focusing Iris in their bags</mat-list-item>
-           </mat-list>
+            <mat-list-item>
+              <mat-icon matListIcon>horizontal_rule</mat-icon>Players can only enter the Eye of Eternity if they have
+              cleared Naxxramas
+            </mat-list-item>
+          </mat-list>
         </mat-expansion-panel>
         <mat-expansion-panel>
           <mat-expansion-panel-header>
@@ -24,35 +106,54 @@
             </mat-panel-description>
           </mat-expansion-panel-header>
           <mat-list>
-            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Flame Spike (Dragon ability) damage doubled</mat-list-item>
-           </mat-list>
+            <mat-list-item>
+              <mat-icon matListIcon>horizontal_rule</mat-icon>Flame Spike (Dragon ability) damage doubled
+            </mat-list-item>
+          </mat-list>
         </mat-expansion-panel>
       </mat-accordion>
-    </mat-card-content>
-  </mat-card>
-  </div>
-  <ng-template #mobile>
-    <h1>Eye of Eternity (10-man)</h1>
-    <mat-accordion>
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-description>
-            General
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <mat-list>
-          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Players can only enter the Eye of Eternity if they have Key to the Focusing Iris in their bags</mat-list-item>
-         </mat-list>
-      </mat-expansion-panel>
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-description>
-            Malygos
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <mat-list>
-          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Flame Spike (Dragon ability) damage doubled</mat-list-item>
-         </mat-list>
-      </mat-expansion-panel>
-    </mat-accordion>
-  </ng-template>
+    </mat-tab>
+    <mat-tab label="25-man">
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              Malygos
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item>
+              <mat-icon matListIcon>horizontal_rule</mat-icon>During Vortex all healing received is reduced by 90%
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon matListIcon>horizontal_rule</mat-icon>Each portal in Phase 1 has a chance of spawning a
+              Corrupt Power Spark
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon matListIcon>horizontal_rule</mat-icon>Corrupt Power Spark will cast Arcane Barrage on the raid
+              when killed
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon matListIcon>horizontal_rule</mat-icon>Corrupt Power Spark will cast Power Spark on Malygos
+              when killed
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon matListIcon>horizontal_rule</mat-icon>Corrupt Power Spark will cast Spell Vulneribility on
+              Malygos when it reaches Malygos, increasing melee and spell damage taken by Malygos
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon matListIcon>horizontal_rule</mat-icon>During Phase 2 Azure Captains will spawn and cast Arcane
+              Beam on an individual. If the person is on a Disk the disk will take the damage of the spell.
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon matListIcon>horizontal_rule</mat-icon>When inside a Static Field all healing is reduced by 50%
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon matListIcon>horizontal_rule</mat-icon>Delayed reinforcements increased to 30seconds
+            </mat-list-item>
+          </mat-list>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-tab>
+  </mat-tab-group>
+</ng-template>
