@@ -24,6 +24,9 @@ export class StoreService extends BaseHttpClient {
       case CharacterService.RaceChange: {
         return this._httpClient.post<boolean>(`${environment.apiUrl}/store/racechange/${characterName}`, {});
       }
+      case CharacterService.CharacterBoost: {
+        return this._httpClient.post<boolean>(`${environment.apiUrl}/store/characterboost/${characterName}`, {});
+      }
       default:
         return of(false);
     }

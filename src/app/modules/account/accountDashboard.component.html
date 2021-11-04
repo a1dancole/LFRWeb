@@ -35,6 +35,14 @@
       </mat-card>
     </mat-grid-tile>
     <mat-grid-tile>
+      <mat-card matRipple class="account-dashboard-card disabled">
+        <mat-card-header>
+          <mat-card-title>Character Boost</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="../../../assets/images/character_boost.jpg" class="account-dashboard-image">
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
       <mat-card matRipple class="account-dashboard-card" [routerLink]="['/account/changefaction']">
         <mat-card-header>
           <mat-card-title>Faction Change</mat-card-title>
@@ -108,6 +116,18 @@
           </mat-grid-tile>
           <mat-grid-tile colspan="1">
             <h3><b>Gold</b></h3>
+          </mat-grid-tile>
+        </mat-grid-list>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="account-dashboard-card mobile disabled">
+        <mat-grid-list cols="3" rowHeight="20vh" gutterSize="1vw">
+          <mat-grid-tile colspan="2">
+            <img mat-card-image src="../../../assets/images/character_boost.jpg" class="account-dashboard-image mobile gold">
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1">
+            <h3><b>Character Boost</b></h3>
           </mat-grid-tile>
         </mat-grid-list>
         </mat-card>

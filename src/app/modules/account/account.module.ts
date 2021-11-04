@@ -15,6 +15,7 @@ import { PaypalDialogComponent } from './store/paypal-dialog/paypal-dialog.compo
 import { StoreComponent } from './store/store.component';
 import { StoreService } from './store/store.service';
 import { UnstuckComponent } from './unstuck/unstuck.component';
+import { CharacterBoostComponent } from './character-boost/character-boost.component'
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { UnstuckComponent } from './unstuck/unstuck.component';
     ChangeFactionComponent,
     ChangeRaceComponent,
     GoldComponent,
-    GoldPaypalDialog
+    GoldPaypalDialog,
+    CharacterBoostComponent
   ],
   providers: [AccountService, StoreService],
   imports: [SharedModule, RouterModule, NgxPayPalModule],

@@ -8,5 +8,6 @@ export interface GenericPaypalDialogData {
 export enum CharacterService {
   NameChange = 1,
   RaceChange = 2,
-  FactionChange = 3
+  FactionChange = 3,
+  CharacterBoost = 4
 }
