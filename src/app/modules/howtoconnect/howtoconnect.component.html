@@ -8,8 +8,7 @@
     <mat-horizontal-stepper>
       <mat-step label="Download the client " state="phone">
         <mat-list>
-          <a class="no-decoration" mat-list-item href="https://wow.gamefreedom.net/WoW-WotLK-(Classic-Textures).7z"
-            target="_blank">
+          <a class="no-decoration clickable" mat-list-item (click)="downloadClient()">
             <mat-icon>download</mat-icon>&nbsp;&nbsp;Download the client from here
           </a>
           <a class="no-decoration" mat-list-item href="https://www.7-zip.org/a/7z1900-x64.exe" target="_blank">
