@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
+import { WikiClassesDeathknightComponent } from './classes/deathknight/wiki-classes-deathknight.component';
 import { WikiClassesDruidComponent } from './classes/druid/wiki-classes-druid.component';
 import { WikiClassesHunterComponent } from './classes/hunter/wiki-classes-hunter.component';
 import { WikiClassesMageComponent } from './classes/mage/wiki-classes-mage.component';
@@ -8,6 +9,7 @@ import { WikiClassesPaladinComponent } from './classes/paladin/wiki-classes-pala
 import { WikiClassesPriestComponent } from './classes/priest/wiki-classes-priest.component';
 import { WikiClassesShamanComponent } from './classes/shaman/wiki-classes-shaman.component';
 import { WikiClassesWarlockComponent } from './classes/warlock/wiki-classes-warlock.component';
+import { WikiClassesWarriorComponent } from './classes/warrior/wiki-classes-warrior.component';
 import { WikiClassesComponent } from './classes/wiki-classes.component';
 import { WikiGeneralComponent } from './general/wiki-general.component';
 import { WikiEyeOfEternityComponent } from './raids/eye-of-eternity/wiki-eye-of-eternity.component';
@@ -33,7 +35,9 @@ import { WikiComponent } from './wiki.component';
     WikiClassesPaladinComponent,
     WikiClassesPriestComponent,
     WikiClassesShamanComponent,
-    WikiClassesWarlockComponent
+    WikiClassesWarlockComponent,
+    WikiClassesWarriorComponent,
+    WikiClassesDeathknightComponent
   ],
   providers: [],
   imports: [SharedModule, RouterModule],

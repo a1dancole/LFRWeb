@@ -24,6 +24,7 @@ import { ServerStatusComponent } from './modules/serverstatus/serverstatus.compo
 import { UserGuard } from './modules/shared/guards/user.guard';
 import { StreamComponent } from './modules/stream/stream.component';
 import { UnderConstructionComponent } from './modules/underconstruction/underconstruction.component';
+import { WikiClassesDeathknightComponent } from './modules/wiki/classes/deathknight/wiki-classes-deathknight.component';
 import { WikiClassesDruidComponent } from './modules/wiki/classes/druid/wiki-classes-druid.component';
 import { WikiClassesHunterComponent } from './modules/wiki/classes/hunter/wiki-classes-hunter.component';
 import { WikiClassesMageComponent } from './modules/wiki/classes/mage/wiki-classes-mage.component';
@@ -31,6 +32,7 @@ import { WikiClassesPaladinComponent } from './modules/wiki/classes/paladin/wiki
 import { WikiClassesPriestComponent } from './modules/wiki/classes/priest/wiki-classes-priest.component';
 import { WikiClassesShamanComponent } from './modules/wiki/classes/shaman/wiki-classes-shaman.component';
 import { WikiClassesWarlockComponent } from './modules/wiki/classes/warlock/wiki-classes-warlock.component';
+import { WikiClassesWarriorComponent } from './modules/wiki/classes/warrior/wiki-classes-warrior.component';
 import { WikiClassesComponent } from './modules/wiki/classes/wiki-classes.component';
 import { WikiGeneralComponent } from './modules/wiki/general/wiki-general.component';
 import { WikiEyeOfEternityComponent } from './modules/wiki/raids/eye-of-eternity/wiki-eye-of-eternity.component';
@@ -75,6 +77,8 @@ const routes: Routes = [
   { path: 'wiki/classes/warlock', component: WikiClassesWarlockComponent },
   { path: 'wiki/classes/druid', component: WikiClassesDruidComponent },
   { path: 'wiki/classes/shaman', component: WikiClassesShamanComponent },
+  { path: 'wiki/classes/warrior', component: WikiClassesWarriorComponent },
+  { path: 'wiki/classes/deathknight', component: WikiClassesDeathknightComponent },
   { path: 'analytics', component: AnalyticsComponent },
   { path: 'analytics/raids', component: RaidsComponent },
   { path: 'analytics/server', component: ServerComponent },

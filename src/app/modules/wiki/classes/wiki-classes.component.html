@@ -58,7 +58,25 @@
         <img mat-card-image src="../../../../assets/images/warlock.jpg" class="wiki-classes-image">
       </mat-card>
     </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="wiki-classes-card" [routerLink]="['/wiki/classes/warrior']">
+        <mat-card-header>
+          <mat-card-title>Warrior</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="../../../../assets/images/warrior.jpg" class="wiki-classes-image">
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="wiki-classes-card" [routerLink]="['/wiki/classes/deathknight']">
+        <mat-card-header>
+          <mat-card-title>Death Knight</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="../../../../assets/images/deathknight.jpg" class="wiki-classes-image">
+      </mat-card>
+    </mat-grid-tile>
   </mat-grid-list>
+  <br />
+  <br />
 </div>
 <ng-template #mobile>
   <br />
@@ -147,5 +165,30 @@
         </mat-grid-list>
       </mat-card>
     </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="wiki-classes-card mobile" [routerLink]="['/wiki/classes/warrior']">
+        <mat-grid-list cols="3" rowHeight="20vh" gutterSize="1vw">
+          <mat-grid-tile colspan="2">
+            <img mat-card-image src="../../../../assets/images/warrior.jpg" class="wiki-classes-image mobile warrior">
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1">
+            <h3><b>Warrior</b></h3>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="wiki-classes-card mobile" [routerLink]="['/wiki/classes/deathknight']">
+        <mat-grid-list cols="3" rowHeight="20vh" gutterSize="1vw">
+          <mat-grid-tile colspan="2">
+            <img mat-card-image src="../../../../assets/images/deathknight.jpg" class="wiki-classes-image mobile warrior">
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1">
+            <h3><b>Death Knight</b></h3>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card>
+    </mat-grid-tile>
   </mat-grid-list>
+  <br />
 </ng-template>
