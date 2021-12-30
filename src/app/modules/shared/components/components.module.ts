@@ -22,6 +22,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { YouTubePlayerModule } from '@angular/youtube-player';
+import { VideoPlayerDialogComponent } from './video-player-dialog/video-player-dialog.component';
 
 const globalRippleConfig: RippleGlobalOptions = {
   disabled: false,
@@ -53,9 +55,10 @@ const globalRippleConfig: RippleGlobalOptions = {
     CommonModule,
     FormsModule,
     MatSelectModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    YouTubePlayerModule
   ],
-  declarations: [ToolbarComponent, SideMenuComponent],
+  declarations: [ToolbarComponent, SideMenuComponent, VideoPlayerDialogComponent],
   providers: [
     {provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig}
   ],
@@ -81,7 +84,8 @@ const globalRippleConfig: RippleGlobalOptions = {
     CommonModule,
     FormsModule,
     MatSelectModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    YouTubePlayerModule
   ],
 })
 export class ComponentsModule {}

@@ -1,99 +1,8 @@
 <div *ngIf="isDesktop();else mobile">
-<br />
-<mat-grid-list cols="3" rowHeight="50vh">
-  <mat-grid-tile>
-    <mat-card class="home-card">
-      <mat-card-header class="home-card-header">
-        <mat-card-title class="home-card-title">
-          <h1><b>High Rates</b></h1>
-        </mat-card-title>
-      </mat-card-header>
-      <img mat-card-image src="../../../assets/images/dwarf_levelup.jpg" class="home-card-image">
-      <mat-card-content>
-        <dl>
-          <dt>Instant 80</dt>
-          <dt>Instant 375 Professions</dt>
-          <dt>Instant Friendly with key Northrend reputations</dt>
-          <dt>Start with Northrend reputation tabards</dt>
-          <dt>Reduced Raid Lockouts</dt>
-        </dl>
-      </mat-card-content>
-    </mat-card>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <mat-card class="home-card">
-      <mat-card-header>
-        <mat-card-title class="home-card-title">
-          <h1><b>5-Man Content</b></h1>
-        </mat-card-title>
-      </mat-card-header>
-      <img mat-card-image src="../../../assets/images/group_of_players.jpg" class="home-card-image">
-      <mat-card-content>
-        <p>
-          We're spending our time scaling and scripting every raid to be doable by 5 players. Enjoy developing your
-          characters and progressing through challenging content without the hassle of large groups.
-        </p>
-        <p>
-          25man difficulty is our idea of Challenge Mode, scaled for a challenge with additional mechanics added to
-          suite the theme of the fights.
-        </p>
-      </mat-card-content>
-    </mat-card>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <mat-card class="home-card">
-      <mat-card-header>
-        <mat-card-title class="home-card-title">
-          <h1><b>Progressive</b></h1>
-        </mat-card-title>
-      </mat-card-header>
-      <img mat-card-image src="../../../assets/images/ulduar_combat.jpg" class="home-card-image">
-      <mat-card-content>
-        <p>
-          We've rolled back the years, enjoy Wrath of the Lich King the way it was supposed to be. We've added
-          attunements and removed the catchup mechanics of Emblems of Triumph's from heroics so you can progress from
-          the start.
-        </p>
-      </mat-card-content>
-    </mat-card>
-  </mat-grid-tile>
-</mat-grid-list>
-<mat-grid-list cols="3" rowHeight="15vh">
-  <mat-grid-tile class="home-tile-small">
-    <mat-card class="home-card-small">
-      <mat-card-content>
-        <div class="home-card-small-content" [routerLink]="['/register']">
-          <img src="../../../assets/images/register-logo.png" class="logo">
-          <span class="home-card-small-text"><b>Register</b></span>
-        </div>
-      </mat-card-content>
-    </mat-card>
-  </mat-grid-tile>
-  <mat-grid-tile class="home-tile-small">
-    <mat-card class="home-card-small">
-      <mat-card-content>
-        <div class="home-card-small-content" (click)="downloadClient()">
-          <img src="../../../assets/images/download-logo.png" class="logo">
-          <span class="home-card-small-text"><b>Download</b></span>
-        </div>
-      </mat-card-content>
-    </mat-card>
-  </mat-grid-tile>
-  <mat-grid-tile class="home-tile-small">
-    <mat-card class="home-card-small">
-      <mat-card-content>
-        <div class="home-card-small-content" (click)="openDiscordUrl()">
-          <img src="../../../assets/images/discord-logo.png" class="logo">
-          <span class="home-card-small-text"><b>Discord</b></span>
-        </div>
-      </mat-card-content>
-    </mat-card>
-  </mat-grid-tile>
-</mat-grid-list>
-</div>
-<ng-template #mobile>
   <br />
-      <mat-card class="home-card mobile">
+  <mat-grid-list cols="3" rowHeight="50vh">
+    <mat-grid-tile>
+      <mat-card class="home-card">
         <mat-card-header class="home-card-header">
           <mat-card-title class="home-card-title">
             <h1><b>High Rates</b></h1>
@@ -110,7 +19,9 @@
           </dl>
         </mat-card-content>
       </mat-card>
-      <mat-card class="home-card mobile">
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card class="home-card">
         <mat-card-header>
           <mat-card-title class="home-card-title">
             <h1><b>5-Man Content</b></h1>
@@ -128,7 +39,9 @@
           </p>
         </mat-card-content>
       </mat-card>
-      <mat-card class="home-card mobile">
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card class="home-card">
         <mat-card-header>
           <mat-card-title class="home-card-title">
             <h1><b>Progressive</b></h1>
@@ -143,7 +56,11 @@
           </p>
         </mat-card-content>
       </mat-card>
-      <mat-card class="home-card-small mobile">
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-grid-list cols="3" rowHeight="10vh">
+    <mat-grid-tile class="home-tile-small">
+      <mat-card class="home-card-small">
         <mat-card-content>
           <div class="home-card-small-content" [routerLink]="['/register']">
             <img src="../../../assets/images/register-logo.png" class="logo">
@@ -151,15 +68,19 @@
           </div>
         </mat-card-content>
       </mat-card>
-      <!-- <mat-card class="home-card-small mobile">
+    </mat-grid-tile>
+    <mat-grid-tile class="home-tile-small">
+      <mat-card class="home-card-small">
         <mat-card-content>
           <div class="home-card-small-content" (click)="downloadClient()">
-            <img src="../../../assets/images/download_logo.png" class="download-logo">
+            <img src="../../../assets/images/download-logo.png" class="logo">
             <span class="home-card-small-text"><b>Download</b></span>
           </div>
         </mat-card-content>
-      </mat-card> -->
-      <mat-card class="home-card-small mobile">
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile class="home-tile-small">
+      <mat-card class="home-card-small">
         <mat-card-content>
           <div class="home-card-small-content" (click)="openDiscordUrl()">
             <img src="../../../assets/images/discord-logo.png" class="logo">
@@ -167,5 +88,124 @@
           </div>
         </mat-card-content>
       </mat-card>
-      <br />
+    </mat-grid-tile>
+  </mat-grid-list>
+  <br />
+  <mat-grid-list cols="8" rowHeight="20vh">
+    <mat-grid-tile [colspan]="2">
+      <mat-card class="home-card-video" (click)="playVideo('BrlA2lZOTks', 'Sartharion Heroic +3 Drakes')" style="background-image: url('../../../assets/images/sartharion.jpg');background-size: cover;">
+        <mat-card-content>
+          <div class="home-card-video-content">
+            <img src="../../../assets/images/youtube-play.png" class="logo youtube">
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="2">
+      <mat-card class="home-card-video" (click)="playVideo('rmmef6k6Fd0', 'Kel`thuzad Heroic')" style="background-image: url('../../../assets/images/kelthuzad.jpg');background-size: cover;">
+        <mat-card-content>
+          <div class="home-card-video-content">
+            <img src="../../../assets/images/youtube-play.png" class="logo youtube">
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="2">
+      <mat-card class="home-card-video" (click)="playVideo('G8bhl0h1LMI', 'Malygos Heroic')" style="background-image: url('../../../assets/images/malygos.jpg');background-size: cover;">
+        <mat-card-content>
+          <div class="home-card-video-content">
+            <img src="../../../assets/images/youtube-play.png" class="logo youtube">
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="2">
+      <mat-card class="home-card-video" (click)="playVideo('kPkmtDe473w', 'Four Horseman Heroic')" style="background-image: url('../../../assets/images/fourhorseman.jpg');background-size: cover;">
+        <mat-card-content>
+          <div class="home-card-video-content">
+            <img src="../../../assets/images/youtube-play.png" class="logo youtube">
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+<br />
+</div>
+<ng-template #mobile>
+  <br />
+  <mat-card class="home-card mobile">
+    <mat-card-header class="home-card-header">
+      <mat-card-title class="home-card-title">
+        <h1><b>High Rates</b></h1>
+      </mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="../../../assets/images/dwarf_levelup.jpg" class="home-card-image">
+    <mat-card-content>
+      <dl>
+        <dt>Instant 80</dt>
+        <dt>Instant 375 Professions</dt>
+        <dt>Instant Friendly with key Northrend reputations</dt>
+        <dt>Start with Northrend reputation tabards</dt>
+        <dt>Reduced Raid Lockouts</dt>
+      </dl>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="home-card mobile">
+    <mat-card-header>
+      <mat-card-title class="home-card-title">
+        <h1><b>5-Man Content</b></h1>
+      </mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="../../../assets/images/group_of_players.jpg" class="home-card-image">
+    <mat-card-content>
+      <p>
+        We're spending our time scaling and scripting every raid to be doable by 5 players. Enjoy developing your
+        characters and progressing through challenging content without the hassle of large groups.
+      </p>
+      <p>
+        25man difficulty is our idea of Challenge Mode, scaled for a challenge with additional mechanics added to
+        suite the theme of the fights.
+      </p>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="home-card mobile">
+    <mat-card-header>
+      <mat-card-title class="home-card-title">
+        <h1><b>Progressive</b></h1>
+      </mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="../../../assets/images/ulduar_combat.jpg" class="home-card-image">
+    <mat-card-content>
+      <p>
+        We've rolled back the years, enjoy Wrath of the Lich King the way it was supposed to be. We've added
+        attunements and removed the catchup mechanics of Emblems of Triumph's from heroics so you can progress from
+        the start.
+      </p>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="home-card-small mobile">
+    <mat-card-content>
+      <div class="home-card-small-content" [routerLink]="['/register']">
+        <img src="../../../assets/images/register-logo.png" class="logo">
+        <span class="home-card-small-text"><b>Register</b></span>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <!-- <mat-card class="home-card-small mobile">
+        <mat-card-content>
+          <div class="home-card-small-content" (click)="downloadClient()">
+            <img src="../../../assets/images/download_logo.png" class="download-logo">
+            <span class="home-card-small-text"><b>Download</b></span>
+          </div>
+        </mat-card-content>
+      </mat-card> -->
+  <mat-card class="home-card-small mobile">
+    <mat-card-content>
+      <div class="home-card-small-content" (click)="openDiscordUrl()">
+        <img src="../../../assets/images/discord-logo.png" class="logo">
+        <span class="home-card-small-text"><b>Discord</b></span>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <br />
 </ng-template>

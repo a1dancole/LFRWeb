@@ -1,0 +1,13 @@
+<div *ngIf="isDesktop(); else mobile">
+<h2 mat-dialog-title>{{data.videoName}}</h2>
+<mat-dialog-content class="mat-typography" style="height:60vh;width:75vw;">
+  <div class="flex flex-col flex-auto w-full h-full xs:p-2" style="margin: 0 auto">
+    <youtube-player [height]="videoHeight" [width]="videoWidth" [videoId]="data.videoId" suggestedQuality="hd1080"></youtube-player>
+  </div>
+</mat-dialog-content>
+</div>
+<ng-template #mobile>
+  <h2 mat-dialog-title>Checkout</h2>
+<mat-dialog-content class="mat-typography">
+</mat-dialog-content>
+</ng-template>
