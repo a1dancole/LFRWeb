@@ -85,7 +85,7 @@ export class StoreComponent implements OnInit {
       return;
     }
 
-    if(this.cart.length > 0 && this.cart.reduce((sum, x) => sum + x.cost, 0) == 0) {
+    if(this.cart.length > 0 && (this.cart.reduce((sum, x) => sum + x.cost, 0) == 0 || this.userProfile?.isContributor)) {
       let authorizedOrder: AuthorizedOrder = {
         characterName: this.selectedCharacter.name,
         items: this.cart,
@@ -97,7 +97,6 @@ export class StoreComponent implements OnInit {
           duration: 2000,
         })
       }, (error: any) => {
-        console.log(error);
         this._snackBar.open(`${error.error.detail}`, undefined, { duration: 2000 })
       }).add(() => {
         this.resetCart();

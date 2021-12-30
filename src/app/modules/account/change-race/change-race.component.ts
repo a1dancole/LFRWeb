@@ -9,6 +9,7 @@ import {
   GenericPaypalDialogData,
 } from '../generic-paypal-dialog/generic-paypal-dialog-data';
 import { GenericPaypalDialogComponent } from '../generic-paypal-dialog/generic-paypal-dialog.component';
+import { StoreService } from '../store/store.service';
 
 @Component({
   styleUrls: ['./change-race.component.scss'],
@@ -21,7 +22,8 @@ export class ChangeRaceComponent implements OnInit {
   constructor(
     private _userCookieService: UserCookieService,
     private _snackBar: MatSnackBar,
-    private _dialog: MatDialog
+    private _dialog: MatDialog,
+    private _storeService: StoreService
   ) {}
 
   ngOnInit() {
@@ -37,20 +39,30 @@ export class ChangeRaceComponent implements OnInit {
       return;
     }
 
-    let paypalDialogData: GenericPaypalDialogData = {
-      character: this.selectedCharacter.name,
-      itemCost: 5,
-      itemName: 'Character Race Change',
-      characterService: CharacterService.RaceChange,
-    };
+    if(this.userProfile?.isContributor) {
+      this._storeService.processCharacterService(this.selectedCharacter.name, CharacterService.RaceChange).subscribe(response => {
+        this._snackBar.open(`Order processed`, undefined, {
+          duration: 2000,
+        })
+      }, (error: any) => {
+        this._snackBar.open(`${error.error.detail}`, undefined, { duration: 2000 })
+      });
+    } else {
+      let paypalDialogData: GenericPaypalDialogData = {
+        character: this.selectedCharacter.name,
+        itemCost: 5,
+        itemName: 'Character Race Change',
+        characterService: CharacterService.RaceChange,
+      };
 
-    const dialogRef = this._dialog
-      .open(GenericPaypalDialogComponent, {
-        data: paypalDialogData,
-        disableClose: true,
-      })
-      .afterClosed()
-      .subscribe((success: boolean) => {});
+      const dialogRef = this._dialog
+        .open(GenericPaypalDialogComponent, {
+          data: paypalDialogData,
+          disableClose: true,
+        })
+        .afterClosed()
+        .subscribe((success: boolean) => {});
+    }
   }
 
   public isDesktop(): boolean {

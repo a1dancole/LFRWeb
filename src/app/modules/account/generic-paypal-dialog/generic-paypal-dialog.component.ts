@@ -13,7 +13,7 @@ import { environment } from 'src/environments/environment';
 export class GenericPaypalDialogComponent {
   public payPalConfig?: IPayPalConfig;
 
-  constructor(@Inject(MAT_DIALOG_DATA)private _data: GenericPaypalDialogData, private _dialogRef: MatDialogRef<GenericPaypalDialogComponent>, private _storeService: StoreService, private _snackBar: MatSnackBar) {
+  constructor(@Inject(MAT_DIALOG_DATA)public data: GenericPaypalDialogData, private _dialogRef: MatDialogRef<GenericPaypalDialogComponent>, private _storeService: StoreService, private _snackBar: MatSnackBar) {
     this.payPalConfig = this.buildPaypalConfig();
   }
 
@@ -30,16 +30,16 @@ export class GenericPaypalDialogComponent {
           purchase_units: [{
               amount: {
                   currency_code: 'GBP',
-                  value: this._data.itemCost.toString(),
+                  value: this.data.itemCost.toString(),
                   breakdown: {
                       item_total: {
                           currency_code: 'GBP',
-                          value: this._data.itemCost.toString()
+                          value: this.data.itemCost.toString()
                       }
                   }
               },
               items: [
-                {name: this._data.itemName, quantity: '1', category: 'DIGITAL_GOODS',unit_amount: {currency_code: 'GBP', value: this._data.itemCost.toString()}}
+                {name: this.data.itemName, quantity: '1', category: 'DIGITAL_GOODS',unit_amount: {currency_code: 'GBP', value: this.data.itemCost.toString()}}
               ]
           }]
       },
@@ -51,7 +51,7 @@ export class GenericPaypalDialogComponent {
           layout: 'vertical'
       },
       onClientAuthorization: (data) => {
-        this._storeService.processCharacterService(this._data.character, this._data.characterService).subscribe(response => {
+        this._storeService.processCharacterService(this.data.character, this.data.characterService).subscribe(response => {
           this._snackBar.open(`Order processed`, undefined, {
             duration: 2000,
           })

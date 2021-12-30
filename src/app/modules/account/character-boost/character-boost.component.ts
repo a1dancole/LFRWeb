@@ -6,6 +6,7 @@ import { UserProfile } from "../../shared/models/userprofile";
 import { UserCookieService } from "../../shared/services/userCookie.service";
 import { CharacterService, GenericPaypalDialogData } from "../generic-paypal-dialog/generic-paypal-dialog-data";
 import { GenericPaypalDialogComponent } from "../generic-paypal-dialog/generic-paypal-dialog.component";
+import { StoreService } from "../store/store.service";
 
 @Component({
   styleUrls: ['./character-boost.component.scss'],
@@ -17,7 +18,7 @@ export class CharacterBoostComponent implements OnInit {
   public userProfile!: UserProfile | undefined
   public selectedCharacter!: Character;
 
-  constructor(private _userCookieService: UserCookieService, private _snackBar: MatSnackBar, private _dialog: MatDialog) { }
+  constructor(private _userCookieService: UserCookieService, private _snackBar: MatSnackBar, private _dialog: MatDialog, private _storeService: StoreService) { }
 
   ngOnInit() {
     this.userProfile = this._userCookieService.getLoggedInUser();
@@ -32,13 +33,23 @@ export class CharacterBoostComponent implements OnInit {
       return;
     }
 
-    let paypalDialogData: GenericPaypalDialogData = {character: this.selectedCharacter.name, itemCost: 10, itemName: 'Character Boost', characterService: CharacterService.CharacterBoost };
+    if(this.userProfile?.isContributor) {
+      this._storeService.processCharacterService(this.selectedCharacter.name, CharacterService.CharacterBoost).subscribe(response => {
+        this._snackBar.open(`Order processed`, undefined, {
+          duration: 2000,
+        })
+      }, (error: any) => {
+        this._snackBar.open(`${error.error.detail}`, undefined, { duration: 2000 })
+      });
+    } else {
+      let paypalDialogData: GenericPaypalDialogData = {character: this.selectedCharacter.name, itemCost: 10, itemName: 'Character Boost', characterService: CharacterService.CharacterBoost };
 
-    const dialogRef = this._dialog.open(GenericPaypalDialogComponent, {
-      data: paypalDialogData,
-      disableClose: true
-    }).afterClosed().subscribe((success: boolean) => {
-    })
+      const dialogRef = this._dialog.open(GenericPaypalDialogComponent, {
+        data: paypalDialogData,
+        disableClose: true
+      }).afterClosed().subscribe((success: boolean) => {
+      })
+    }
   }
 
   public isDesktop(): boolean {
