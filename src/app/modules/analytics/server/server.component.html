@@ -1,21 +1,59 @@
 <div *ngIf="isDesktop();else mobile" class="server-desktop-container">
   <br />
   <br />
-  <mat-grid-list cols="3" rowHeight="fit" class="server-grid" gutterSize="1%">
-    <mat-grid-tile *ngFor="let tileUri of tileUris">
-      <mat-card class="server-card">
-        <iframe [src]="tileUri | safe" scrolling="no"></iframe>
+  <mat-grid-list cols="2" rowHeight="40vh" class="server-grid" gutterSize="3%">
+    <mat-grid-tile [colspan]="2">
+
+      <mat-card matRipple class="server-card" [routerLink]="['/analytics/raids']">
+        <mat-card-header>
+          <mat-card-title>Active Players (past 30days)</mat-card-title>
+          <mat-card-subtitle>These figures are calculated based on activity performed on the server, if a player logs in and does not complete any content they do not count as an active player</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content class="server-card-content">
+          <div style="height:70%;width:100%">
+            <ngx-charts-line-chart [results]="activePlayers" [xAxis]="true" [yAxis]="true" [animations]="true" [legend]="false" style="fill: #ffffff;">
+            </ngx-charts-line-chart>
+          </div>
+        </mat-card-content>
       </mat-card>
     </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="server-card disabled">
+        <mat-card-header>
+          <mat-card-title>Class breakdown</mat-card-title>
+          <mat-card-subtitle>These figures are based on players who have performed at least one endgame activity on the server. Bank alts, gathering alts, name reserves etc are not included</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content class="server-card-content">
+          <div style="height:90%;width:100%">
+            <ngx-charts-bar-horizontal
+            [results]="classBreakdown"
+            [animations]="true"
+            [yAxis]="true"
+            style="fill: #ffffff;"
+            >
+          </ngx-charts-bar-horizontal>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <!-- <mat-grid-tile>
+      <mat-card matRipple class="server-card disabled">
+        <mat-card-header>
+          <mat-card-title>Other Breakdowns</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="server-card-content">
+          <div style="height:30%;width:100%">
+            <ngx-charts-number-card
+            [results]="cdata"
+            [animations]="true"
+            style="fill: #ffffff;">
+          </ngx-charts-number-card>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile> -->
   </mat-grid-list>
 </div>
 <ng-template #mobile>
-  <br />
-  <mat-grid-list cols="1" rowHeight="fit" class="server-grid mobile" gutterSize="1%">
-    <mat-grid-tile *ngFor="let tileUri of tileUris">
-      <mat-card class="server-card mobile">
-        <iframe [src]="tileUri | safe"></iframe>
-      </mat-card>
-    </mat-grid-tile>
-  </mat-grid-list>
+
 </ng-template>

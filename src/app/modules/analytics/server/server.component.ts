@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { AnalyticsService } from "../analytics.service";
+import { ActivePlayers } from "../models/activePlayers";
+import { ClassBreakdown } from "../models/classBreakdown";
 
 @Component({
   styleUrls: ['./server.component.scss'],
@@ -6,17 +9,43 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServerComponent implements OnInit {
 
-  public tileUris: string[] = [
-    'https://chart-embed.service.eu.newrelic.com/herald/b1ca5089-d995-4511-84d1-8187ca98f53c?height=300px&timepicker=false',
-    'https://chart-embed.service.eu.newrelic.com/herald/a9a01ca9-436b-4232-a988-6ed21a987ec7?height=300px&timepicker=false',
-    'https://chart-embed.service.eu.newrelic.com/herald/d6e02fa1-392d-43b5-8e37-79ec03709a3d?height=300px&timepicker=false',
-    'https://chart-embed.service.eu.newrelic.com/herald/fe098ed9-41f4-4d79-a575-dcd5d043b78c?height=300px&timepicker=false',
-    'https://chart-embed.service.eu.newrelic.com/herald/5356b8f5-5ec9-4265-b127-a356c3ac7099?height=300px&timepicker=false',
+  public activePlayers: ActivePlayers[] | undefined;
+  public classBreakdown: ClassBreakdown[] | undefined;
+  public cdata = [
+    {
+      "name": "Accounts",
+      "value": 456
+    },
+    {
+      "name": "Characters",
+      "value": 700
+    },
+    {
+      "name": "Guilds",
+      "value": 12
+    },
+    {
+      "name": "Boss Kills",
+      "value": 2500
+    },
+    {
+      "name": "Pvp Kills",
+      "value": 8000
+    },
+    {
+      "name": "Achievements",
+      "value": 10500
+    }
   ];
 
-  constructor() {}
-
+  constructor(private _analyticsService: AnalyticsService) {}
   ngOnInit(): void {
+    this._analyticsService.getActivePlayers().subscribe(response => {
+      this.activePlayers = response;
+    });
+    this._analyticsService.getClassBreakdown().subscribe(response => {
+      this.classBreakdown= response;
+    })
   }
 
   public isDesktop(): boolean {

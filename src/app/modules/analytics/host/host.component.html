@@ -1,0 +1,21 @@
+<div *ngIf="isDesktop();else mobile" class="server-desktop-container">
+  <br />
+  <br />
+  <mat-grid-list cols="3" rowHeight="fit" class="server-grid" gutterSize="1%">
+    <mat-grid-tile *ngFor="let tileUri of tileUris">
+      <mat-card class="server-card">
+        <iframe [src]="tileUri | safe" scrolling="no"></iframe>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+<ng-template #mobile>
+  <br />
+  <mat-grid-list cols="1" rowHeight="fit" class="server-grid mobile" gutterSize="1%">
+    <mat-grid-tile *ngFor="let tileUri of tileUris">
+      <mat-card class="server-card mobile">
+        <iframe [src]="tileUri | safe"></iframe>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</ng-template>

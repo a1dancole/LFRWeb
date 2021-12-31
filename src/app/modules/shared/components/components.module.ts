@@ -24,6 +24,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { VideoPlayerDialogComponent } from './video-player-dialog/video-player-dialog.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 const globalRippleConfig: RippleGlobalOptions = {
   disabled: false,
@@ -56,7 +57,8 @@ const globalRippleConfig: RippleGlobalOptions = {
     FormsModule,
     MatSelectModule,
     MatPaginatorModule,
-    YouTubePlayerModule
+    YouTubePlayerModule,
+    NgxChartsModule
   ],
   declarations: [ToolbarComponent, SideMenuComponent, VideoPlayerDialogComponent],
   providers: [
@@ -85,7 +87,8 @@ const globalRippleConfig: RippleGlobalOptions = {
     FormsModule,
     MatSelectModule,
     MatPaginatorModule,
-    YouTubePlayerModule
+    YouTubePlayerModule,
+    NgxChartsModule
   ],
 })
 export class ComponentsModule {}

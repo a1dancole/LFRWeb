@@ -1,0 +1,31 @@
+.server-card {
+  height: 35vh;
+  width: 100%;
+  background: linear-gradient(to bottom, #fff -50%, #272727);
+}
+
+.server-card.mobile {
+  height:auto;
+  width:90vw;
+  border:10px;
+  border-radius:25%;
+  height: 35vh;
+}
+
+.server-grid {
+  height: 80%;
+}
+
+.server-desktop-container {
+  height:100vh;
+}
+
+.embedded-widget {
+  background-color: black !important;
+}
+
+iframe {
+  height: 310px;
+  border: 0;
+  width:100%;
+}

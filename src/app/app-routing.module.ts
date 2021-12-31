@@ -10,6 +10,7 @@ import { GoldComponent } from './modules/account/gold/gold.component';
 import { StoreComponent } from './modules/account/store/store.component';
 import { UnstuckComponent } from './modules/account/unstuck/unstuck.component';
 import { AnalyticsComponent } from './modules/analytics/analytics.component';
+import { HostComponent } from './modules/analytics/host/host.component';
 import { RaidsComponent } from './modules/analytics/raids/raids.component';
 import { ServerComponent } from './modules/analytics/server/server.component';
 import { LoginComponent } from './modules/authentication/login/login.component';
@@ -81,6 +82,7 @@ const routes: Routes = [
   { path: 'wiki/classes/deathknight', component: WikiClassesDeathknightComponent },
   { path: 'analytics', component: AnalyticsComponent },
   { path: 'analytics/raids', component: RaidsComponent },
+  { path: 'analytics/host', component: HostComponent },
   { path: 'analytics/server', component: ServerComponent },
   { path: 'leaderboards', component: LeaderboardsComponent }
 ];
