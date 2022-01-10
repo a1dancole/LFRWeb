@@ -24,8 +24,9 @@
           <mat-card-subtitle>These figures are based on players who have performed at least one endgame activity on the server. Bank alts, gathering alts, name reserves etc are not included</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content class="server-card-content">
-          <div style="height:90%;width:100%">
+          <div style="height:70%;width:100%" #barContainer>
             <ngx-charts-bar-horizontal
+            [view]="[barContainer.offsetWidth, barContainer.offsetHeight]"
             [results]="classBreakdown"
             [animations]="true"
             [yAxis]="true"
