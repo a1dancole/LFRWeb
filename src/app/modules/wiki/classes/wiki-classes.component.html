@@ -74,6 +74,14 @@
         <img mat-card-image src="../../../../assets/images/deathknight.jpg" class="wiki-classes-image">
       </mat-card>
     </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="wiki-classes-card" [routerLink]="['/wiki/classes/rogue']">
+        <mat-card-header>
+          <mat-card-title>Rogue</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="../../../../assets/images/rogue.jpg" class="wiki-classes-image">
+      </mat-card>
+    </mat-grid-tile>
   </mat-grid-list>
   <br />
   <br />
@@ -185,6 +193,18 @@
           </mat-grid-tile>
           <mat-grid-tile colspan="1">
             <h3><b>Death Knight</b></h3>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card matRipple class="wiki-classes-card mobile" [routerLink]="['/wiki/classes/rogue']">
+        <mat-grid-list cols="3" rowHeight="20vh" gutterSize="1vw">
+          <mat-grid-tile colspan="2">
+            <img mat-card-image src="../../../../assets/images/rogue.jpg" class="wiki-classes-image mobile warrior">
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1">
+            <h3><b>Rogue</b></h3>
           </mat-grid-tile>
         </mat-grid-list>
       </mat-card>

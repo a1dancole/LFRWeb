@@ -7,6 +7,7 @@ import { WikiClassesHunterComponent } from './classes/hunter/wiki-classes-hunter
 import { WikiClassesMageComponent } from './classes/mage/wiki-classes-mage.component';
 import { WikiClassesPaladinComponent } from './classes/paladin/wiki-classes-paladin.component';
 import { WikiClassesPriestComponent } from './classes/priest/wiki-classes-priest.component';
+import { WikiClassesRogueComponent } from './classes/rogue/wiki-classes-rogue.component';
 import { WikiClassesShamanComponent } from './classes/shaman/wiki-classes-shaman.component';
 import { WikiClassesWarlockComponent } from './classes/warlock/wiki-classes-warlock.component';
 import { WikiClassesWarriorComponent } from './classes/warrior/wiki-classes-warrior.component';
@@ -37,7 +38,8 @@ import { WikiComponent } from './wiki.component';
     WikiClassesShamanComponent,
     WikiClassesWarlockComponent,
     WikiClassesWarriorComponent,
-    WikiClassesDeathknightComponent
+    WikiClassesDeathknightComponent,
+    WikiClassesRogueComponent
   ],
   providers: [],
   imports: [SharedModule, RouterModule],

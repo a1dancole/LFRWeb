@@ -31,6 +31,7 @@ import { WikiClassesHunterComponent } from './modules/wiki/classes/hunter/wiki-c
 import { WikiClassesMageComponent } from './modules/wiki/classes/mage/wiki-classes-mage.component';
 import { WikiClassesPaladinComponent } from './modules/wiki/classes/paladin/wiki-classes-paladin.component';
 import { WikiClassesPriestComponent } from './modules/wiki/classes/priest/wiki-classes-priest.component';
+import { WikiClassesRogueComponent } from './modules/wiki/classes/rogue/wiki-classes-rogue.component';
 import { WikiClassesShamanComponent } from './modules/wiki/classes/shaman/wiki-classes-shaman.component';
 import { WikiClassesWarlockComponent } from './modules/wiki/classes/warlock/wiki-classes-warlock.component';
 import { WikiClassesWarriorComponent } from './modules/wiki/classes/warrior/wiki-classes-warrior.component';
@@ -80,6 +81,7 @@ const routes: Routes = [
   { path: 'wiki/classes/shaman', component: WikiClassesShamanComponent },
   { path: 'wiki/classes/warrior', component: WikiClassesWarriorComponent },
   { path: 'wiki/classes/deathknight', component: WikiClassesDeathknightComponent },
+  { path: 'wiki/classes/rogue', component: WikiClassesRogueComponent },
   { path: 'analytics', component: AnalyticsComponent },
   { path: 'analytics/raids', component: RaidsComponent },
   { path: 'analytics/host', component: HostComponent },
