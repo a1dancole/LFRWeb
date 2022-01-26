@@ -29,6 +29,14 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
+      <mat-form-field appearance="fill" class="raid-search-input">
+        <mat-label>Hard mode</mat-label>
+        <mat-select [(ngModel)]="hardMode" (ngModelChange)="loadData()">
+          <mat-option *ngFor="let value of booleanSelectList" [value]="value.value">
+            {{value.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
       <mat-grid-list cols="3" rowHeight="fit" class="leaderboards-grid" gutterSize="1vw">
         <mat-grid-tile *ngFor="let wing of topThree; let i = index">
           <mat-card class="leaderboards-card">

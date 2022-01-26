@@ -4,4 +4,5 @@ export interface QueryEncounter extends PaginationRequest {
   mapId: number;
   difficultyId: number;
   searchTerm: string;
+  hardMode: boolean;
 }

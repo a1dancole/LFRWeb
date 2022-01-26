@@ -1,4 +1,3 @@
-
 <div *ngIf="isDesktop();else mobile">
   <br />
   <mat-card>
@@ -26,6 +25,14 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
+      <mat-form-field appearance="fill" class="raid-search-input">
+        <mat-label>Hard mode</mat-label>
+        <mat-select [(ngModel)]="hardMode" (ngModelChange)="loadData()">
+          <mat-option *ngFor="let value of booleanSelectList" [value]="value.value">
+            {{value.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
       <mat-table [dataSource]="encounters" class="mat-elevation-z8">
         <ng-container matColumnDef="bossName">
           <mat-header-cell *matHeaderCellDef> Boss </mat-header-cell>
@@ -47,12 +54,14 @@
           <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
           <mat-cell *matCellDef="let element"> {{element.killDate | date:'d/M/yy'}} </mat-cell>
         </ng-container>
-        <mat-header-row *matHeaderRowDef="['bossName', 'wingName', 'guild', 'killTime', 'killDate']; sticky: true"></mat-header-row>
-        <mat-row matRipple *matRowDef="let row; columns: ['bossName', 'wingName', 'guild', 'killTime', 'killDate'];" (click)="loadGroup(row)"></mat-row>
+        <mat-header-row *matHeaderRowDef="['bossName', 'wingName', 'guild', 'killTime', 'killDate']; sticky: true">
+        </mat-header-row>
+        <mat-row matRipple *matRowDef="let row; columns: ['bossName', 'wingName', 'guild', 'killTime', 'killDate'];"
+          (click)="loadGroup(row)"></mat-row>
       </mat-table>
     </mat-card-content>
     <mat-paginator (page)="paginatorPaged($event)" [length]="length" [pageSize]="pageSize"></mat-paginator>
   </mat-card>
-  </div>
-  <ng-template #mobile>
-  </ng-template>
+</div>
+<ng-template #mobile>
+</ng-template>

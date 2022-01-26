@@ -8,6 +8,7 @@ import { RaidDifficulty } from '../analytics/models/raidDifficulty';
 import { Wing } from '../analytics/models/wing';
 import { WingSelectList } from '../analytics/models/wingSelectList';
 import { RaidGroupDialogComponent } from '../analytics/raids/raid-group-dialog/raid-group-dialog.component';
+import { BooleanSelectList } from '../shared/models/booleanSelectList';
 import { LeaderboardBottomsheetComponent } from './bottom-sheet/leaderboard-bottomsheet.component';
 
 @Component({
@@ -19,13 +20,11 @@ export class LeaderboardsComponent implements OnInit {
   public wings: Wing[] = [];
   public raids: Raid[] = [
     { mapId: 533, name: 'Naxxramas' },
+    { mapId: 615, name: 'Obsidian Sanctum' },
     { mapId: 616, name: 'Eye of Eternity' }
   ];
   //Default to Naxx
-  public selectedRaid: Raid = {
-    mapId: 533,
-    name: 'Naxxramas',
-  };
+  public selectedRaid: Raid = this.raids[0];
 
   public raidDifficulties: RaidDifficulty[] = [
     { id: 0, name: '10 Man' },
@@ -33,10 +32,7 @@ export class LeaderboardsComponent implements OnInit {
   ];
 
   //Default to 10-Man
-  public selectedDifficulty: RaidDifficulty = {
-    id: 0,
-    name: '10 Man',
-  };
+  public selectedDifficulty: RaidDifficulty = this.raidDifficulties[0];
 
   public wingsSelectList: WingSelectList[] = [
     { mapId: 533, name: 'The Arachnid Quarter' },
@@ -46,10 +42,14 @@ export class LeaderboardsComponent implements OnInit {
     { mapId: 533, name: 'The Upper Necropolis' },
   ];
 
-  public selectedWing: WingSelectList = {
-    mapId: 533,
-    name: 'The Arachnid Quarter',
-  };
+  public selectedWing: WingSelectList = this.wingsSelectList[0];
+
+  public booleanSelectList: BooleanSelectList[] = [
+    {name: 'Yes', value: true},
+    {name: 'No', value: false}
+  ];
+
+  public hardMode: boolean = false;
 
   constructor(
     private _analyticsService: AnalyticsService,
@@ -69,6 +69,7 @@ export class LeaderboardsComponent implements OnInit {
         map: this.selectedRaid.mapId,
         difficulty: this.selectedDifficulty.id,
         wing: this.doesRaidHaveWings() ? this.selectedWing.name : '',
+        hardMode: false
       })
       .subscribe((response) => {
         this.topThree = response;
@@ -79,6 +80,7 @@ export class LeaderboardsComponent implements OnInit {
         map: this.selectedRaid.mapId,
         difficulty: this.selectedDifficulty.id,
         wing: this.doesRaidHaveWings() ? this.selectedWing.name : '',
+        hardMode: this.hardMode
       })
       .subscribe((response) => {
         this.wings = response;

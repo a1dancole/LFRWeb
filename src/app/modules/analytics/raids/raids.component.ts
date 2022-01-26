@@ -5,6 +5,7 @@ import { Encounter } from '../models/encounter';
 import { Raid } from '../models/raid';
 import { RaidDifficulty } from '../models/raidDifficulty';
 import { RaidGroupDialogComponent } from './raid-group-dialog/raid-group-dialog.component';
+import { BooleanSelectList } from '../../shared/models/booleanSelectList';
 
 @Component({
   styleUrls: ['./raids.component.scss'],
@@ -18,10 +19,7 @@ export class RaidsComponent implements OnInit {
     { mapId: 616, name: 'Eye of Eternity' },
   ];
   //Default to Naxx
-  public selectedRaid: Raid = {
-    mapId: 533,
-    name: 'Naxxramas',
-  };
+  public selectedRaid: Raid = this.raids[0];
 
   public raidDifficulties: RaidDifficulty[] = [
     { id: 0, name: '10 Man' },
@@ -29,12 +27,15 @@ export class RaidsComponent implements OnInit {
   ];
 
   //Default to 10-Man
-  public selectedDifficulty: RaidDifficulty = {
-    id: 0,
-    name: '10 Man',
-  };
+  public selectedDifficulty: RaidDifficulty = this.raidDifficulties[0];
+
+  public booleanSelectList: BooleanSelectList[] = [
+    {name: 'Yes', value: true},
+    {name: 'No', value: false}
+  ];
 
   public searchTerm: string = '';
+  public hardMode: boolean = false;
   public pageSize: number = 10;
   public length: number = 10;
   public pageNumber: number = 1;
@@ -59,6 +60,7 @@ export class RaidsComponent implements OnInit {
         mapId: this.selectedRaid.mapId,
         difficultyId: this.selectedDifficulty.id,
         searchTerm: this.searchTerm,
+        hardMode: this.hardMode,
         pageSize: this.pageSize,
         pageNumber: this.pageNumber
       })

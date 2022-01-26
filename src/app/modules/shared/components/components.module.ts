@@ -25,6 +25,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { VideoPlayerDialogComponent } from './video-player-dialog/video-player-dialog.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
 
 const globalRippleConfig: RippleGlobalOptions = {
   disabled: false,
@@ -57,6 +59,7 @@ const globalRippleConfig: RippleGlobalOptions = {
     FormsModule,
     MatSelectModule,
     MatPaginatorModule,
+    MatCheckboxModule,
     YouTubePlayerModule,
     NgxChartsModule
   ],
@@ -87,6 +90,7 @@ const globalRippleConfig: RippleGlobalOptions = {
     FormsModule,
     MatSelectModule,
     MatPaginatorModule,
+    MatCheckboxModule,
     YouTubePlayerModule,
     NgxChartsModule
   ],
