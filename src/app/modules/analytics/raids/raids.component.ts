@@ -38,7 +38,7 @@ export class RaidsComponent implements OnInit {
   public hardMode: boolean = false;
   public pageSize: number = 10;
   public length: number = 10;
-  public pageNumber: number = 1;
+  public pageNumber: number = 0;
 
   constructor(
     private _analyticsService: AnalyticsService,
