@@ -69,7 +69,7 @@ export class LeaderboardsComponent implements OnInit {
         map: this.selectedRaid.mapId,
         difficulty: this.selectedDifficulty.id,
         wing: this.doesRaidHaveWings() ? this.selectedWing.name : '',
-        hardMode: false
+        hardMode: this.hardMode
       })
       .subscribe((response) => {
         this.topThree = response;

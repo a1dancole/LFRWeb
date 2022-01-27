@@ -16,19 +16,19 @@ export class AnalyticsService extends BaseHttpClient {
     query: QueryEncounter
   ): Observable<PaginationResponse<Encounter>> {
     return this._httpClient.get<PaginationResponse<Encounter>>(
-      `${environment.apiUrl}/analytics/encounters?mapId=${query.mapId}&difficultyId=${query.difficultyId}&searchTerm=${query.searchTerm}&PageNumber=${query.pageNumber}&PageSize=${query.pageSize}`
+      `${environment.apiUrl}/analytics/encounters?mapId=${query.mapId}&difficultyId=${query.difficultyId}&hardmode=${query.hardMode}&searchTerm=${query.searchTerm}&PageNumber=${query.pageNumber}&PageSize=${query.pageSize}`
     );
   }
 
   public getTopThreeGroupsForWing(query: QueryWings): Observable<Wing[]> {
     return this._httpClient.get<Wing[]>(
-      `${environment.apiUrl}/analytics/gettopthreegroupsforwing?map=${query.map}&difficulty=${query.difficulty}&wing=${query.wing}`
+      `${environment.apiUrl}/analytics/gettopthreegroupsforwing?map=${query.map}&difficulty=${query.difficulty}&wing=${query.wing}&hardmode=${query.hardMode}`
     );
   }
 
   public getTopGroupsForWing(query: QueryWings): Observable<Wing[]> {
     return this._httpClient.get<Wing[]>(
-      `${environment.apiUrl}/analytics/wings?map=${query.map}&difficulty=${query.difficulty}&wing=${query.wing}`
+      `${environment.apiUrl}/analytics/wings?map=${query.map}&difficulty=${query.difficulty}&wing=${query.wing}&hardmode=${query.hardMode}`
     );
   }
 
