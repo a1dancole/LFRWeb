@@ -2,9 +2,9 @@
   <button mat-icon-button (click)="toggleSideMenu()">
     <mat-icon>{{sideMenuOpen ? 'menu_open' : 'menu'}}</mat-icon>
   </button>
-  <a *ngIf="isDesktop()" routerLink="" class="menu-image"><img src="../../../../../assets/images/Color logo - no background.png"/></a>
-  <a *ngIf="!isDesktop() && !isPwa()" routerLink="" class="menu-image"><img src="../../../../../assets/images/logo_no_text.png"/></a>
-  <a *ngIf="!isDesktop() && isPwa()" routerLink="/account" class="menu-image"><img src="../../../../../assets/images/logo_no_text.png"/></a>
+  <a *ngIf="isDesktop()" routerLink="" class="menu-image"><img src="../../../../../assets/images/Color logo - no background.png" alt="Looking For Raid"/></a>
+  <a *ngIf="!isDesktop() && !isPwa()" routerLink="" class="menu-image"><img src="../../../../../assets/images/logo_no_text.png" alt="LFR"/></a>
+  <a *ngIf="!isDesktop() && isPwa()" routerLink="/account" class="menu-image"><img src="../../../../../assets/images/logo_no_text.png" alt="LFR"/></a>
   <button *ngIf="!isLoggedIn && !isPwa()" mat-icon-button [matMenuTriggerFor]="loggedOutMenu">
     <mat-icon>account_circle</mat-icon>
   </button>
