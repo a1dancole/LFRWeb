@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AccountDashboardComponent } from './modules/account/accountDashoard.component';
 import { ChangeFactionComponent } from './modules/account/change-faction/change-faction.component';
 import { ChangeNameComponent } from './modules/account/change-name/change-name.component';
@@ -40,6 +40,7 @@ import { WikiGeneralComponent } from './modules/wiki/general/wiki-general.compon
 import { WikiEyeOfEternityComponent } from './modules/wiki/raids/eye-of-eternity/wiki-eye-of-eternity.component';
 import { WikiNaxxramasComponent } from './modules/wiki/raids/naxxramas/wiki-naxxramas.component';
 import { WikiObsidianSanctumComponent } from './modules/wiki/raids/obsidian-sanctum/wiki-obsidian-sanctum.component';
+import { WikiUlduarComponent } from './modules/wiki/raids/ulduar/wiki-ulduar.component';
 import { WikiVaultOfArchavonComponent } from './modules/wiki/raids/vault-of-archavon/wiki-vault-of-archavon.component';
 import { WikiRaidsComponent } from './modules/wiki/raids/wiki-raids.component';
 import { WikiComponent } from './modules/wiki/wiki.component';
@@ -71,6 +72,7 @@ const routes: Routes = [
   { path: 'wiki/raids/obsidian-sanctum', component: WikiObsidianSanctumComponent },
   { path: 'wiki/raids/eye-of-eternity', component: WikiEyeOfEternityComponent },
   { path: 'wiki/raids/vault-of-archavon', component: WikiVaultOfArchavonComponent },
+  { path: 'wiki/raids/ulduar', component: WikiUlduarComponent },
   { path: 'wiki/classes', component: WikiClassesComponent },
   { path: 'wiki/classes/mage', component: WikiClassesMageComponent },
   { path: 'wiki/classes/hunter', component: WikiClassesHunterComponent },
@@ -90,7 +92,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  imports: [RouterModule.forRoot(routes, { useHash: true, preloadingStrategy: PreloadAllModules })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

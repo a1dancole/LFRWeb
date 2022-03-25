@@ -1,0 +1,122 @@
+<div *ngIf="isDesktop();else mobile">
+  <br />
+  <mat-card class="wiki-general-card">
+    <mat-card-header>
+      <mat-card-title>Ulduar (10-man)</mat-card-title>
+      <mat-card-subtitle>Ulduar changes that have been made to the server. If boss is not listed assume the only changes are to scaling</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-accordion multi="true">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              General
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>You can only access Ulduar 10 after completeing Champion of the Frozen Wastes achievement.</mat-list-item>
+           </mat-list>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              Flame Leviathan
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Only one of each vehicle will be spawned at the start and outside Flame Leviathan's room.</mat-list-item>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Tower of Life being up will result in only one corner of the room spawning adds.</mat-list-item>
+           </mat-list>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              Razorscale
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Using a tank cooldown, such as Shield Wall or Survival Instincts, will remove the Fuse Armour debuff.</mat-list-item>
+           </mat-list>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              Ignis the Furnace Master
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Heat debuff reduces movement speed instead of increasing it.</mat-list-item>
+           </mat-list>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              Assembly of Iron
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Stormcaller Brundir does not have a threat list and instead will randomly attack the group with lightning bolts.</mat-list-item>
+            <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Rune of Power will not be cast on Stormcaller Brundir.</mat-list-item>
+           </mat-list>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-card-content>
+  </mat-card>
+  </div>
+  <ng-template #mobile>
+    <h1>Ulduar (10-man)</h1>
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-description>
+            General
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>You can only access Ulduar 10 after completeing Champion of the Frozen Wastes achievement.</mat-list-item>
+         </mat-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-description>
+            Flame Leviathan
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Only one of each vehicle will be spawned at the start and outside Flame Leviathan's room.</mat-list-item>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Tower of Life being up will result in only one corner of the room spawning adds.</mat-list-item>
+         </mat-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-description>
+            Razorscale
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Using a tank cooldown, such as Shield Wall or Survival Instincts, will remove the Fuse Armour debuff.</mat-list-item>
+         </mat-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-description>
+            Ignis the Furnace Master
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Heat debuff reduces movement speed instead of increasing it.</mat-list-item>
+         </mat-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-description>
+            Assembly of Iron
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Stormcaller Brundir does not have a threat list and instead will randomly attack the group with lightning bolts.</mat-list-item>
+          <mat-list-item><mat-icon matListIcon>horizontal_rule</mat-icon>Rune of Power will not be cast on Stormcaller Brundir.</mat-list-item>
+         </mat-list>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </ng-template>

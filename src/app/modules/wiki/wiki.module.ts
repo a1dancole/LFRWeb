@@ -16,6 +16,7 @@ import { WikiGeneralComponent } from './general/wiki-general.component';
 import { WikiEyeOfEternityComponent } from './raids/eye-of-eternity/wiki-eye-of-eternity.component';
 import { WikiNaxxramasComponent } from './raids/naxxramas/wiki-naxxramas.component';
 import { WikiObsidianSanctumComponent } from './raids/obsidian-sanctum/wiki-obsidian-sanctum.component';
+import { WikiUlduarComponent } from './raids/ulduar/wiki-ulduar.component';
 import { WikiVaultOfArchavonComponent } from './raids/vault-of-archavon/wiki-vault-of-archavon.component';
 import { WikiRaidsComponent } from './raids/wiki-raids.component';
 import { WikiComponent } from './wiki.component';
@@ -29,6 +30,7 @@ import { WikiComponent } from './wiki.component';
     WikiObsidianSanctumComponent,
     WikiEyeOfEternityComponent,
     WikiVaultOfArchavonComponent,
+    WikiUlduarComponent,
     WikiClassesComponent,
     WikiClassesMageComponent,
     WikiClassesDruidComponent,

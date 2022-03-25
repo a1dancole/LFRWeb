@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this._title.setTitle('Looking For Raid - WOTLK5Man');
+    this._title.setTitle('Looking For Raid - WOTLK5Man - Instant 80');
 
     this._meta.addTags([
       {
