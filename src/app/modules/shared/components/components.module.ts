@@ -26,6 +26,7 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
 import { VideoPlayerDialogComponent } from './video-player-dialog/video-player-dialog.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 
 const globalRippleConfig: RippleGlobalOptions = {
@@ -55,6 +56,7 @@ const globalRippleConfig: RippleGlobalOptions = {
     MatGridListModule,
     MatRippleModule,
     MatTableModule,
+    MatProgressBarModule,
     CommonModule,
     FormsModule,
     MatSelectModule,
@@ -86,6 +88,7 @@ const globalRippleConfig: RippleGlobalOptions = {
     MatGridListModule,
     MatRippleModule,
     MatTableModule,
+    MatProgressBarModule,
     CommonModule,
     FormsModule,
     MatSelectModule,

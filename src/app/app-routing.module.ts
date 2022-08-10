@@ -9,6 +9,7 @@ import { CharacterBoostComponent } from './modules/account/character-boost/chara
 import { GoldComponent } from './modules/account/gold/gold.component';
 import { StoreComponent } from './modules/account/store/store.component';
 import { UnstuckComponent } from './modules/account/unstuck/unstuck.component';
+import { AchievementsComponent } from './modules/analytics/achievements/achievements.component';
 import { AnalyticsComponent } from './modules/analytics/analytics.component';
 import { HostComponent } from './modules/analytics/host/host.component';
 import { RaidsComponent } from './modules/analytics/raids/raids.component';
@@ -88,6 +89,7 @@ const routes: Routes = [
   { path: 'analytics/raids', component: RaidsComponent },
   { path: 'analytics/host', component: HostComponent },
   { path: 'analytics/server', component: ServerComponent },
+  { path: 'analytics/achievements', component: AchievementsComponent },
   { path: 'leaderboards', component: LeaderboardsComponent }
 ];
 

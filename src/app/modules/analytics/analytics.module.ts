@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { SharedModule } from "../shared/shared.module";
+import { AchievementsComponent } from "./achievements/achievements.component";
 import { AnalyticsComponent } from "./analytics.component";
 import { AnalyticsService } from "./analytics.service";
 import { HostComponent } from "./host/host.component";
@@ -9,7 +10,7 @@ import { RaidsComponent } from "./raids/raids.component";
 import { ServerComponent } from "./server/server.component";
 
 @NgModule({
-  declarations: [AnalyticsComponent, RaidsComponent, HostComponent, ServerComponent, RaidGroupDialogComponent],
+  declarations: [AnalyticsComponent, RaidsComponent, HostComponent, ServerComponent, RaidGroupDialogComponent, AchievementsComponent],
   providers: [
     AnalyticsService
   ],

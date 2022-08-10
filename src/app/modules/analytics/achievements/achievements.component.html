@@ -1,0 +1,33 @@
+<div *ngIf="isDesktop();else mobile">
+  <br />
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Achievements</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field appearance="fill" class="achievements-search-input">
+        <mat-label>Search</mat-label>
+        <input matInput [(ngModel)]="searchTerm" (ngModelChange)="loadData()">
+      </mat-form-field>
+      <mat-table [dataSource]="achievements" class="mat-elevation-z8">
+        <ng-container matColumnDef="characterName">
+          <mat-header-cell *matHeaderCellDef> Player </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.characterName}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="achievementCount">
+          <mat-header-cell *matHeaderCellDef> Achievements Earned </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <mat-progress-bar mode="determinate" [value]="element.achievementCount/1058 * 100"></mat-progress-bar>
+            <div class="mat-progress-bar-text"> {{element.achievementCount + "/1058"}} </div>
+          </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="['characterName', 'achievementCount']; sticky: true">
+        </mat-header-row>
+        <mat-row matRipple *matRowDef="let row; columns: ['characterName', 'achievementCount'];"></mat-row>
+      </mat-table>
+    </mat-card-content>
+    <mat-paginator (page)="paginatorPaged($event)" [length]="length" [pageSize]="pageSize"></mat-paginator>
+  </mat-card>
+</div>
+<ng-template #mobile>
+</ng-template>
