@@ -1,0 +1,72 @@
+mat-card {
+  max-width: 40vw;
+  margin: 10vh auto;
+  border: 30px;
+  border-radius: 30px;
+}
+
+mat-card.mobile {
+  max-width: 90vw;
+  border: 10px;
+  border-radius: 10px;
+}
+
+.mat-card.mobile:not([class*=mat-elevation-z]) {
+  box-shadow: 0 2px 1px -1px rgba(0,0,0,1),
+              0 1px 1px 0 rgba(0,0,0,1),
+              0 1px 3px 0 rgba(0,0,0,1);
+}
+
+.icon-right {
+  margin-left: auto;
+}
+
+
+.unstuck-select-list {
+  width: 100%;
+}
+
+mat-card-actions {
+  text-align: center;
+}
+
+mat-card-header.mobile {
+  justify-content: center;
+}
+
+.unstuck-character-image {
+  max-height:30vh;
+  filter:opacity(0.8);
+}
+
+.unstuck-card-content {
+  width:100%;
+}
+
+.unstuck-button {
+  width: 100%;
+}
+
+.mat-form-field.file-upload {
+  width:100%;
+}
+
+.mat-toolbar-single-row {
+  height: auto !important;
+  background: transparent;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+#uploadFile {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 9;
+  opacity: 0;
+  height: 100%;
+  cursor: pointer;
+  position: absolute;
+}

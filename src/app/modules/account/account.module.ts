@@ -16,6 +16,8 @@ import { StoreComponent } from './store/store.component';
 import { StoreService } from './store/store.service';
 import { UnstuckComponent } from './unstuck/unstuck.component';
 import { CharacterBoostComponent } from './character-boost/character-boost.component'
+import { CharacterImportComponent } from './character-import/character-import.component';
+import { InstructionsDialogComponent } from './character-import/dialogs/instructions.dialog.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { CharacterBoostComponent } from './character-boost/character-boost.compo
     ChangeRaceComponent,
     GoldComponent,
     GoldPaypalDialog,
-    CharacterBoostComponent
+    CharacterBoostComponent,
+    CharacterImportComponent,
+    InstructionsDialogComponent
   ],
   providers: [AccountService, StoreService],
   imports: [SharedModule, RouterModule, NgxPayPalModule],
