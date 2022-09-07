@@ -13,6 +13,7 @@ import { UnstuckComponent } from './modules/account/unstuck/unstuck.component';
 import { AchievementsComponent } from './modules/analytics/achievements/achievements.component';
 import { AnalyticsComponent } from './modules/analytics/analytics.component';
 import { HostComponent } from './modules/analytics/host/host.component';
+import { PvpComponent } from './modules/analytics/pvp/pvp.component';
 import { RaidsComponent } from './modules/analytics/raids/raids.component';
 import { ServerComponent } from './modules/analytics/server/server.component';
 import { LoginComponent } from './modules/authentication/login/login.component';
@@ -92,6 +93,7 @@ const routes: Routes = [
   { path: 'analytics/host', component: HostComponent },
   { path: 'analytics/server', component: ServerComponent },
   { path: 'analytics/achievements', component: AchievementsComponent },
+  { path: 'analytics/pvp', component: PvpComponent },
   { path: 'leaderboards', component: LeaderboardsComponent }
 ];
 

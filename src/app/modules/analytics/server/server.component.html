@@ -6,7 +6,7 @@
 
       <mat-card matRipple class="server-card" [routerLink]="['/analytics/raids']">
         <mat-card-header>
-          <mat-card-title>Active Players (past 30days)</mat-card-title>
+          <mat-card-title class="server-card-title">Active Players (past 30days)</mat-card-title>
           <mat-card-subtitle>These figures are calculated based on activity performed on the server, if a player logs in and does not complete any content they do not count as an active player</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content class="server-card-content">
@@ -20,7 +20,7 @@
     <mat-grid-tile>
       <mat-card matRipple class="server-card disabled">
         <mat-card-header>
-          <mat-card-title>Class breakdown</mat-card-title>
+          <mat-card-title class="server-card-title">Class breakdown</mat-card-title>
           <mat-card-subtitle>These figures are based on players who have performed at least one endgame activity on the server. Bank alts, gathering alts, name reserves etc are not included</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content class="server-card-content">
@@ -40,14 +40,15 @@
     <mat-grid-tile>
       <mat-card matRipple class="server-card disabled">
         <mat-card-header>
-          <mat-card-title>Other Breakdowns</mat-card-title>
+          <mat-card-title class="server-card-title">Other Breakdowns</mat-card-title>
         </mat-card-header>
         <mat-card-content class="server-card-content">
-          <div style="height:30%;width:100%">
+          <div #containerRef class="numbers-card-body">
             <ngx-charts-number-card
-            [results]="cdata"
-            [animations]="true"
-            style="fill: #ffffff;">
+            (window:resize)="resizeNumbersCard(containerRef.offsetWidth)"
+            [view]="[containerRef.offsetWidth, containerRef.offsetHeight]"
+            [results]="otherBreakdowns"
+            [animations]="true">
           </ngx-charts-number-card>
           </div>
         </mat-card-content>

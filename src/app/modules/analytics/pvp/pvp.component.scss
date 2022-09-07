@@ -1,0 +1,21 @@
+.pvp-search-input {
+  padding-right: 0.5vw;
+}
+
+.mat-progress-bar {
+  height: 2vh;
+}
+
+::ng-deep .mat-progress-bar-buffer {
+  background-color: #272727;
+}
+
+.mat-progress-bar-text {
+  position: absolute;
+  padding-left: 25%;
+}
+
+.mat-row .mat-cell {
+  cursor: pointer;
+}
+

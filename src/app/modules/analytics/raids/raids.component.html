@@ -7,7 +7,7 @@
     <mat-card-content>
       <mat-form-field appearance="fill" class="raid-search-input">
         <mat-label>Search</mat-label>
-        <input matInput [(ngModel)]="searchTerm" (ngModelChange)="loadData()">
+        <input matInput [(ngModel)]="searchTerm" (ngModelChange)="loadData()" (keyup.enter)="loadData()">
       </mat-form-field>
       <mat-form-field appearance="fill" class="raid-search-input">
         <mat-label>Raid</mat-label>
