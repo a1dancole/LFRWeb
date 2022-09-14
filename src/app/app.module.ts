@@ -14,7 +14,7 @@ import { DiscordModule } from './modules/discord/discord.module';
 import { HowToConnectModule } from './modules/howtoconnect/howtoconnect.module';
 import { ChangesModule } from './modules/changes/changes.module';
 import { AccountModule } from './modules/account/account.module';
-import { BlogsModule } from './modules/blogs/blogs.module';
+import { AboutModule } from './modules/blogs/about.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment'
 import { WikiModule } from './modules/wiki/wiki.module';
@@ -40,7 +40,7 @@ import { LeaderboardsModule } from './modules/leaderboards/leaderboards.module';
     HowToConnectModule,
     ChangesModule,
     AccountModule,
-    BlogsModule,
+    AboutModule,
     WikiModule,
     AnalyticsModule,
     LeaderboardsModule,

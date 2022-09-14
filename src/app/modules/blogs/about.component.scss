@@ -1,0 +1,17 @@
+.about-wrapper {
+  height: 100vh;
+  width: 70vw;
+  margin: auto;
+}
+
+.about-image {
+  width:20vw;
+}
+
+mat-grid-tile {
+  border-bottom: 1px #00cbcc solid;
+}
+
+mat-grid-tile.no-border {
+  border:0px;
+}

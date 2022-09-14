@@ -10,9 +10,11 @@
   height: 30vh;
   width: 20vw;
   border: 30px;
-  border-radius: 30px;
+  border-radius: 10px;
   cursor: pointer;
+  transition: all .2s ease-in-out;
 }
+.wiki-classes-card:hover { transform: scale(1.1); }
 
 .wiki-classes-card.mobile {
   height:auto;

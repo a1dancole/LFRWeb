@@ -13,6 +13,7 @@ import { QueryAchievements } from './models/queryAchievement';
 import { QueryEncounter } from './models/queryEncounters';
 import { QueryPvp } from './models/queryPvp';
 import { QueryWings } from './models/queryWings';
+import { ServerStatus } from './models/serverStatus';
 import { Wing } from './models/wing';
 
 @Injectable()
@@ -62,6 +63,12 @@ export class AnalyticsService extends BaseHttpClient {
   public queryPvp(query: QueryPvp): Observable<PaginationResponse<PvpKills>> {
     return this._httpClient.get<PaginationResponse<PvpKills>>(
       `${environment.apiUrl}/analytics/pvp?searchterm=${query.searchTerm}&PageNumber=${query.pageNumber}&PageSize=${query.pageSize}`
+    );
+  }
+
+  public getServerStatus(): Observable<ServerStatus> {
+    return this._httpClient.get<ServerStatus>(
+      `${environment.apiUrl}/analytics/serverstatus`
     );
   }
 }

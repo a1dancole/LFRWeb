@@ -18,7 +18,7 @@ import { RaidsComponent } from './modules/analytics/raids/raids.component';
 import { ServerComponent } from './modules/analytics/server/server.component';
 import { LoginComponent } from './modules/authentication/login/login.component';
 import { RegisterComponent } from './modules/authentication/register/register.component';
-import { BlogsComponent } from './modules/blogs/blogs.component';
+import { AboutComponent } from './modules/blogs/about.component';
 import { ChangesComponent } from './modules/changes/changes.component';
 import { DiscordComponent } from './modules/discord/discord.component';
 import { HomeComponent } from './modules/home/home.component';
@@ -50,7 +50,7 @@ import { WikiComponent } from './modules/wiki/wiki.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
-  { path: 'blogs', component: BlogsComponent },
+  { path: 'about', component: AboutComponent },
   { path: 'register', component: RegisterComponent},
   { path: 'serverstatus', component: ServerStatusComponent},
   { path: 'underconstruction', component: UnderConstructionComponent},

@@ -1,0 +1,8 @@
+<mat-toolbar class="footer">
+  <img *ngIf="isDesktop()" src="../../../../../assets/images/logo_no_text.png" class="footer-image" alt="LFR" routerLink="/"/>
+  <span class="footer-icons">
+  <fa-icon class="footer-icon" [icon]="faDiscord" matTooltip="Discord" (click)="openDiscordUrl()"></fa-icon>
+  <fa-icon class="footer-icon" [icon]="faTrello" matTooltip="Trello" (click)="openTrelloUrl()"></fa-icon>
+  <fa-icon class="footer-icon" [icon]="faYoutube" matTooltip="Youtube" (click)="openYoutubeUrl()"></fa-icon>
+</span>
+</mat-toolbar>

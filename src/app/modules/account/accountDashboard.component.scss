@@ -12,7 +12,9 @@
   border: 30px;
   border-radius: 30px;
   cursor: pointer;
+  transition: all .2s ease-in-out;
 }
+.account-dashboard-card:hover { transform: scale(1.05); }
 
 .account-dashboard-card.mobile {
   height:auto;

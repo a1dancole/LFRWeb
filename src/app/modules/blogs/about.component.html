@@ -1,0 +1,77 @@
+<div *ngIf="isDesktop();else mobile">
+  <div style="height:5vh"></div>
+  <div class="about-wrapper">
+    <mat-grid-list cols="3" rowHeight="1vh" gutterSize="1vw">
+      <mat-grid-tile [colspan]="1" [rowspan]="12">
+        <mat-card-content>
+          <img src="../../../assets/images/ulduar_raid.jpg" class="about-image" />
+        </mat-card-content>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="2" [rowspan]="12">
+        <mat-card-content>
+          <h2>5-man content</h2>
+          <p>Each boss fight has it's mechanics carefully adjusted, health adjusted and damaged adjusted to suite a smaller group size. All of this is done while ensuring the fight feels as familiar to the original boss.</p>
+          <p>Unlike other 'scaled' servers that use auto-scaling modules, or simply adjust health and damage to make the fight easy enough to be doable by 5, we go further to make the fights a challenge but doable by 5.</p>
+          <br />
+        </mat-card-content>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="2" [rowspan]="12">
+        <mat-card-content>
+          <h2>Challenge Mode</h2>
+          <p>To allow players to have access to as much loot as possible and to stop content being stale by fighting the same fights over multiple difficulties we've made 25-man a challenge mode.</p>
+          <p>By entering a raid in 25-man mode you are still restricted to a group size of 5. Each boss will get additional mechanics that are completely custom, but carefully designed to compliment the original fight.</p>
+          <br />
+        </mat-card-content>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="12">
+        <mat-card-content>
+          <img src="../../../assets/images/toc_raid.jpg" class="about-image" />
+        </mat-card-content>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="12">
+        <mat-card-content>
+          <img src="../../../assets/images/raid_timer.png" class="about-image" />
+        </mat-card-content>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="2" [rowspan]="12">
+        <mat-card-content>
+          <h2>Raid Timers</h2>
+          <p>Each boss kill is timed and displayed on the website for people to view. Compete against other groups and guilds to be the best and be the top of the leaderboard.</p>
+          <p>As well as each boss timer being tracked we also track wing clear times, allowing groups to compete for Server First achievements for being the fastest group to clear a wing in content. This makes the Server First achievement race accessible to all groups; not just the group that can login first night of content being released. Wear your title with respect from all the community!</p>
+          <br />
+        </mat-card-content>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="2" [rowspan]="18">
+        <mat-card-content>
+          <h2>Respect your play time</h2>
+          <p>We pride ourselves on respecting your play time. It starts by making it as simple as possible to get into the endgame content. Start at level 80, get gear from a simple conversation with a vendor and then acquire your professions starting at 300. You'll be ready to play in less than 5minutes!</p>
+          <p>If you want to play alts and gear them up send left over emblems to your alts to allow them to quickly acquire gear with our Emblem Transfer NPC.</p>
+          <p>The Auction House is a great place to purchase materials for crafting, we have an Auction House bot that posts these materials throughout the day letting you convert gold into consumables and gear. The Auction House bot only lists raw materials, no items or crafted materials to encourage player coorperation and reward professions. </p>
+          <p>We offer custom items that players can purchase from our store to replace Fish Feats and Flasks, providing an alternate route to getting raid consumables. There are no pay to win items on the store.</p>
+          <p>Finally raids reset twice a week so you can play when your schedule allows.</p>
+          <br />
+        </mat-card-content>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="18">
+        <mat-card-content>
+          <img src="../../../assets/images/new_starter.png" class="about-image" />
+        </mat-card-content>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="12" class="no-border">
+        <mat-card-content>
+          <img src="../../../assets/images/dual_spec.png" class="about-image" />
+        </mat-card-content>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="2" [rowspan]="12" class="no-border">
+        <mat-card-content>
+          <h2>Class Changes</h2>
+          <p>We have made small class changes to allow groups to be competitive regardless of group composition. This has been achieved by baking in buffs and debuffs into other talents or spells and carefully scripting to only work within raids so that PVP and open world play is not affected.</p>
+          <p>Dual spec has also been improved by allowing Glyphs to be reused, they are no longer consumed when adding them to a spec so you can change your classes talents and glyphs as much as you want!</p>
+          <br />
+        </mat-card-content>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>
+<ng-template #mobile>
+</ng-template>

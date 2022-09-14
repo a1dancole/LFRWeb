@@ -1,8 +1,8 @@
 {
   "name": "Looking For Raid",
   "short_name": "LFR",
-  "theme_color": "#272727",
-  "background_color": "#272727",
+  "theme_color": "#1a1a1cf7",
+  "background_color": "#1a1a1cf7",
   "display": "standalone",
   "scope": "./",
   "start_url": "./#/account",

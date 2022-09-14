@@ -27,6 +27,8 @@ import { VideoPlayerDialogComponent } from './video-player-dialog/video-player-d
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { FooterComponent } from './footer/footer.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 const globalRippleConfig: RippleGlobalOptions = {
@@ -63,9 +65,10 @@ const globalRippleConfig: RippleGlobalOptions = {
     MatPaginatorModule,
     MatCheckboxModule,
     YouTubePlayerModule,
-    NgxChartsModule
+    NgxChartsModule,
+    FontAwesomeModule
   ],
-  declarations: [ToolbarComponent, SideMenuComponent, VideoPlayerDialogComponent],
+  declarations: [ToolbarComponent, SideMenuComponent, VideoPlayerDialogComponent, FooterComponent],
   providers: [
     {provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig}
   ],
@@ -95,7 +98,9 @@ const globalRippleConfig: RippleGlobalOptions = {
     MatPaginatorModule,
     MatCheckboxModule,
     YouTubePlayerModule,
-    NgxChartsModule
+    NgxChartsModule,
+    FooterComponent,
+    FontAwesomeModule
   ],
 })
 export class ComponentsModule {}

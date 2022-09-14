@@ -13,13 +13,13 @@
           <span>Home</span>
         </button>
       </mat-list-item>
-      <mat-divider></mat-divider>
       <mat-list-item>
-        <button mat-menu-item routerLink="/blogs">
-          <mat-icon>article</mat-icon>
-          <span>Blogs</span>
+        <button mat-menu-item routerLink="/about">
+          <mat-icon>info</mat-icon>
+          <span>About</span>
         </button>
       </mat-list-item>
+      <mat-divider></mat-divider>
       <mat-list-item>
         <button mat-menu-item routerLink="/wiki">
           <mat-icon>menu_book</mat-icon>
@@ -38,24 +38,12 @@
           <span>Leaderboards</span>
         </button>
       </mat-list-item>
-      <!-- <mat-list-item>
-        <button mat-menu-item routerLink="/serverstatus">
-          <mat-icon>speed</mat-icon>
-          <span>Server Status</span>
-        </button>
-      </mat-list-item> -->
       <mat-list-item *ngIf="isDesktop()">
         <button mat-menu-item routerLink="/howtoconnect">
           <mat-icon>settings_ethernet</mat-icon>
           <span>How To Connect</span>
         </button>
       </mat-list-item>
-      <!-- <mat-list-item>
-        <button mat-menu-item routerLink="/discord">
-          <mat-icon>question_answer</mat-icon>
-          <span>Discord</span>
-        </button>
-      </mat-list-item> -->
       <mat-list-item *ngIf="isDesktop()">
         <button mat-menu-item routerLink="/streams">
           <mat-icon>stream</mat-icon>
@@ -96,14 +84,14 @@
       <mat-divider></mat-divider>
       <mat-list-item *ngIf="!isLoggedIn" routerLink="/login">
         <button mat-menu-item>
-          <mat-icon>login</mat-icon>
+          <mat-icon>manage_accounts</mat-icon>
           <span>Login</span>
         </button>
       </mat-list-item>
       <mat-list-item *ngIf="!isLoggedIn">
         <button mat-menu-item routerLink="/register">
-          <mat-icon>create</mat-icon>
-          <span>Register</span>
+          <mat-icon>person_add</mat-icon>
+          <span>Create Account</span>
         </button>
       </mat-list-item>
       <mat-list-item *ngIf="isLoggedIn && !isPwa()">

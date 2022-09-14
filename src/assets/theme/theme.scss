@@ -215,6 +215,8 @@ $theme-warn: mat-palette($mat-warn, main, lighter, darker);;
 $theme: mat-dark-theme($theme-primary, $theme-accent, $theme-warn);
 $altTheme: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
 
+$backgroundColor: rgb(33, 33, 35);
+
 // Theme Init
 @include angular-material-theme($theme);
 
@@ -243,4 +245,37 @@ $altTheme: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
   .mat-badge-content {
     font-family: 'Roboto';
   }
+}
+
+.mat-card {
+  background: rgb($backgroundColor, 70%);
+
+}
+
+.mat-toolbar {
+  background: $backgroundColor
+}
+
+.mat-drawer {
+  background: $backgroundColor
+}
+
+.mat-expansion-panel {
+  background: $backgroundColor
+}
+
+.mat-table {
+  background: $backgroundColor
+}
+
+.mat-stepper-horizontal, .mat-stepper-vertical {
+  background: $backgroundColor
+}
+
+.mat-menu-panel {
+  background: $backgroundColor
+}
+
+.mat-dialog-container {
+  background: #161618
 }
