@@ -30,7 +30,7 @@
     "@swimlane/ngx-charts": "^19.2.0",
     "bigint-mod-arith": "^2.0.8",
     "buffer": "^6.0.3",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "lodash": "^4.17.21",
     "ngx-cookie-service": "^11.0.2",
     "ngx-paypal": "^7.0.0",
